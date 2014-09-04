@@ -310,6 +310,37 @@ h2 {
     position: absolute; 
 }
 
+.arrow-login {
+    background: url('../img/arrow-login.png') no-repeat;
+    width:30px;
+    height: 30px;
+    display: inline-block;
+    position: relative;
+    margin: 4px 0 0 40px;
+}
+
+.arrow-login a {
+    width: 100%;
+    height: 100%;
+    position: absolute; 
+}
+
+.arrow-login-1 {
+    background: url('../img/arrow-login1.png') no-repeat;
+    width:30px;
+    height: 30px;
+    display: inline-block;
+    position: relative;
+    margin: 4px 0 0 40px;
+}
+
+.arrow-login-1 a {
+    width: 100%;
+    height: 100%;
+    position: absolute; 
+}
+
+
 .m-navbar {
     margin: 0 auto 0 auto;
 }
@@ -441,7 +472,7 @@ h2 {
 }
 
 .paralax-section2 {
-    background: url('../img/magic-pixel.png') repeat top left, url('../img/background-testimonials.jpg');
+    background: url('../img/magic-pixel.png') repeat top left, url('../img/pelota-futbol.jpg');
 }
 
 .l-twitter-section {
@@ -1091,6 +1122,9 @@ h2 {
             
     .navbar .arrow-top {
         display: none;
+    }
+
+    .navbar .arrow-login {
     }
 }
 
