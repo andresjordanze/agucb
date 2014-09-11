@@ -1,4 +1,5 @@
 Agucb::Application.routes.draw do
+  devise_for :users
   root "home#index"
 
   match '/futbol8',    to: 'home#futbol8',    via: 'get'

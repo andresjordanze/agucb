@@ -29,6 +29,8 @@ gem 'turbolinks'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 1.2'
 
+gem 'devise'
+
 group :production do
 	gem 'pg'
 	gem 'rails_12factor', '0.0.2'
