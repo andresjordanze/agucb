@@ -62,14 +62,14 @@
                                             <div class="container">
                                                 <div class="col-lg-9 div-centered">                                        
                                                     <div class="splash-centering" >
-                                                        <h1>ASOCIACION DE GRADUADOS</h1><br />
+                                                        <h1>ASOCIACION DE GRADUADOS</h1><br/>
 
                                                         <div class="splash-text">
                                                             <p>UNIVERSIDAD CATOLICA BOLIVIANA</br>"SAN PABLO"</p>
                                                         </div><!-- splash-text -->
 
                                                         <!--<a href="/prueba" class="btn">Futbol 8</a>--> 
-                                                        <a href="#page-section" class="btn second-btn">Ingresar</a>
+                                                        <a href="#inicio" class="btn second-btn">Ingresar</a>
                                                     </div><!-- splash-centering -->
                                                 </div><!-- span12 -->
 
@@ -153,23 +153,11 @@
                               <div class="collapse navbar-collapse" id="navbar">
                              
                                     <ul class="nav navbar-nav navbar-right">
-                                      <li class="active">
-                                       <a href="#page-section">Inicio</a>
-                                      </li>
+                                      <li class="active"><a href="#inicio">Inicio</a></li>
                                       <!-- <li><a href="#whatwedo"></a></li> -->
                                       <!--<li><a href="#news"></a></li> -->
                                       <!--<li><a href="#testimonials"></a></li>-->
-                                      <li class="dropdown">
-                                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">AGUCB <b class="caret"></b></a>
-                                        <ul class="dropdown-menu">
-                                          <li><a href="#">¿Quiénes Somos?</a></li>
-                                          <li><a href="#">Misión y Visión</a></li>
-                                          <li><a href="#">Objetivos</a></li>
-                                          <li class="divider"></li>
-                                          <li><a href="#">Finalidades Institucionales</a></li>
-                                          <li><a href="#">Organización</a></li>
-                                        </ul>
-                                      </li>
+                                      <li><a href="#agucb" class="dropdown-toggle" data-toggle="dropdown">AGUCB</a></li>
                                       <li><a href="#skills">El Graduado de la UCB</a></li>
                                       <!-- <li><a href="#skills">Organización</a></li> -->
                                       <li><a href="#gallery">Noticias</a></li>
@@ -181,7 +169,6 @@
                                         Signed in as <%= current_user.email %>. Not you?  
                                         <%= link_to "Sign out", destroy_user_session_path, :method => :delete %>
                                         <% else %>  
-                                            <%= link_to "Sign up", new_user_registration_path %> |
                                         <%= link_to "Sign in", new_user_session_path %>
                                         <% end %>
                                       </li> 
@@ -202,65 +189,493 @@
             
                 <section>
 
-                    <div class="l-page-section l-section" id="page-section">
+                    <!-- ssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss -->
+                    <div class="l-latest-posts l-section" id="inicio">
 
                         <div class="container">
+                            <br/>
                             <div class="row">
                                 <div class="col-lg-12">
                                     <h2 class="text-center">Últimas Noticias</h2>
-
-                                    <!-- <p class="text-center">
+                                    <div class="m-heading-border"></div><!-- m-heading-border -->
+                                    <p class="text-center">
                                         In hac habitasse platea dictumst. Suspendisse viverra mattis felis. Suspendisse bibendum, nibh non convallis pharetra, eros erat auctor sapien, 
                                         a dapibus lacus dolor et nisi. Sed imperdiet pellentesque laoreet. Cras a ultrices leo. 
                                         Praesent velit mi, ultricies nec neque a, egestas pellentesque nisl. Fusce pellentesque commodo mattis. 
                                         Maecenas gravida egestas iaculis. Aenean vel mollis enim.                
-                                    </p> -->
-
+                                    </p>
                                 </div><!-- col-lg-12 -->
                             </div><!-- row -->
-
                             <div class="separator"></div><!-- separator -->
+
+                            <div class="clearfix"></div><!-- clearfix -->
+
+                            <div class="m-posts">
+
+                                <div class="row">
+
+                                    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 text-center">
+
+                                        <div class="m-news-post">                                                                        
+                                            <div class="m-image-wrap">      
+                                                <div class="hover-wrap">
+                                                    <div class="image-hover">                                            
+                                                        <div class="categories">
+                                                            <a href="#post-popup1">Computers</a>, <a href="#post-popup1">Science</a>
+                                                            <div class="m-heading-border"></div><!-- m-heading-border -->
+                                                        </div>                                            
+                                                        <div class="post-meta">                                                
+                                                            <div class="post-comments text-left">
+                                                                10 comments
+                                                            </div><!-- comments -->                                                
+                                                            <div class="post-date text-right">
+                                                                12 - jan - 2014
+                                                            </div>                                                
+                                                        </div><!-- post-meta -->                                            
+                                                    </div>  <!-- image-hover -->
+                                                </div><!-- hover-wrap -->
+                                                
+                                                <img src="img/news-one.jpg" alt="latest post image" />                                    
+                                            </div><!-- m-image-wrap -->
+
+                                            <div class="news-content">
+                                                <h6>
+                                                    <a href="#">Vestibulum et eros scelerisque</a>
+                                                </h6>
+
+                                                <p>
+                                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod temp.or incididunt 
+                                                </p>
+
+                                                <div class="clearfix"></div><!-- clearfix -->
+                                                <a  href="#post-popup1" class="news-button open-popup-link">Read More</a>
+                                            </div><!-- news-content -->
+
+                                        </div><!-- m-news-post -->                                                                
+
+                                        
+                                        <!-- post popup content -->
+                                        <div id="post-popup1" class="white-popup mfp-hide">
+                                            <img src="img/gallery3.jpg" alt="popup-image" />
+                                            <p>
+                                                Nulla ullamcorper odio vel elit hendrerit dignissim. In hac habitasse platea dictumst. Suspendisse nec pharetra leo, sit amet tempus ipsum. 
+                                                Phasellus sapien elit, scelerisque vel eleifend sit amet, luctus quis neque. Nullam enim eros, aliquet in tellus non, lobortis consectetur ipsum. 
+                                                Sed magna augue, luctus venenatis ante vitae, blandit eleifend elit. Donec ac dictum lorem. Duis sed massa quis dui volutpat varius eu quis dui.
+                                            </p>
+                                        </div>
+                                        
+                                        
+                                    </div><!-- col-lg-4 -->
+
+                                    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 text-center">
+
+                                        <div class="m-news-post">                                                                        
+                                            <div class="m-image-wrap">     
+                                                <div class="hover-wrap">
+                                                    <div class="image-hover">                                            
+                                                        <div class="categories">
+                                                            <a href="#post-popup2">Computers</a>, <a href="#post-popup2">Science</a>
+                                                            <div class="m-heading-border"></div><!-- m-heading-border -->
+                                                        </div>                                            
+                                                        <div class="post-meta">                                                
+                                                            <div class="post-comments text-left">
+                                                                10 comments
+                                                            </div><!-- comments -->                                                
+                                                            <div class="post-date text-right">
+                                                                12 - jan - 2014
+                                                            </div>                                                
+                                                        </div><!-- post-meta -->                                            
+                                                    </div>  <!-- image-hover -->
+                                                </div><!-- hover-wrap -->
+                                                    
+                                                <img src="img/news-one2.jpg" alt="latest post image" />                                    
+                                            </div><!-- m-image-wrap -->
+
+                                            <div class="news-content">
+                                                <h6>
+                                                    <a href="#">Vestibulum et eros scelerisque</a>
+                                                </h6>
+
+                                                <p>
+                                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod temp.or incididunt 
+                                                </p>
+
+                                                <div class="clearfix"></div><!-- clearfix -->
+                                                <a  href="#post-popup2" class="news-button open-popup-link">Read More</a>
+                                            </div><!-- news-content -->
+                                            
+                                        <!-- post popup content -->
+                                        <div id="post-popup2" class="white-popup mfp-hide">
+                                            <img src="img/gallery2.jpg" alt="popup-image" />
+                                            <p>
+                                                Nulla ullamcorper odio vel elit hendrerit dignissim. In hac habitasse platea dictumst. Suspendisse nec pharetra leo, sit amet tempus ipsum. 
+                                                Phasellus sapien elit, scelerisque vel eleifend sit amet, luctus quis neque. Nullam enim eros, aliquet in tellus non, lobortis consectetur ipsum. 
+                                                Sed magna augue, luctus venenatis ante vitae, blandit eleifend elit. Donec ac dictum lorem. Duis sed massa quis dui volutpat varius eu quis dui.
+                                            </p>
+                                        </div>
+
+                                        </div><!-- m-news-post -->                                                                
+
+                                    </div><!-- col-lg-4 -->
+
+                                    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 text-center">
+
+                                        <div class="m-news-post">                                                                        
+                                            <div class="m-image-wrap">                                        
+                                                <div class="hover-wrap">
+                                                    <div class="image-hover">                                            
+                                                        <div class="categories">
+                                                            <a href="#post-popup3">Computers</a>, <a href="#post-popup3">Science</a>
+                                                            <div class="m-heading-border"></div><!-- m-heading-border -->
+                                                        </div>                                            
+                                                        <div class="post-meta">                                                
+                                                            <div class="post-comments text-left">
+                                                                10 comments
+                                                            </div><!-- comments -->                                                
+                                                            <div class="post-date text-right">
+                                                                12 - jan - 2014
+                                                            </div>                                                
+                                                        </div><!-- post-meta -->                                            
+                                                    </div>  <!-- image-hover -->
+                                                </div><!-- hover-wrap -->                                    
+                                                <img src="img/news-one3.jpg" alt="latest post image" />                                    
+                                            </div><!-- m-image-wrap -->
+
+                                            <div class="news-content">
+                                                <h6>
+                                                    <a href="#">Vestibulum et eros scelerisque</a>
+                                                </h6>
+
+                                                <p>
+                                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod temp.or incididunt 
+                                                </p>
+
+                                                <div class="clearfix"></div><!-- clearfix -->
+                                                <a  href="#post-popup3" class="news-button open-popup-link">Read More</a>
+                                                
+                                                
+                                                <!-- post popup content -->
+                                                <div id="post-popup3" class="white-popup mfp-hide">
+                                                    <img src="img/gallery4.jpg" alt="popup-image" />
+                                                    <p>
+                                                        Nulla ullamcorper odio vel elit hendrerit dignissim. In hac habitasse platea dictumst. Suspendisse nec pharetra leo, sit amet tempus ipsum. 
+                                                        Phasellus sapien elit, scelerisque vel eleifend sit amet, luctus quis neque. Nullam enim eros, aliquet in tellus non, lobortis consectetur ipsum. 
+                                                        Sed magna augue, luctus venenatis ante vitae, blandit eleifend elit. Donec ac dictum lorem. Duis sed massa quis dui volutpat varius eu quis dui.
+                                                    </p>
+                                                </div>
+                                                
+                                            </div><!-- news-content -->
+
+                                        </div><!-- m-news-post -->                                                                
+
+                                    </div><!-- col-lg-4 -->
+
+                                </div><!-- row -->
+
+                            
+
 
                             <div class="row">
 
-                                <div class="col-lg-4 col-md-4 col-sm-4 text-center">
+                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 text-center">
 
-                                    <img src="img/responsive.png" alt="icon" class="round-icon"  />
-                                    <h5>Maestría En Influencia de Negocios</h5>                                
-                                    <p>                                    
-                                        La Maestría que Ingenieros de Sistemas, Administradores e Ingenieros Comerciales tanto estaban esperando ! Iniciamos clases en una semana ! ya te inscribiste?                                
-                                    </p>
+                                    <div class="m-news-post">                                                                        
+                                        <div class="m-image-wrap">                                        
+                                                <div class="hover-wrap">
+                                                    <div class="image-hover">                                            
+                                                        <div class="categories">
+                                                            <a href="#post-popup4">Computers</a>, <a href="#post-popup4">Science</a>
+                                                            <div class="m-heading-border"></div><!-- m-heading-border -->
+                                                        </div>                                            
+                                                        <div class="post-meta">                                                
+                                                            <div class="post-comments text-left">
+                                                                10 comments
+                                                            </div><!-- comments -->                                                
+                                                            <div class="post-date text-right">
+                                                                12 - jan - 2014
+                                                            </div>                                                
+                                                        </div><!-- post-meta -->                                            
+                                                    </div>  <!-- image-hover -->
+                                                </div><!-- hover-wrap -->                         
+                                            <img src="img/news-one4.jpg" alt="latest post image" />                                    
+                                        </div><!-- m-image-wrap -->
+
+                                        <div class="news-content">
+                                            <h6>
+                                                <a href="#">Vestibulum et eros scelerisque</a>
+                                            </h6>
+
+                                            <p>
+                                                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod temp.or incididunt 
+                                            </p>
+
+                                            <div class="clearfix"></div><!-- clearfix -->
+                                            <a  href="#post-popup4" class="news-button open-popup-link">Read More</a>
+                                        </div><!-- news-content -->
+
+                                    </div><!-- m-news-post -->                                                                
+
+                                    <!-- post popup content -->
+                                    <div id="post-popup4" class="white-popup mfp-hide">
+                                        <iframe src="//player.vimeo.com/video/79505580?badge=0" width="500" height="245"></iframe> <p><a href="http://vimeo.com/79505580">"LILA"</a> from <a href="http://vimeo.com/carloslascano">Carlos Lascano</a> on <a href="https://vimeo.com">Vimeo</a>.</p>
+                                        <p>
+                                            Nulla ullamcorper odio vel elit hendrerit dignissim. In hac habitasse platea dictumst. Suspendisse nec pharetra leo, sit amet tempus ipsum. 
+                                            Phasellus sapien elit, scelerisque vel eleifend sit amet, luctus quis neque. Nullam enim eros, aliquet in tellus non, lobortis consectetur ipsum. 
+                                            Sed magna augue, luctus venenatis ante vitae, blandit eleifend elit. Donec ac dictum lorem. Duis sed massa quis dui volutpat varius eu quis dui.
+                                        </p>
+                                    </div>
+                                    
+                                </div><!-- col-lg-4 -->
+
+                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 text-center">
+
+                                    <div class="m-news-post">                                                                        
+                                        <div class="m-image-wrap">                                        
+                                                <div class="hover-wrap">
+                                                    <div class="image-hover">                                            
+                                                        <div class="categories">
+                                                            <a href="#post-popup5">Computers</a>, <a href="#post-popup5">Science</a>
+                                                            <div class="m-heading-border"></div><!-- m-heading-border -->
+                                                        </div>                                            
+                                                        <div class="post-meta">                                                
+                                                            <div class="post-comments text-left">
+                                                                10 comments
+                                                            </div><!-- comments -->                                                
+                                                            <div class="post-date text-right">
+                                                                12 - jan - 2014
+                                                            </div>                                                
+                                                        </div><!-- post-meta -->                                            
+                                                    </div>  <!-- image-hover -->
+                                                </div><!-- hover-wrap -->                                     
+                                            <img src="img/news-one5.jpg" alt="latest post image" />                                    
+                                        </div><!-- m-image-wrap -->
+
+                                        <div class="news-content">
+                                            <h6>
+                                                <a href="#">Vestibulum et eros scelerisque</a>
+                                            </h6>
+
+                                            <p>
+                                                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod temp.or incididunt 
+                                            </p>
+
+                                            <div class="clearfix"></div><!-- clearfix -->
+                                            <a  href="#post-popup5" class="news-button open-popup-link">Read More</a>
+                                        </div><!-- news-content -->
+                                        
+                                        <!-- post popup content -->
+                                        <div id="post-popup5" class="white-popup mfp-hide">
+                                            <img src="img/gallery1.jpg" alt="popup-image" />
+                                            <p>
+                                                Nulla ullamcorper odio vel elit hendrerit dignissim. In hac habitasse platea dictumst. Suspendisse nec pharetra leo, sit amet tempus ipsum. 
+                                                Phasellus sapien elit, scelerisque vel eleifend sit amet, luctus quis neque. Nullam enim eros, aliquet in tellus non, lobortis consectetur ipsum. 
+                                                Sed magna augue, luctus venenatis ante vitae, blandit eleifend elit. Donec ac dictum lorem. Duis sed massa quis dui volutpat varius eu quis dui.
+                                            </p>
+                                        </div>
+                                        
+                                        
+                                    </div><!-- m-news-post -->                                                                
 
                                 </div><!-- col-lg-4 -->
 
-                                <div class="col-lg-4 col-md-4 col-sm-4 text-center">
+                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 text-center">
 
-                                    <img src="img/bootstrap.png" alt="icon" class="round-icon"  />                                                                
-                                    <h5>Conferencia en Sistemas De Informacion General</h5>                                
-                                    <p>                                    
-                                        Business Inteligence ? Balanced Scorecard ? Te invitamos a participar de la presentación que se llevará acabo el día de hoy Miércoles 10 de Septiembre a las 19:00.
-                                    </p>
+                                    <div class="m-news-post">                                                                        
+                                        <div class="m-image-wrap">                                        
+                                                <div class="hover-wrap">
+                                                    <div class="image-hover">                                            
+                                                        <div class="categories">
+                                                            <a href="#post-popup6">Computers</a>, <a href="#post-popup6">Science</a>
+                                                            <div class="m-heading-border"></div><!-- m-heading-border -->
+                                                        </div>                                            
+                                                        <div class="post-meta">                                                
+                                                            <div class="post-comments text-left">
+                                                                10 comments
+                                                            </div><!-- comments -->                                                
+                                                            <div class="post-date text-right">
+                                                                12 - jan - 2014
+                                                            </div>                                                
+                                                        </div><!-- post-meta -->                                            
+                                                    </div>  <!-- image-hover -->
+                                                </div><!-- hover-wrap -->                                    
+                                            <img src="img/news-one6.jpg" alt="latest post image" />                                    
+                                        </div><!-- m-image-wrap -->
 
-                                </div><!-- col-lg-4 -->
+                                        <div class="news-content">
+                                            <h6>
+                                                <a href="#">Vestibulum et eros scelerisque</a>
+                                            </h6>
 
-                                <div class="col-lg-4 col-md-4 col-sm-4  text-center">
+                                            <p>
+                                                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod temp.or incididunt 
+                                            </p>
 
-                                    <img src="img/pixelperfect.png" alt="icon" class="round-icon"  />
-                                    <h5>Ginmasio en la UCB</h5>                                
-                                    <p>                                    
-                                        A partir del lunes 8 sep, los AERÓBICOS se concentran sólo por la noche, de hrs. 19:00 a 20:00, con los Instructores de FITNESS GROUP. Abierto a todo público, precios promocionales. Además, ofreceremos GIMNASIA LABORAL. EN EL MES DEL AMOR: PONTE EN FORMA, ES SALUDABLE.
-                                    </p>
+                                            <div class="clearfix"></div><!-- clearfix -->
+                                            <a  href="#post-popup6" class="news-button open-popup-link">Read More</a>
+                                        </div><!-- news-content -->
 
+                                    </div><!-- m-news-post -->            
+
+                                    <!-- post popup content -->
+                                    <div id="post-popup6" class="white-popup mfp-hide">
+                                        <img src="img/gallery6.jpg" alt="popup-image" />
+                                        <p>
+                                            Nulla ullamcorper odio vel elit hendrerit dignissim. In hac habitasse platea dictumst. Suspendisse nec pharetra leo, sit amet tempus ipsum. 
+                                            Phasellus sapien elit, scelerisque vel eleifend sit amet, luctus quis neque. Nullam enim eros, aliquet in tellus non, lobortis consectetur ipsum. 
+                                            Sed magna augue, luctus venenatis ante vitae, blandit eleifend elit. Donec ac dictum lorem. Duis sed massa quis dui volutpat varius eu quis dui.
+                                        </p>
+                                    </div><!-- white-popup -->
+                                    
+                                    
                                 </div><!-- col-lg-4 -->
 
                             </div><!-- row -->
+                            
+                        </div><!-- m-posts -->
 
-                        </div><!-- container -->                    
+                        </div><!-- container -->
 
-                    </div><!-- l-page-section -->
+                    </div><!-- l-latest-posts -->
+                    <!-- ssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss -->
+
 
                 </section>
 
+                <!-- TESTIMONIALS PARALAX SECTION -->
+                <section>
+
+                    <div class="l-paralax-section testimonials-paralax paralax-section2 l-section"  data-0="background-position:0px 800px;" data-10000="background-position:0px -2000px;" id="agucb">
+
+                            <div class="flexslider-testimonials flexslider">
+                                <ul class="slides">
+                                    <li class="text-center">
+                                        <div class="container opacity">
+                                            <div class="col-lg-12">
+                                                <img src="img/quienes_somos.png" alt="avatar" style="width: 150px; height: 150px;" class="img-circle"/>
+                                                <h4>¿Quiénes Somos?</h4>
+                                                <!-- <span>~ParalaxProduction</span> -->
+                                                <p>
+                                                    Algunos titulados de las distintas Carreras de la Universidad Católica Boliviana “San Pablo”, Regional Cochabamba, nos reunimos el 6 de septiembre del 2011, para fundar la Asociación de Graduados de la UCB con la sigla AGUCB y la palabra Alumni que es la que mundialmente hace referencia a los ex alumnos de las universidades. Obtuvo su Personería Jurídica el 26 de octubre del 2012.
+                                                <br/><br/>
+                                                    Una de sus principales actividades es trabajar juntamente con su Alma Mater y por eso se firmó un Convenio Interinstitucional, el 30 de noviembre del 2012.
+                                                </p>
+                                            </div><!-- col-lg-12 -->
+                                        </div><!-- container -->
+                                    </li>
+
+                                    <li class="text-center">
+                                        <div class="container opacity">
+                                            <div class="col-lg-12">
+                                                <img src="img/mision.png" alt="avatar" style="width: 150px; height: 150px;" class="img-circle"/>
+                                                <h4>Misión</h4>
+                                                <!-- <span>~CEO of Fitness2Go</span> -->
+
+                                                <p>
+                                                    De acuerdo a su ESTATUTO, la MISIÓN es  coadyuvar al desarrollo integral de Cochabamba mediante acciones realizadas con alto sentido de responsabilidad social y espíritu cristiano, creando, manteniendo y fortaleciendo los vínculos entre todos los Graduados de la UCB.
+                                                </p>
+                                            </div><!--  col-lg-12  -->
+                                        </div><!-- container -->
+                                    </li>
+                                      
+                                    <li class="text-center">
+                                        <div class="container opacity">
+                                            <div class="col-lg-12">
+                                                <img src="img/vision.png" alt="avatar" style="width: 150px; height: 150px;" class="img-circle"/>
+                                                <h4>Visión</h4>
+                                                <!-- <span>~Athletic director in Brown Derby</span> -->
+                                                <p>
+                                                    Su VISIÓN es ser reconocida por la sociedad cochabambina  como una institución comprometida con el país, como referente profesional para la comunidad y como asociación colaboradora de otras. Al estar formada por personas de distintas profesiones, se pretende que la AGUCB ALUMNI sea un elemento integrador de la sociedad a través del entendimiento intercultural, el desarrollo del conocimiento, la solidaridad y el espíritu cristiano entre las personas.
+                                                </p>
+                                            </div><!--  col-lg-12  -->
+                                        </div><!-- container -->
+                                    </li>
+
+                                    <li class="text-center">
+                                        <div class="container opacity">
+                                          <div class="col-lg-12">
+                                            <img src="img/objetivo_g.png" alt="avatar" style="width: 150px; height: 150px;" class="img-circle"/>
+                                            <h4>Objetivos Generales</h4>
+                                            <!-- <span>~Athletic director in Brown Derby</span> -->
+                                            <p>
+                                                Prolongar el espíritu universitario a lo largo de la vida profesional de los titulados en la Universidad Católica Boliviana “San Pablo”, manteniendo un contacto permanente entre el Alma Mater con sus graduados y de estos entre sí.
+                                                <br/><br/>
+                                                Crear una estructura sostenible, estable y duradera entre los Graduados de la UCB.
+                                                Ofrecer oportunidades de actividades en distintas áreas y etapas de la vida.
+                                                Generar acciones con impacto positivo en la sociedad y en la vida de los graduados.
+                                            </p>
+                                          </div><!--  col-lg-12  -->
+                                        </div><!-- container -->
+                                    </li>
+
+                                    <li class="text-center">
+                                        <div class="container opacity">
+                                          <div class="col-lg-12">
+                                            <img src="img/objetivo_e.png" alt="avatar" style="width: 150px; height: 150px;" class="img-circle"/>
+                                            <h4>Objetivos Específicos</h4>
+                                            <!-- <span>~Athletic director in Brown Derby</span> -->
+                                            <p>
+                                                <span class="glyphicon glyphicon-ok"></span> Lograr la autonomía de Gestión.<br/>
+                                                <span class="glyphicon glyphicon-ok"></span> Canalizar el apoyo y generar oportunidades para el desarrollo profesional y académico de los miembros.<br/>
+                                                <span class="glyphicon glyphicon-ok"></span> Generar espacios de encuentro presencial y virtual con fines académicos, sociales o recreativos.<br/>
+                                                <span class="glyphicon glyphicon-ok"></span> Fomentar iniciativas para el desarrollo y crecimiento personal así como institucional.<br/>
+                                                <span class="glyphicon glyphicon-ok"></span> Organizar actividades artísticas y de recreación para sus miembros.<br/>
+                                                <span class="glyphicon glyphicon-ok"></span> Mantener buenas relaciones con la Universidad Católica Boliviana, realizar varias actividades conjuntas con ésta y apoyarla en su crecimiento institucional.
+                                            </p>
+                                          </div><!--  col-lg-12  -->
+                                        </div><!-- container -->
+                                    </li>
+
+                                    <li class="text-center">
+                                        <div class="container opacity">
+                                          <div class="col-lg-12">
+                                            <img src="img/finalidades_institucionales.png" alt="avatar" style="width: 150px; height: 150px;" class="img-circle"/>
+                                            <h4>Finalidades Institucionales</h4>
+                                            <p>
+                                                Mantener vínculos de amistad y de trabajo conjunto en servicio de la comunidad, entre todas las personas tituladas en la UCB.
+                                                <br/><br/>
+                                                Organizar, planificar, coordinar y ejecutar ponencias, seminarios, foros, mesas redondas, cursos y similares, destinados a la difusión de los trabajos de la AGUCB-ALUMNI y de cualquier tópico que tenga interés general o particular y que se adecue a los principios de la Asociación.
+                                                <br/><br/>
+                                                Prestar servicios de análisis, opinión e información científica a toda entidad natural o colectiva y sobre la especialidad que le sea requerida.
+                                            </p>
+                                          </div><!--  col-lg-12  -->
+                                        </div><!-- container -->
+                                    </li>
+
+                                    <li class="text-center">
+                                        <div class="container opacity">
+                                          <div class="col-lg-12">
+                                            <img src="img/organizacion.png" alt="avatar" style="width: 150px; height: 150px;" class="img-circle"/>
+                                            <h4>Organización</h4>
+                                            <p>
+                                                Asamblea General
+                                                DIRECTIVA DE LA ASOCIACIÓN DE GRADUADOS DE LA UNIVERSIDAD CATÓLICA BOLIVIANA “SAN PABLO” para la gestión 2013-2014<br/>
+                                                Fecha de la elección por parte de  la Asamblea General:  12 de marzo del 2013<br/><br/>
+                                                Presidente: Fernando Andrade Ruiz<br/>
+                                                Vicepresidente: Daniel Ontiveros<br/>
+                                                Director General: Cristhian Uriona<br/>
+                                                Directores Académicos: Camilo Kunstek y Rodrigo Lisarazu<br/>
+                                                Director de Hacienda: Jafet Chambi<br/> 
+                                                Director de Cultura: Jacqueline Camacho<br/>
+                                                Director de Comunicación: Alex Yáñez<br/>
+                                                Director de Deportes: (por designar)<br/>
+                                                Vocal 1: María José Andrade<br/>
+                                                Vocal 2: Ximena Duran<br/><br/>
+                                                La AGUCB Alumni se financia con el aporte de sus miembros y con las diversas actividades que organiza para recaudar fondos.<br/>
+                                                Mantiene relaciones con organizaciones ALUMNI a nivel internacional.
+
+ 
+                                            </p>
+                                          </div><!--  col-lg-12  -->
+                                        </div><!-- container -->
+                                    </li>
+
+                                </ul>
+                              </div><!-- flexslider -->
+
+
+                    </div><!-- l-paralax-section -->
+
+                </section>
 
                 <!-- WHAT WE DO PARALAX SECTION -->
                 <section>
@@ -659,75 +1074,6 @@
 
 
                 </section>
-
-
-
-
-                <!-- TESTIMONIALS PARALAX SECTION -->
-                <section>
-
-                    <div class="l-paralax-section testimonials-paralax paralax-section2 l-section"  data-0="background-position:0px 800px;" data-10000="background-position:0px -2000px;"  id="testimonials">
-
-                    
-                            <div class="flexslider-testimonials flexslider">
-                                <ul class="slides">
-                                  <li class="text-center">
-                                      <div class="container opacity">
-                                          <div class="col-lg-12">
-                                                <img src="img/avatar5.png" alt="avatar" />
-                                                <h4>Robert Delacruz</h4>
-                                                <span>~ParalaxProduction</span>
-
-                                                <p>
-                                                    Integer fermentum purus nibh, sed dignissim dolor elementum vel. Aliquam lacinia vel risus id semper. Duis tempus sapien eu sollicitudin mollis. 
-                                                    Etiam eget tempus erat, ut vehicula dolor. In hac habitasse platea dictumst. 
-                                                </p>
-                                          </div><!-- col-lg-12 -->
-                                      </div><!-- container -->
-                                    
-                                  </li>
-
-                                    <li class="text-center">
-                                        <div class="container opacity">
-                                          <div class="col-lg-12">
-                                            <img src="img/avatar.png" alt="avatar" />
-                                            <h4>Venus Puleo</h4>
-                                            <span>~CEO of Fitness2Go</span>
-
-                                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla vitae scelerisque nibh. 
-                                                Morbi fermentum ipsum odio, id dictum leo egestas vel. 
-                                                Sed commodo, nunc eget ultrices viverra, turpis odio luctus nisl, sit amet porttitor diam nulla in augue. 
-                                                Etiam eu felis libero. Nam feugiat ultrices sapien eget sagittis.
-                                            </p>
-                                          </div><!--  col-lg-12  -->
-                                        </div><!-- container -->
-                                      </li>
-                                      
-                                        <li class="text-center">
-                                            <div class="container opacity">
-                                              <div class="col-lg-12">
-                                                <img src="img/avatar6.png" alt="avatar" />
-                                                <h4>Martha Lehman</h4>
-                                                <span>~Athletic director in Brown Derby</span>
-
-                                                <p>
-                                                    Morbi placerat mi consectetur est venenatis porta. Curabitur velit lacus, cursus a egestas quis, ullamcorper ut odio. 
-                                                    Praesent purus magna, luctus volutpat dignissim aliquam, lacinia a neque. Quisque congue nulla id mauris dictum, eu scelerisque dolor tincidunt. 
-                                                    Nam posuere metus fermentum risus scelerisque ultrices. Morbi rutrum fermentum laoreet.
-                                                </p>
-                                              </div><!--  col-lg-12  -->
-                                            </div><!-- container -->
-                                          </li>
-
-                                </ul>
-                              </div><!-- flexslider -->
-
-
-                    </div><!-- l-paralax-section -->
-
-                </section>
-
-
 
 
                 <!-- TECHNICAL SKILLS SECTION -->
