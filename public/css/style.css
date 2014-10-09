@@ -475,6 +475,10 @@ h2 {
     background: url('../img/magic-pixel.png') repeat top left, url('../img/pelota-futbol.jpg');
 }
 
+.paralax-section3 {
+    background: url('../img/magic-pixel.png') repeat top left, url('../img/acercadenosotros.png');
+}
+
 .l-twitter-section {
     background: url('../img/magic-pixel.png') repeat top left, url('../img/background-twitter.jpg');
 }
