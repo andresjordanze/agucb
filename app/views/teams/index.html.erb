@@ -1,0 +1,46 @@
+<%= render 'layouts/header8'%>
+<h1>Listing teams</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>P jug</th>
+      <th>P gan</th>
+      <th>P per</th>
+      <th>P emp</th>
+      <th>Goles</th>
+      <th>Tar roj</th>
+      <th>Tar ama</th>
+      <th>Login</th>
+      <th>Password</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @teams.each do |team| %>
+      <tr>
+        <td><%= team.name %></td>
+        <td><%= team.p_jug %></td>
+        <td><%= team.p_gan %></td>
+        <td><%= team.p_per %></td>
+        <td><%= team.p_emp %></td>
+        <td><%= team.goles %></td>
+        <td><%= team.tar_roj %></td>
+        <td><%= team.tar_ama %></td>
+        <td><%= team.login %></td>
+        <td><%= team.password %></td>
+        <td><%= link_to 'Show', team %></td>
+        <td><%= link_to 'Edit', edit_team_path(team) %></td>
+        <td><%= link_to 'Destroy', team, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Team', new_team_path %>

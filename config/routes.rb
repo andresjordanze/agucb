@@ -1,9 +1,17 @@
 Agucb::Application.routes.draw do
-  devise_for :users
+  get 'user/edit' => 'users#edit', :as => :edit_current_user
+  get 'signup' => 'users#new', :as => :signup
+  get 'logout' => 'sessions#destroy', :as => :logout
+  get 'login' => 'sessions#new', :as => :login
+  get 'login8' => 'sessions#new8', :as => :login8
+  resources :sessions
+  resources :users
+  resources :teams
+  
   root "home#inicio"
 
   match '/futbol8',    to: 'home#futbol8',    via: 'get'
-   match '/agucb',    to: 'home#agucb',    via: 'get'
+  match '/agucb',    to: 'home#agucb',    via: 'get'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

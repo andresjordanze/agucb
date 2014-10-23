@@ -1,0 +1,25 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  p_jug: 1
+  p_gan: 1
+  p_per: 1
+  p_emp: 1
+  goles: 1
+  tar_roj: 1
+  tar_ama: 1
+  login: MyString
+  password: MyString
+
+two:
+  name: MyString
+  p_jug: 1
+  p_gan: 1
+  p_per: 1
+  p_emp: 1
+  goles: 1
+  tar_roj: 1
+  tar_ama: 1
+  login: MyString
+  password: MyString

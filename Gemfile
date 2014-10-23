@@ -5,7 +5,7 @@ gem 'rails', '4.0.4'
 
 # Use sqlite3 as the database for Active Record
 group :development do
-	gem 'sqlite3', '1.3.8', :require => 'sqlite3'
+	gem 'sqlite3', '1.3.9', :require => 'sqlite3'
 end
 
 # Use SCSS for stylesheets
@@ -29,7 +29,9 @@ gem 'turbolinks'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 1.2'
 
-gem 'devise'
+gem 'nifty-generators'
+
+gem "protected_attributes", "~> 1.0.5"
 
 group :production do
 	gem 'pg'
@@ -52,3 +54,7 @@ end
 
 # Use debugger
 # gem 'debugger', group: [:development, :test]
+
+gem "bcrypt-ruby", require: "bcrypt"
+
+gem "mocha", group: :test

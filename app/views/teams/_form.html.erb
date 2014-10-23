@@ -1,0 +1,57 @@
+<%= form_for(@team) do |f| %>
+  <% if @team.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@team.errors.count, "error") %> prohibited this team from being saved:</h2>
+
+      <ul>
+      <% @team.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+  </div>
+<!--  <div class="field">
+    <%= f.label :p_jug %><br>
+    <%= f.number_field :p_jug %>
+  </div>
+  <div class="field">
+    <%= f.label :p_gan %><br>
+    <%= f.number_field :p_gan %>
+  </div>
+  <div class="field">
+    <%= f.label :p_per %><br>
+    <%= f.number_field :p_per %>
+  </div>
+  <div class="field">
+    <%= f.label :p_emp %><br>
+    <%= f.number_field :p_emp %>
+  </div>
+  <div class="field">
+    <%= f.label :goles %><br>
+    <%= f.number_field :goles %>
+  </div>
+  <div class="field">
+    <%= f.label :tar_roj %><br>
+    <%= f.number_field :tar_roj %>
+  </div>
+  <div class="field">
+    <%= f.label :tar_ama %><br>
+    <%= f.number_field :tar_ama %>
+  </div>-->
+  <div class="field">
+    <%= f.label :login %><br>
+    <%= f.text_field :login %>
+  </div>
+  <div class="field">
+    <%= f.label :password %><br>
+    <%= f.password_field :password %>
+  </div>
+  <div class="actions">
+    <%= f.submit (@team.new_record? ? 'Registrar equipo' : 'Guardar cambios'), :class=>"btn btn-success" %>
+  </div>
+<% end %>
