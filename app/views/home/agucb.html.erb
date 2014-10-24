@@ -49,14 +49,7 @@
                                       <li><a href="#gallery">Noticias</a></li>
                                       <li><a href="#team">Eventos</a></li>
                                       <li><a href="#contact">Contáctanos</a></li>
-                                      <li>  
-                                        <% if user_signed_in? %>  
-                                        Signed in as <%= current_user.email %>. Not you?  
-                                        <%= link_to "Sign out", destroy_user_session_path, :method => :delete %>
-                                        <% else %>  
-                                        <%= link_to "Sign in", new_user_session_path %>
-                                        <% end %>
-                                      </li> 
+                                       
                                       <li class="arrow-login"><a href="#splash-image-wrap"></a></li>
                                     </ul>                                                      
                               </div><!-- /.navbar-collapse -->
