@@ -12,6 +12,7 @@ Agucb::Application.routes.draw do
 
   match '/futbol8',    to: 'home#futbol8',    via: 'get'
   match '/agucb',    to: 'home#agucb',    via: 'get'
+  match '/menu_agucb',    to: 'home#menu_agucb',    via: 'get'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
