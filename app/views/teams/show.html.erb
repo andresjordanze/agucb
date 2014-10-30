@@ -1,5 +1,64 @@
-<p id="notice"><%= notice %></p>
+<div class="page-loader"></div>
+<div class="l-wrapper">
+  <%= render 'layouts/header8'%>
+  <p id="notice"><%= notice %></p>
 
+
+    <section>
+
+                    <div class="l-paralax-section what-we-do-section paralax-section1 l-section"  data-0="background-position:0px 180px" data-10000="background-position: 0px -2000px;"  id="whatwedo">
+
+                        <div class="container">
+                            <h1 class="text-center"><%= @team.name%></h1>
+                                <center>
+                                  <img src="/img/avatar4.png" height="200" width="200">
+                                  <h1 align="center">1º</h1>
+                                  <h3 align="center">Posición</h3>
+                                <br>
+                                </center> 
+                        </div><!-- container -->
+                        <center>
+                        <div class="table-responsive">
+                                <table>
+                                  <tr>
+                                    <td>&nbsp;&nbsp;</td>
+                                    <td><h1 align="center">3</h1></td>
+                                    <td>&nbsp;&nbsp;</td>
+                                    <td><h1 align="center">0</h1></td>
+                                    <td>&nbsp;&nbsp;</td>
+                                    <td><h1 align="center">0</h1></td>
+                                  </tr>
+                                  <tr>
+                                    <td>&nbsp;&nbsp;</td>
+                                    <td><h4 align="center">Ganados</h4></td>
+                                    <td>&nbsp;&nbsp;</td>
+                                    <td><h4 align="center">Perdidos</h4></td>
+                                    <td>&nbsp;&nbsp;</td>
+                                    <td><h4 align="center">Empatados</h4></td>
+                                  </tr>
+                                </table>
+                                </div>
+                                <p><h4>Goleador: Bryan Quinteros</h4></p>
+
+<%= link_to 'Volver', teams_path %>
+ </center>
+
+                    </div><!-- l-paralax-section -->
+                    <div class="l-copyright text-center" style="margin-top:0;">
+            © Asociacion de Graduados UCB 2014 - Todos los derechos reservados 
+        </div>
+
+                </section>
+
+
+
+
+
+
+
+
+
+<!--
 <p>
   <strong>Name:</strong>
   <%= @team.name %>
@@ -52,3 +111,4 @@
 
 <%= link_to 'Edit', edit_team_path(@team) %> |
 <%= link_to 'Back', teams_path %>
+</div>-->

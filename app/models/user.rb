@@ -15,6 +15,8 @@ class User < ActiveRecord::Base
 
   def self.nuevo(login,pass)
     user = User.create(username:login,password:pass)
+    user.rol = "f8"
+    user.save
   end
 
   # login can be either username or email address
