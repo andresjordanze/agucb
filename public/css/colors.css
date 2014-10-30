@@ -208,6 +208,12 @@ p {
     color: #fff;
 }
 
+
+.l-form-section {
+    background-color: #EFEDED;
+    color: #fff;
+}
+
 .form-button {
     background-color: #f36363;
     border: none;
@@ -228,4 +234,8 @@ p {
 
 .l-contactus-section h1, .l-contactus-section h2, .l-contactus-section h3, .l-contactus-section h4, .l-contactus-section h5, .l-contactus-section h6 {
     color: #fff;
-} 
+}
+
+.l-form-section h1, .l-form-section h2, .l-form-section h3, .l-form-section h4, .l-form-section h5, .l-form-section h6 {
+    color: #34495E;
+}  

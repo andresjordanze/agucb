@@ -1,4 +1,5 @@
 <% title "Iniciar Sesión" %>
+<div class="page-loader"></div> 
 <div class="l-wrapper">
 	<div class="l-content-wrap" id="standard-content">
 	<div class="clearfix"></div>
@@ -8,8 +9,7 @@
 			<br><br><br>
 			<a href="/agucb"><img src="/img/logo.png"></a>  |  <a href="/futbol8"><img src="/img/logo1.png"></a><br><br>
 			<p>No tienes una cuenta? <%= link_to "Registrate", signup_path, :class=>"btncto" %></p>
-			<div class="row">
-	    		<div class="col-xs-6 col-md-4">
+	    	<div class="col-xs-6 col-md-4">
 				<%= form_tag sessions_path do %>
 		  			<div class="form-group">
 		    			<%= text_field_tag :login, params[:login],:class=>"form-control", :placeholder=>"Login usuario/equipo" %>
@@ -19,7 +19,6 @@
 		  			</div>
 		  			<p><%= submit_tag "Iniciar sesión" , :class=>"first-btn"%></p>
 				<% end %>
-				</div>
 			</div>
 			<div class="l-copyright text-center">
 	        	Copyright 2014 @agucb.com

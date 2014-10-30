@@ -82,7 +82,7 @@ h2 {
 }
 
 .l-wrapper {
-    opacity: 0;
+    /*opacity: 0;*/
 }
 
 /* SPLASH IMAGE */
@@ -201,7 +201,21 @@ h2 {
 }
 
 .first-btn:hover {
-    background-color: #00BD95;
+    background-color: #01896c;
+    color: white;
+}
+
+
+.back-btn {
+    background-color: #D04642;
+    color: white;
+    border: transparent;
+    padding: 12px;
+}
+
+.back-btn:hover {
+    background-color: #b42e2a;
+    color: white;
 }
 
 .btncto {
@@ -1089,7 +1103,7 @@ h2 {
 }
 
 .l-copyright {
-    background-color: rgba(0, 0, 0, 0.2);
+    background-color: #293A4A;
     padding: 35px 0;
     width: 100%;
     margin: 55px 0 0 0;

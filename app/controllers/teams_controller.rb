@@ -27,7 +27,7 @@ class TeamsController < ApplicationController
     @team = Team.new(team_params)
     respond_to do |format|
       if @team.save
-        @user = User.nuevo(params[:team][:login],params[:team][:password])
+        @user = User.nuevo(params["team"]["login"],params["team"]["password"])
         format.html { redirect_to @team, notice: 'Team was successfully created.' }
         format.json { render action: 'show', status: :created, location: @team }
       else

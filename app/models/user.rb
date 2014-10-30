@@ -14,12 +14,7 @@ class User < ActiveRecord::Base
   validates_length_of :password, :minimum => 6, :allow_blank => true
 
   def self.nuevo(login,pass)
-    user = User.new
-    user.username = login
-    user.password = pass
-    user.password_confirmation = pass
-    user.rol = 'f8'
-    user.save
+    user = User.create(username:login,password:pass)
   end
 
   # login can be either username or email address
