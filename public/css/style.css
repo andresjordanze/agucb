@@ -82,6 +82,7 @@ h2 {
 }
 
 .l-wrapper {
+    opacity: 0;
 }
 
 /* SPLASH IMAGE */
@@ -190,6 +191,24 @@ h2 {
 
 .m-splash-image .second-btn:hover {
     color: #269796;
+}
+
+.first-btn {
+    background-color: #07AC8D;
+    color: white;
+    border: transparent;
+    padding: 8px;
+}
+
+.first-btn:hover {
+    background-color: #00BD95;
+}
+
+.btncto {
+    color: #fbd46b;
+}
+.btncto:hover {
+    color: #FDC93B;
 }
 
 .div-centered {
@@ -339,6 +358,20 @@ h2 {
     position: absolute; 
 }
 
+.arrow-login-2 {
+    background: url('../img/arrow-login2.png') no-repeat;
+    width:30px;
+    height: 30px;
+    display: inline-block;
+    position: relative;
+    margin: 4px 0 0 40px;
+}
+
+.arrow-login-2 a {
+    width: 100%;
+    height: 100%;
+    position: absolute; 
+}
 
 .m-navbar {
     margin: 0 auto 0 auto;

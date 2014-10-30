@@ -134,7 +134,7 @@ Setting slider height on load
 =============================================== */
     
     var browserHeight = jQuery(window).height();
-    jQuery('.m-splash-image .flexslider li, .splash-image-wrap').css('height', browserHeight);
+    jQuery('.m-splash-image .flexslider li, .splash-image-wrap').css('height', browserHeight-1);
 
  /* ==============================================
   Google maps

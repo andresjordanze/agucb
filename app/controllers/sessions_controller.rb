@@ -1,4 +1,5 @@
 class SessionsController < ApplicationController
+  
   def new
   end
 
@@ -6,15 +7,22 @@ class SessionsController < ApplicationController
     user = User.authenticate(params[:login], params[:password])
     if user
       session[:user_id] = user.id
-      redirect_to_target_or_default root_url, :notice => "Logged in successfully."
+      if user.rol == 'f8'
+        redirect_to "/futbol8"
+      else
+        redirect_to "/agucb"
+      end
+      flash.now[:success] = "Sesión iniciada exitosamente."
     else
-      flash.now[:alert] = "Invalid login or password."
+      flash.now[:danger] = "Login o contraseña invalidos"
       render :action => 'new'
     end
   end
 
   def destroy
     session[:user_id] = nil
-    redirect_to root_url, :notice => "You have been logged out."
+    redirect_to "/"
+    flash.now[:danger] = "Sesion cerrada exitosamente."
   end
+
 end

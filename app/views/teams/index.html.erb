@@ -1,4 +1,101 @@
-<%= render 'layouts/header8'%>
+<div class="page-loader"></div>
+<div class="l-wrapper">
+  <%= render 'layouts/header8'%>
+  <div class="l-content-wrap" id="standard-content">
+    <!-- TEAM SECTION -->
+    <section>
+
+        <div class="l-team-section l-section" id="team">
+
+            <div class="container">
+
+                <h4 class="text-center">Equipos Categoria A</h4>
+
+                <div class="m-heading-border"></div><!-- m-heading-border -->
+               
+                <div class="row">
+                    <% @teams.each do |team| %>
+                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12 text-center m-team-member opacity">
+                        <img src="img/avatar4.png" class="team-member-image" alt="team-member" />                                
+                        <h5><%= team.name%></h5>
+
+                        <div class="l-description-wrap">
+                            <div class="member-description">
+
+                                <div class="m-arrow-wrap">
+                                    <div class="m-arrow"></div>
+                                </div><!-- m-arrow-wrap -->
+
+                                <p>Nunc consequat lobortis sem, eget consequat metus euismod gravida. Maecenas dapibus dui non ipsum </p>
+
+                                <div class="team-social-icons text-center">
+
+                                    <a href="#"><i class="fa fa-twitter fa-lg"></i></a>
+                                    <a href="#"><i class="fa fa-facebook fa-lg"></i></a>
+                                    <a href="#"><i class="fa fa-google-plus fa-lg"></i></a>
+                                    <a href="#"><i class="fa fa-pinterest fa-lg"></i></a>
+                                    <a href="#"><i class="fa fa-dribbble fa-lg"></i></a>
+
+                                </div><!-- team-social-icons -->  
+                                <div class="clearfix"></div>
+                            </div><!-- member-description -->
+                        </div><!-- l-description-wrap -->
+
+                    </div><!-- col-lg-3 -->
+                    <%end%>
+                </div>
+                
+
+
+                    
+                    <h4 class="text-center">Equipos Categoria B</h4>
+                    <div class="m-heading-border"></div>
+                                
+                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12 text-center m-team-member opacity">
+                        <img src="img/avatar3.png" class="team-member-image" alt="team-member" />                                
+                        <h5>Hatie Wagneer</h5>
+
+                        <div class="l-description-wrap">
+                            <div class="member-description">
+
+                                <div class="m-arrow-wrap">
+                                    <div class="m-arrow"></div>
+                                </div><!-- m-arrow-wrap -->
+
+                                <p>Nunc consequat lobortis sem, eget consequat metus euismod gravida. Maecenas dapibus dui non ipsum </p>
+
+                                <div class="team-social-icons text-center">
+
+                                    <a href="#"><i class="fa fa-twitter fa-lg"></i></a>
+                                    <a href="#"><i class="fa fa-facebook fa-lg"></i></a>
+                                    <a href="#"><i class="fa fa-google-plus fa-lg"></i></a>
+                                    <a href="#"><i class="fa fa-pinterest fa-lg"></i></a>
+                                    <a href="#"><i class="fa fa-dribbble fa-lg"></i></a>
+
+                                </div><!-- team-social-icons -->  
+                                <div class="clearfix"></div>
+                            </div><!-- member-description -->
+                        </div><!-- l-description-wrap -->
+
+                    </div><!-- col-lg-3 -->
+
+
+                </div><!-- row -->
+
+            </div><!-- container -->
+
+        </div><!-- l-paralax-section -->
+
+    </section>
+
+  </div>
+</div>
+
+
+
+
+
+
 <h1>Listing teams</h1>
 
 <table>
@@ -12,8 +109,6 @@
       <th>Goles</th>
       <th>Tar roj</th>
       <th>Tar ama</th>
-      <th>Login</th>
-      <th>Password</th>
       <th></th>
       <th></th>
       <th></th>
@@ -31,8 +126,6 @@
         <td><%= team.goles %></td>
         <td><%= team.tar_roj %></td>
         <td><%= team.tar_ama %></td>
-        <td><%= team.login %></td>
-        <td><%= team.password %></td>
         <td><%= link_to 'Show', team %></td>
         <td><%= link_to 'Edit', edit_team_path(team) %></td>
         <td><%= link_to 'Destroy', team, method: :delete, data: { confirm: 'Are you sure?' } %></td>

@@ -3,7 +3,6 @@ Agucb::Application.routes.draw do
   get 'signup' => 'users#new', :as => :signup
   get 'logout' => 'sessions#destroy', :as => :logout
   get 'login' => 'sessions#new', :as => :login
-  get 'login8' => 'sessions#new8', :as => :login8
   resources :sessions
   resources :users
   resources :teams

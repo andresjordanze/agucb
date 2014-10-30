@@ -18,6 +18,7 @@ class User < ActiveRecord::Base
     user.username = login
     user.password = pass
     user.password_confirmation = pass
+    user.rol = 'f8'
     user.save
   end
 
