@@ -1,12 +1,15 @@
 Agucb::Application.routes.draw do
+  
   get 'user/edit' => 'users#edit', :as => :edit_current_user
   get 'signup' => 'users#new', :as => :signup
   get 'logout' => 'sessions#destroy', :as => :logout
   get 'login' => 'sessions#new', :as => :login
+  
   resources :sessions
   resources :users
   resources :teams
-  
+  resources :players
+
   root "home#inicio"
 
   match '/futbol8',    to: 'home#futbol8',    via: 'get'

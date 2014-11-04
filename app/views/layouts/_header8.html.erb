@@ -32,9 +32,9 @@
               <li><a href="#gallery">Reglamentos</a></li>
               <li><a href="#team">Contacto</a></li>
               <%if current_user%>
-                <li class="arrow-login-2"><%= link_to "", logout_path %></li>
+                <li class="arrow-login-2" rel="tooltip" data-placement='bottom' title="Cerrar Sesión"><%= link_to "", logout_path %></li>
               <%else%>
-                <li class="arrow-login-1"><a href="/login"></a></li>
+                <li class="arrow-login-1" rel="tooltip" data-placement='bottom' title="Iniciar Sesión"><a href="/login"></a></li>
               <%end%>                   
             </ul>                                                                                
           </div><!-- /.navbar-collapse -->                                         

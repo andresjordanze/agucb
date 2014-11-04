@@ -24,10 +24,10 @@ class TeamsController < ApplicationController
   # POST /teams
   # POST /teams.json
   def create
-    @team = Team.new(team_params)
+    @team = Team.new(params["team"])
     respond_to do |format|
       if @team.save
-        @user = User.nuevo(params["team"]["login"],params["team"]["password"])
+        @user = User.nuevo(params["team"]["login"],params["team"]["email"],params["team"]["password"])
         format.html { redirect_to @team, notice: 'Team was successfully created.' }
         format.json { render action: 'show', status: :created, location: @team }
       else
@@ -69,6 +69,6 @@ class TeamsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def team_params
-      params.require(:team).permit(:name, :p_jug, :p_gan, :p_per, :p_emp, :goles, :tar_roj, :tar_ama, :login, :password)
+      params.require(:team).permit(:name, :p_jug, :p_gan, :p_per, :p_emp, :goles, :tar_roj, :tar_ama, :login, :password, :delegado, :email, :phone)
     end
 end

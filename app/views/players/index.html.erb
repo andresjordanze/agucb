@@ -1,0 +1,73 @@
+<!--<h1>Listing players</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Lastname</th>
+      <th>Career</th>
+      <th>Goals</th>
+      <th>T ama</th>
+      <th>T roj</th>
+      <th>Team</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @players.each do |player| %>
+      <tr>
+        <td><%= player.name %></td>
+        <td><%= player.lastname %></td>
+        <td><%= player.career %></td>
+        <td><%= player.goals %></td>
+        <td><%= player.t_ama %></td>
+        <td><%= player.t_roj %></td>
+        <td><%= player.team_id %></td>
+        <td><%= link_to 'Show', player %></td>
+        <td><%= link_to 'Edit', edit_player_path(player) %></td>
+        <td><%= link_to 'Destroy', player, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Player', new_player_path %>
+-->
+<% title "Jugadores"%>
+<div class="page-loader"></div>
+<div class="l-wrapper">
+<%= render 'layouts/header8'%>
+  <div class="l-content-wrap" id="standard-content">
+
+<section>
+
+                    <div class="l-paralax-section what-we-do-section paralax-section1 l-section"  data-0="background-position:0px 180px" data-10000="background-position: 0px -2000px;"  id="whatwedo">
+
+                        <div class="container">
+                            <h1 class="text-center">Jugadores - Papines</h1><br>
+
+                            <div class="row">
+                                <% @players.each do |player| %>
+                                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12 text-center">
+                                    <img src="img/avatar5.png"  alt="icon" class="opacity" />
+                                    <h6><%= player.name %> <%= player.lastname %></h6>
+                                    <h6><%= player.career %></h6>
+                                    <%= link_to 'Editar', edit_player_path(player), :class=>"edit-btn-mini" %><br><br>
+                                    <%= button_to 'Eliminar', player, method: :delete, data: { confirm: 'Are you sure?' },:class=>"back-btn-mini" %><br>
+                                </div><!-- col-lg-3 -->
+                                <%end%>
+
+                            </div><!-- row -->
+
+                        </div><!-- container -->
+
+                    </div><!-- l-paralax-section -->
+
+
+                </section>
+                </div>

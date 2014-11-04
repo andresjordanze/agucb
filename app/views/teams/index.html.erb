@@ -18,6 +18,9 @@
                     <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12 text-center m-team-member opacity">
                         <img src="img/avatar4.png" class="team-member-image" alt="team-member" />                                
                         <h5><%= link_to team.name, team %></h5>
+                        <!--%= link_to 'Confirmar', edit_team_path(team), :class=>"edit-btn-mini" %-->
+                        <%= link_to 'Editar', edit_team_path(team), :class=>"edit-btn-mini" %>
+                        <%= link_to 'Eliminar', team, method: :delete, data: { confirm: 'Are you sure?' }, :class=>"back-btn-mini" %>
 
                         <!--<div class="l-description-wrap">
                             <div class="member-description">

@@ -1,55 +1,54 @@
 <div class="page-loader"></div>
 <div class="l-wrapper">
   <%= render 'layouts/header8'%>
-  <p id="notice"><%= notice %></p>
+  <section>
+    <div class="l-paralax-section what-we-do-section paralax-section1 l-section"  data-0="background-position:0px 180px" data-10000="background-position: 0px -2000px;"  id="whatwedo">
+      <div class="container">
+        <h1 class="text-center"><%= @team.name%></h1>
+        <center>
+          <img src="/img/avatar4.png" height="200" width="200">
+          <h1 align="center"><%= @team.position%></h1>
+          <h3 align="center">Posición</h3>
+        </center> 
+      </div><!-- container -->
+      <center>
+      <div class="table-responsive">
+        <table>
+          <tr>
+            <td>&nbsp;&nbsp;</td>
+            <td><h1 align="center"><%= @team.p_gan%></h1></td>
+            <td>&nbsp;&nbsp;</td>
+            <td><h1 align="center"><%= @team.p_per%></h1></td>
+            <td>&nbsp;&nbsp;</td>
+            <td><h1 align="center"><%= @team.p_emp%></h1></td>
+          </tr>
+          <tr>
+            <td>&nbsp;&nbsp;</td>
+            <td><h4 align="center">Ganados</h4></td>
+            <td>&nbsp;&nbsp;</td>
+            <td><h4 align="center">Perdidos</h4></td>
+            <td>&nbsp;&nbsp;</td>
+            <td><h4 align="center">Empatados</h4></td>
+          </tr>
+        </table>
+      </div>
+      <h5>Delegado: <%= @team.delegado%> Teléfono: <%= @team.phone%> Email: <%= @team.email%></h5>
+      <%= link_to "Jugadores", "/players", {:controller => :players, :action => "index", :team_id => @team.id}%>
 
-
-    <section>
-
-                    <div class="l-paralax-section what-we-do-section paralax-section1 l-section"  data-0="background-position:0px 180px" data-10000="background-position: 0px -2000px;"  id="whatwedo">
-
-                        <div class="container">
-                            <h1 class="text-center"><%= @team.name%></h1>
-                                <center>
-                                  <img src="/img/avatar4.png" height="200" width="200">
-                                  <h1 align="center">1º</h1>
-                                  <h3 align="center">Posición</h3>
-                                <br>
-                                </center> 
-                        </div><!-- container -->
-                        <center>
-                        <div class="table-responsive">
-                                <table>
-                                  <tr>
-                                    <td>&nbsp;&nbsp;</td>
-                                    <td><h1 align="center">3</h1></td>
-                                    <td>&nbsp;&nbsp;</td>
-                                    <td><h1 align="center">0</h1></td>
-                                    <td>&nbsp;&nbsp;</td>
-                                    <td><h1 align="center">0</h1></td>
-                                  </tr>
-                                  <tr>
-                                    <td>&nbsp;&nbsp;</td>
-                                    <td><h4 align="center">Ganados</h4></td>
-                                    <td>&nbsp;&nbsp;</td>
-                                    <td><h4 align="center">Perdidos</h4></td>
-                                    <td>&nbsp;&nbsp;</td>
-                                    <td><h4 align="center">Empatados</h4></td>
-                                  </tr>
-                                </table>
-                                </div>
-                                <p><h4>Goleador: Bryan Quinteros</h4></p>
-
-<%= link_to 'Volver', teams_path %>
- </center>
-
-                    </div><!-- l-paralax-section -->
-                    <div class="l-copyright text-center" style="margin-top:0;">
-            © Asociacion de Graduados UCB 2014 - Todos los derechos reservados 
-        </div>
-
-                </section>
-
+      <%if current_user%>
+        <%if current_user.rol=="admin"%>
+          <%= link_to 'Editar', edit_team_path(@team), :class=>"edit-btn-mini" %> |
+        <%end%>
+      <%end%>
+      <%= link_to 'Volver', teams_path ,:class=>"back-btn-mini"%></br>
+        
+      </center>
+    </div><!-- l-paralax-section -->
+    <div class="l-copyright text-center" style="margin-top:0;">
+        © Asociacion de Graduados UCB 2014 - Todos los derechos reservados 
+    </div>
+  </section>
+</div>
 
 
 

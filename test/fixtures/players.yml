@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  lastname: MyString
+  career: MyString
+  goals: 1
+  t_ama: 1
+  t_roj: 1
+  team_id: 1
+
+two:
+  name: MyString
+  lastname: MyString
+  career: MyString
+  goals: 1
+  t_ama: 1
+  t_roj: 1
+  team_id: 1
