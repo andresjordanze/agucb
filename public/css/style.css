@@ -205,7 +205,6 @@ h2 {
     color: white;
 }
 
-
 .back-btn {
     background-color: #D04642;
     color: white;
@@ -215,6 +214,30 @@ h2 {
 
 .back-btn:hover {
     background-color: #b42e2a;
+    color: white;
+}
+
+.back-btn-mini {
+    background-color: #D04642;
+    color: white;
+    border: transparent;
+    padding: 2px;
+}
+
+.back-btn-mini:hover {
+    background-color: #b42e2a;
+    color: white;
+}
+
+.edit-btn-mini {
+    background-color: #E3BC68;
+    color: white;
+    border: transparent;
+    padding: 2px;
+}
+
+.edit-btn-mini:hover {
+    background-color: #bc984a;
     color: white;
 }
 

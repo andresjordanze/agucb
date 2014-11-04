@@ -43,7 +43,11 @@
     <link rel="stylesheet" href="/css/style.css">
     <link rel="stylesheet" href="/css/colors.css">
 
-
+    <script language="javascript">
+        $(document).ready(function(){
+            $("[rel='tooltip']").tooltip();
+        })
+    </script>
 
   </head>
   <body>
@@ -54,7 +58,6 @@
     <% end %>
     <!--<%= content_tag :h1, yield(:title) if show_title? %>-->
     <%= yield %>
-    
 <!-- LOAD SCRIPTS -->
 
         <!-- Latest compiled and minified JavaScript -->

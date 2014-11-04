@@ -14,6 +14,9 @@ class CreateTeams < ActiveRecord::Migration
       t.string :delegado
       t.string :email
       t.string :phone
+      t.boolean :check
+      t.string :category
+      t.integer :position
 
       t.timestamps
     end

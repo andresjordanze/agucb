@@ -1,4 +1,4 @@
-<% title "Editar equipo" %>
+<% title "Editar jugador"%>
 <div class="page-loader"></div>
 <div class="l-wrapper">
 <%= render 'layouts/header8'%>
@@ -8,22 +8,24 @@
       <center>
       <!--<br><br><br>
       <a href="/futbol8"><img src="/img/logo1.png"></a><br><br>-->
-      <h1>Editar equipo</h1><br>
+      <h1>Editar jugador</h1><br>
         <div class="col-xs-6 col-md-4">
-        <%= form_for(@team) do |f| %>
+        <%= form_for(@player) do |f| %>
             <div class="form-group">
-              <%= f.text_field :name,:class=>"form-control", :placeholder=>"Nombre de equipo" %>
+              <%= f.text_field :name,:class=>"form-control", :placeholder=>"Nombres" %>
             </div>
             <div class="form-group">
-              <%= f.text_field :delegado,:class=>"form-control", :placeholder=>"Nombre de delegado" %>
+              <%= f.text_field :lastname,:class=>"form-control", :placeholder=>"Apellidos"  %>
             </div>
             <div class="form-group">
-              <%= f.text_field :email,:class=>"form-control", :placeholder=>"Email delegado" %>
+              <%= f.text_field :career,:class=>"form-control", :placeholder=>"Carrera" %>
             </div>
             <div class="form-group">
-              <%= f.text_field :phone,:class=>"form-control", :placeholder=>"Celular ó Telefono" %>
+              <%= f.label "Equipo:", :class=>"form-control" %>
+              <%=f.collection_select(:team_id, Team.all, :id, :name)%>
             </div>
-            <p><%= f.submit (@team.new_record? ? 'Registrar equipo' : 'Guardar cambios'), :class=>"first-btn" %> <%= link_to 'Cancelar', teams_path, :class=>"back-btn" %></p>
+            <p><%= f.submit 'Guardar cambios', :class=>"first-btn" %><br><br>
+            <%= link_to 'Cancelar', players_path, :class=>"back-btn" %></p>
         <% end %>
       </div>
       <div class="l-copyright text-center">
@@ -34,3 +36,4 @@
     </section>
   </div>
 </div>
+

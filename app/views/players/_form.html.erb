@@ -1,0 +1,70 @@
+<!--<%= form_for(@player) do |f| %>
+
+  <div class="field">
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :lastname %><br>
+    <%= f.text_field :lastname %>
+  </div>
+  <div class="field">
+    <%= f.label :career %><br>
+    <%= f.text_field :career %>
+  </div>
+  <div class="field">
+    <%= f.label :goals %><br>
+    <%= f.number_field :goals %>
+  </div>
+  <div class="field">
+    <%= f.label :t_ama %><br>
+    <%= f.number_field :t_ama %>
+  </div>
+  <div class="field">
+    <%= f.label :t_roj %><br>
+    <%= f.number_field :t_roj %>
+  </div>
+  div class="field">
+    <%= f.label :team_id %><br>
+    <%= f.number_field :team_id %>
+  </div
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>-->
+
+
+<div class="page-loader"></div>
+<div class="l-wrapper">
+<%= render 'layouts/header8'%>
+  <div class="l-content-wrap" id="standard-content">
+    <section>
+    <div class="l-form-section l-section">
+      <center>
+      <!--<br><br><br>
+      <a href="/futbol8"><img src="/img/logo1.png"></a><br><br>-->
+      <h1>Registrar jugador</h1><br>
+        <div class="col-xs-6 col-md-4">
+        <%= form_for(@player) do |f| %>
+            <div class="form-group">
+              <%= f.text_field :name,:class=>"form-control", :placeholder=>"Nombres" %>
+            </div>
+            <div class="form-group">
+              <%= f.text_field :lastname,:class=>"form-control", :placeholder=>"Apellidos"  %>
+            </div>
+            <div class="form-group">
+              <%= f.text_field :career,:class=>"form-control", :placeholder=>"Carrera" %>
+            </div>
+            <p><%= f.submit (@player.new_record? ? 'Registrar jugador' : 'Guardar cambios'), :class=>"first-btn" %><br><br>
+            <%= link_to 'Cancelar', teams_path, :class=>"back-btn" %></p>
+        <% end %>
+      </div>
+      <div class="l-copyright text-center">
+            © Asociacion de Graduados UCB 2014 - Todos los derechos reservados 
+        </div>
+        </center>
+    </div>
+    </section>
+  </div>
+</div>
+
