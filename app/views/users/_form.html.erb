@@ -1,20 +1,64 @@
-<%= form_for @user do |f| %>
-  <%= f.error_messages %>
+<!-- <%#= form_for @user do |f| %>
+  <%#= f.error_messages %>
   <p>
-    <%= f.label :username, "Nombre De Usuario" %><br />
-    <%= f.text_field :username %>
+    <%#= f.label :username, "Nombre De Usuario" %><br />
+    <%#= f.text_field :username %>
   </p>
   <p>
-    <%= f.label :email, "Correo Electrónico" %><br />
-    <%= f.text_field :email %>
+    <%#= f.label :email, "Correo Electrónico" %><br />
+    <%#= f.text_field :email %>
   </p>
   <p>
-    <%= f.label :password, "Contraseña" %><br />
-    <%= f.password_field :password %>
+    <%#= f.label :password, "Contraseña" %><br />
+    <%#= f.password_field :password %>
   </p>
   <p>
-    <%= f.label :password_confirmation, "Vuelve a escribir la contraseña" %><br />
-    <%= f.password_field :password_confirmation %>
+    <%#= f.label :password_confirmation, "Vuelve a escribir la contraseña" %><br />
+    <%#= f.password_field :password_confirmation %>
   </p>
-  <p><%= f.submit (@user.new_record? ? "Crear" : "Guardar Cambios") %></p>
-<% end %>
+  <p><%#= f.submit (@user.new_record? ? "Crear" : "Guardar Cambios") %></p>
+<%# end %> -->
+
+<% title "Registrar equipo"%>
+<div class="page-loader"></div>
+<div class="l-wrapper">
+  <div class="l-content-wrap" id="standard-content">
+    <section>
+    <div class="l-form-section l-section">
+      <center>
+      <!--<br><br><br>
+      <a href="/futbol8"><img src="/img/logo1.png"></a><br><br>-->
+      <h1>Registrar Usuario</h1><br>
+        <div class="col-xs-6 col-md-4">
+        <%= form_for(@user) do |f| %>
+          <%= f.error_messages %>
+            <div class="form-group">
+              <%= f.text_field :username,:class=>"form-control", :placeholder=>"Nombre de usuario" %>
+            </div>
+            <div class="form-group">
+              <%= f.text_field :email,:class=>"form-control", :placeholder=>"Correo electrónico" %>
+            </div>
+            <div class="form-group">
+              <%= f.text_field :userType,:class=>"form-control", :placeholder=>"Tipo de Usuario" %>
+            </div>
+            <div class="form-group">
+              <%= f.password_field :password,:class=>"form-control", :placeholder=>"Contraseña" %>
+            </div>
+            <div class="form-group">
+              <%= f.password_field :password_confirmation,:class=>"form-control", :placeholder=>"Vuelve a escribir la contraseña" %>
+            </div>
+            <div class="btn-group btn-group-lg">
+              <%= f.submit (@user.new_record? ? "Registrar usuario" : "Guardar cambios Leo"), :class=>"first-btn" %>
+              <%= link_to 'Cancelar', teams_path, :class=>"back-btn" %>
+            </div>
+        <% end %>
+
+      </div>
+      <div class="l-copyright text-center">
+            © Asociacion de Graduados UCB 2014 - Todos los derechos reservados 
+        </div>
+        </center>
+    </div>
+    </section>
+  </div>
+</div>

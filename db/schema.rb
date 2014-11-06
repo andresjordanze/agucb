@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141106142248) do
+ActiveRecord::Schema.define(version: 20141106145122) do
 
   create_table "associateds", force: true do |t|
     t.string   "name"
@@ -68,6 +68,7 @@ ActiveRecord::Schema.define(version: 20141106142248) do
     t.string   "password_salt"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "userType"
   end
 
 end
