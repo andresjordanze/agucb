@@ -1,0 +1,43 @@
+<h1>Listing associateds</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Lastname</th>
+      <th>Phone</th>
+      <th>Cellphone</th>
+      <th>Email</th>
+      <th>Address</th>
+      <th>Universitydegree</th>
+      <th>Universitycareer</th>
+      <th>Yeardegree</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @associateds.each do |associated| %>
+      <tr>
+        <td><%= associated.name %></td>
+        <td><%= associated.lastname %></td>
+        <td><%= associated.phone %></td>
+        <td><%= associated.cellphone %></td>
+        <td><%= associated.email %></td>
+        <td><%= associated.address %></td>
+        <td><%= associated.universityDegree %></td>
+        <td><%= associated.universityCareer %></td>
+        <td><%= associated.yearDegree %></td>
+        <td><%= link_to 'Show', associated %></td>
+        <td><%= link_to 'Edit', edit_associated_path(associated) %></td>
+        <td><%= link_to 'Destroy', associated, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Associated', new_associated_path %>
