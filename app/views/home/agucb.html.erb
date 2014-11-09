@@ -11,61 +11,8 @@
         <div class="l-wrapper">
             
             <!-- HEADER -->
-
-            <div class="menu-wrap">
-                <!-- NAVIGATION -->
-                <div class="l-navigation-wrap menu-padd" id="l-navigation">
-                    <div class="m-navbar container">
-                        <nav class="navbar navbar-default" role="navigation">
-                            <div class="container-fluid">
-                                
-                                <div class="l-logo">
-                                  <a href="#splash-image-wrap">
-                                      <img src="img/logo.png" alt="logo"  />
-                                  </a>
-                                </div><!-- l-logo -->
-                                
-                                
-                                
-                              <!-- Brand and toggle get grouped for better mobile display -->
-                              <div class="navbar-header">
-                                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
-                                  <span class="sr-only">Toggle navigation</span>
-                                  <span class="icon-bar"></span>
-                                </button>                                
-                              </div>
-
-                              <!-- Collect the nav links, forms, and other content for toggling -->
-                              <div class="collapse navbar-collapse" id="navbar">
-                             
-                                    <ul class="nav navbar-nav navbar-right">
-                                      <li class="active"><a href="#inicio">Inicio</a></li>
-                                      <!-- <li><a href="#whatwedo"></a></li> -->
-                                      <!--<li><a href="#news"></a></li> -->
-                                      <!--<li><a href="#testimonials"></a></li>-->
-                                      <li><a href="#agucb" class="dropdown-toggle" data-toggle="dropdown">AGUCB</a></li>
-                                      <li><a href="#skills">El Graduado de la UCB</a></li>
-                                      <!-- <li><a href="#skills">Organización</a></li> -->
-                                      <li><a href="#gallery">Noticias</a></li>
-                                      <li><a href="#team">Eventos</a></li>
-                                      <li><a href="#contact">Contáctanos</a></li>
-                                      <li><a href="/menu_agucb">menu</a></li>
-                                      <%if current_user%>
-                                      <li class="arrow-login-2"><%= link_to "", logout_path %></li>
-                                      <%else%>
-                                      <li class="arrow-login"><a href="/login"></a></li>
-                                      <%end%>
-                                    </ul>                                                      
-                              </div><!-- /.navbar-collapse -->
-                                                          
-                              
-                            </div><!-- /.container-fluid -->
-                          </nav>
-                    </div><!-- m-navbar -->
-                </div><!-- l-navigation -->
-                
-            </div><!-- content -->
             
+            <%= render 'layouts/header'%>
             
             <div class="l-content-wrap" id="standard-content">
             

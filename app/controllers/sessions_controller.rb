@@ -7,10 +7,10 @@ class SessionsController < ApplicationController
     user = User.authenticate(params[:login], params[:password])
     if user
       session[:user_id] = user.id
-      if user.rol == "f8"
+      if user.userType == "f8"
         redirect_to "/futbol8"
       else
-        redirect_to "/agucb"
+        redirect_to "/menu_agucb"
       end
       flash.now[:success] = "Sesión iniciada exitosamente."
     else
