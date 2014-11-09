@@ -73,6 +73,7 @@
                           <li><a href="#agucb" class="dropdown-toggle" data-toggle="dropdown">Asociados</a></li>
                           <li><a href="/dashboard">dashboard</a></li>
                           <%if current_user%>
+                            <li><a href="/users/<%= current_user.id%>/edit">Editar cuenta</a></li>
                             <li class="arrow-login-2" rel="tooltip" data-placement='bottom' title="Cerrar Sesión"><%= link_to "", logout_path %></li>
                           <%else%>
                             <li class="arrow-login-1" rel="tooltip" data-placement='bottom' title="Iniciar Sesión"><a href="/login"></a></li>
