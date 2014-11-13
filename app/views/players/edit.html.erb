@@ -20,10 +20,10 @@
             <div class="form-group">
               <%= f.text_field :career,:class=>"form-control", :placeholder=>"Carrera" %>
             </div>
-            <div class="form-group">
+            <!--<div class="form-group">
               <%= f.label "Equipo:", :class=>"form-control" %>
               <%=f.collection_select(:team_id, Team.all, :id, :name)%>
-            </div>
+            </div>-->
             <p><%= f.submit 'Guardar cambios', :class=>"first-btn" %><br><br>
             <%= link_to 'Cancelar', players_path, :class=>"back-btn" %></p>
         <% end %>

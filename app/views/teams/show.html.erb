@@ -33,7 +33,7 @@
         </table>
       </div>
       <h5>Delegado: <%= @team.delegado%> Teléfono: <%= @team.phone%> Email: <%= @team.email%></h5>
-      <%= link_to "Jugadores", "/players", {:controller => :players, :action => "index", :team_id => @team.id}%>
+      <%= link_to "Lista de Jugadores", "/players", {:controller => :players, :action => "index", :team_id => @team.id}%><br><br>
 
       <%if current_user%>
         <%if current_user.rol=="admin"%>
