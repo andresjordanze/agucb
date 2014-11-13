@@ -1,3 +1,4 @@
+<div class="col-xs-6 col-md-4">
 <%= form_for(@associated) do |f| %>
   <% if @associated.errors.any? %>
     <div id="error_explanation">
@@ -12,42 +13,43 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :name %><br>
-    <%= f.text_field :name %>
+    <%= f.label :Nombres, :style=>"color:green" %><br>
+    <%= f.text_field :name, :class=>"form-control", :placeholder=>"Nombres" %>
   </div>
   <div class="field">
-    <%= f.label :lastname %><br>
-    <%= f.text_field :lastname %>
+    <%= f.label :Apellidos, :style=>"color:green" %><br>
+    <%= f.text_field :lastname, :class=>"form-control", :placeholder=>"Apellidos" %>
   </div>
   <div class="field">
-    <%= f.label :phone %><br>
-    <%= f.text_field :phone %>
+    <%= f.label :Teléfono, :style=>"color:green" %><br>
+    <%= f.text_field :phone, :class=>"form-control", :placeholder=>"Teléfono fijo" %>
   </div>
   <div class="field">
-    <%= f.label :cellphone %><br>
-    <%= f.text_field :cellphone %>
+    <%= f.label :Celular, :style=>"color:green" %><br>
+    <%= f.text_field :cellphone, :class=>"form-control", :placeholder=>"Celular" %>
   </div>
   <div class="field">
-    <%= f.label :email %><br>
-    <%= f.text_field :email %>
+    <%= f.label :Correo, :style=>"color:green" %><br>
+    <%= f.text_field :email, :class=>"form-control", :placeholder=>"Correo Electrónico" %>
   </div>
   <div class="field">
-    <%= f.label :address %><br>
-    <%= f.text_field :address %>
+    <%= f.label :Ciudad, :style=>"color:green" %><br>
+    <%= f.text_field :address, :class=>"form-control", :placeholder=>"Ciudad" %>
   </div>
   <div class="field">
-    <%= f.label :universityDegree %><br>
-    <%= f.text_field :universityDegree %>
+    <%= f.label :Título, :style=>"color:green" %><br>
+    <%= f.text_field :universityDegree, :class=>"form-control", :placeholder=>"Título Universitario" %>
   </div>
   <div class="field">
-    <%= f.label :universityCareer %><br>
-    <%= f.text_field :universityCareer %>
+    <%= f.label :Carrera, :style=>"color:green" %><br>
+    <%= f.text_field :universityCareer, :class=>"form-control", :placeholder=>"Carrera Universitaria" %>
   </div>
   <div class="field">
-    <%= f.label :yearDegree %><br>
-    <%= f.text_field :yearDegree %>
+    <%= f.label :Año_de_graduación, :style=>"color:green" %><br>
+    <%= f.text_field :yearDegree, :class=>"form-control", :placeholder=>"Año de graduación" %>
   </div>
-  <div class="actions">
-    <%= f.submit %>
+  <div class="btn-group btn-group-lg">
+    <%= f.submit :class=>"first-btn"%>
   </div>
 <% end %>
+</div>

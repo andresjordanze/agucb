@@ -1,5 +1,18 @@
-<h1>New associated</h1>
-
-<%= render 'form' %>
-
-<%= link_to 'Back', associateds_path %>
+<% title "Nuevo Asociado" %>
+<div class="page-loader"></div>
+<div class="l-wrapper">
+  <div class="l-content-wrap" id="standard-content">
+    <section>
+    <div class="l-form-section l-section">
+      <center>
+        <h1>Registrar Asociado</h1><br>
+		<%= render 'form' %>
+		<%= link_to 'Back', associateds_path, :class=>"back-btn"%>
+		<div class="l-copyright text-center">
+        	© Asociacion de Graduados UCB 2014 - Todos los derechos reservados 
+      	</div>
+      </center>
+    </div>
+    </section>
+  </div>
+</div>
