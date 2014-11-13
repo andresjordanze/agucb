@@ -1,20 +1,36 @@
-<%= form_for @user do |f| %>
+<div class="col-xs-6 col-md-4">
+<%= form_for(@user) do |f| %>
   <%= f.error_messages %>
-  <p>
-    <%= f.label :username, "Nombre De Usuario" %><br />
-    <%= f.text_field :username %>
-  </p>
-  <p>
-    <%= f.label :email, "Correo Electrónico" %><br />
-    <%= f.text_field :email %>
-  </p>
-  <p>
-    <%= f.label :password, "Contraseña" %><br />
-    <%= f.password_field :password %>
-  </p>
-  <p>
-    <%= f.label :password_confirmation, "Vuelve a escribir la contraseña" %><br />
-    <%= f.password_field :password_confirmation %>
-  </p>
-  <p><%= f.submit (@user.new_record? ? "Crear" : "Guardar Cambios") %></p>
+    <div class="form-group">
+      <%= f.text_field :username,:class=>"form-control", :placeholder=>"Nombre de usuario" %>
+    </div>
+    <div class="form-group">
+      <%= f.text_field :email,:class=>"form-control", :placeholder=>"Correo electrónico" %>
+    </div>
+    <div class="form-group">
+      <%= f.text_field :userType,:class=>"form-control", :placeholder=>"Tipo de Usuario" %>
+    </div>
+    <div class="form-group">
+        <div class="radio">
+          <label style="color:orange">
+            <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">
+            AGUCB
+          </label>
+          <label style="color:blue">
+            <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked="">
+            Campeonato Alumni
+          </label>
+        </div>
+    </div>
+    <div class="form-group">
+      <%= f.password_field :password,:class=>"form-control", :placeholder=>"Contraseña" %>
+    </div>
+    <div class="form-group">
+      <%= f.password_field :password_confirmation,:class=>"form-control", :placeholder=>"Vuelve a escribir la contraseña" %>
+    </div>
+    <div class="btn-group btn-group-lg">
+      <%= f.submit (@user.new_record? ? "Registrar usuario" : "Guardar cambios Leo"), :class=>"first-btn" %>
+      <%= link_to 'Cancelar', teams_path, :class=>"back-btn" %>
+    </div>
 <% end %>
+</div>

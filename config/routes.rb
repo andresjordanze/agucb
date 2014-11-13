@@ -1,5 +1,7 @@
 Agucb::Application.routes.draw do
   
+  resources :associateds
+
   get 'user/edit' => 'users#edit', :as => :edit_current_user
   get 'signup' => 'users#new', :as => :signup
   get 'logout' => 'sessions#destroy', :as => :logout
@@ -15,6 +17,7 @@ Agucb::Application.routes.draw do
   match '/futbol8',    to: 'home#futbol8',    via: 'get'
   match '/agucb',    to: 'home#agucb',    via: 'get'
   match '/menu_agucb',    to: 'home#menu_agucb',    via: 'get'
+  match '/dashboard',    to: 'home#dashboard', via: 'get'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

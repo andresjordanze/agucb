@@ -1,0 +1,49 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @associated.name %>
+</p>
+
+<p>
+  <strong>Lastname:</strong>
+  <%= @associated.lastname %>
+</p>
+
+<p>
+  <strong>Phone:</strong>
+  <%= @associated.phone %>
+</p>
+
+<p>
+  <strong>Cellphone:</strong>
+  <%= @associated.cellphone %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @associated.email %>
+</p>
+
+<p>
+  <strong>Address:</strong>
+  <%= @associated.address %>
+</p>
+
+<p>
+  <strong>Universitydegree:</strong>
+  <%= @associated.universityDegree %>
+</p>
+
+<p>
+  <strong>Universitycareer:</strong>
+  <%= @associated.universityCareer %>
+</p>
+
+<p>
+  <strong>Yeardegree:</strong>
+  <%= @associated.yearDegree %>
+</p>
+
+<%= link_to 'Edit', edit_associated_path(@associated) %> |
+<%= link_to 'Back', associateds_path %>

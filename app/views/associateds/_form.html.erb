@@ -1,0 +1,55 @@
+<div class="col-xs-6 col-md-4">
+<%= form_for(@associated) do |f| %>
+  <% if @associated.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@associated.errors.count, "error") %> prohibited this associated from being saved:</h2>
+
+      <ul>
+      <% @associated.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :Nombres, :style=>"color:green" %><br>
+    <%= f.text_field :name, :class=>"form-control", :placeholder=>"Nombres" %>
+  </div>
+  <div class="field">
+    <%= f.label :Apellidos, :style=>"color:green" %><br>
+    <%= f.text_field :lastname, :class=>"form-control", :placeholder=>"Apellidos" %>
+  </div>
+  <div class="field">
+    <%= f.label :Teléfono, :style=>"color:green" %><br>
+    <%= f.text_field :phone, :class=>"form-control", :placeholder=>"Teléfono fijo" %>
+  </div>
+  <div class="field">
+    <%= f.label :Celular, :style=>"color:green" %><br>
+    <%= f.text_field :cellphone, :class=>"form-control", :placeholder=>"Celular" %>
+  </div>
+  <div class="field">
+    <%= f.label :Correo, :style=>"color:green" %><br>
+    <%= f.text_field :email, :class=>"form-control", :placeholder=>"Correo Electrónico" %>
+  </div>
+  <div class="field">
+    <%= f.label :Ciudad, :style=>"color:green" %><br>
+    <%= f.text_field :address, :class=>"form-control", :placeholder=>"Ciudad" %>
+  </div>
+  <div class="field">
+    <%= f.label :Título, :style=>"color:green" %><br>
+    <%= f.text_field :universityDegree, :class=>"form-control", :placeholder=>"Título Universitario" %>
+  </div>
+  <div class="field">
+    <%= f.label :Carrera, :style=>"color:green" %><br>
+    <%= f.text_field :universityCareer, :class=>"form-control", :placeholder=>"Carrera Universitaria" %>
+  </div>
+  <div class="field">
+    <%= f.label :Año_de_graduación, :style=>"color:green" %><br>
+    <%= f.text_field :yearDegree, :class=>"form-control", :placeholder=>"Año de graduación" %>
+  </div>
+  <div class="btn-group btn-group-lg">
+    <%= f.submit :class=>"first-btn"%>
+  </div>
+<% end %>
+</div>

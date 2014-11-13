@@ -1,5 +1,18 @@
-<% title "Sign up" %>
-
-<p>¿Ya tienes una cuenta? <%= link_to "Iniciar Sesión", login_path %>.</p>
-
-<%= render 'form' %>
+<% title "Registrar Usuario" %>
+<div class="page-loader"></div>
+<div class="l-wrapper">
+  <div class="l-content-wrap" id="standard-content">
+    <section>
+    <div class="l-form-section l-section">
+      <center>
+        <p style="color:green">¿Ya tienes una cuenta? <%= link_to "Iniciar Sesión", login_path %>.</p>
+        <h1>Registrar Usuario</h1><br>
+		    <%= render 'form' %>
+		    <div class="l-copyright text-center">
+        	© Asociacion de Graduados UCB 2014 - Todos los derechos reservados 
+      	</div>
+      </center>
+    </div>
+    </section>
+  </div>
+</div>
