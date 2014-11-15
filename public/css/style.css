@@ -1583,3 +1583,33 @@ fieldset[disabled] .navbar-default2 .btn-link2:focus {
     border-radius: 4px;
   }
 }
+
+.link-style-view {
+    color: #34495e;
+
+}
+
+.link-style-view:hover {
+    color: #5bc0de;
+    font-size: 1.2em;
+}
+
+.link-style-edit {
+    color: #34495e;
+
+}
+
+.link-style-edit:hover {
+    color: #f0ad4e;
+    font-size: 1.2em;
+}
+
+.link-style-delete {
+    color: #34495e;
+
+}
+
+.link-style-delete:hover {
+    color: #d9534f;
+    font-size: 1.2em;
+}

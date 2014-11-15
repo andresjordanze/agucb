@@ -1,0 +1,134 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+     <title>Asociacion de Graduados UCB</title>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+      
+      <link rel="shortcut icon" href="img/favicon.ico">
+      
+      <link href='http://fonts.googleapis.com/css?family=Open+Sans:300,700' rel='stylesheet' type='text/css'>
+      
+      <script src="inc/js/jquery-1.11.0.min.js"></script>
+                     
+      <!-- Latest compiled and minified CSS -->
+      <link rel="stylesheet" href="inc/bootstrap/css/bootstrap.min.css">
+
+      <!-- Optional theme -->
+      <link rel="stylesheet" href="inc/bootstrap/css/bootstrap-theme.min.css">
+      
+      <!-- Bootstrap reset -->
+      <link rel="stylesheet" href="inc/bootstrap/css/bootstrap-reset.css">
+      
+      <!-- flexslider load -->        
+      <link rel="stylesheet" href="inc/flexslider/flexslider.css" type="text/css">        
+             
+      <!-- easy pie chart -->
+      <link rel="stylesheet" type="text/css" href="inc/easy-pie-chart/demo/style.css">
+              
+      <!-- Magnific Popup core CSS file -->
+      <link rel="stylesheet" href="inc/magnific/dist/magnific-popup.css"> 
+
+      <!-- YTP -->
+      <link href="inc/YTPlayer/css/YTPlayer.css" media="all" rel="stylesheet" type="text/css">
+     
+      <link rel="stylesheet" href="inc/font-awesome/css/font-awesome.min.css">        
+      <link rel="stylesheet" href="css/style.css">
+      <link rel="stylesheet" href="css/colors.css">
+
+  </head>
+  <body>
+    <div class="page-loader"></div>
+    <div class="l-wrapper">
+      <header>
+        <div class="menu-wrap">
+          <!-- NAVIGATION -->
+          <div class="l-navigation-wrap menu-padd" id="l-navigation">
+            <div class="m-navbar container">
+              <nav class="navbar navbar-default" role="navigation">
+                <div class="container-fluid">
+                    
+                    <div class="l-logo">
+                      <a href="#splash-image-wrap">
+                          <img src="img/logo.png" alt="logo"  />
+                      </a>
+                    </div><!-- l-logo -->                                                                                                        
+                  <!-- Brand and toggle get grouped for better mobile display -->
+                  <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                      <span class="sr-only">Toggle navigation</span>
+                      <span class="icon-bar"></span>
+                    </button>                                
+                  </div>
+
+                  <!-- Collect the nav links, forms, and other content for toggling -->
+                  <div class="collapse navbar-collapse" id="navbar">
+                 
+                        <ul class="nav navbar-nav navbar-right">
+                          <li class="active"><a href="#inicio">Usuarios</a></li>
+                          <li><a href="#inicio">Eventos</a></li>
+                          <li><a href="#inicio">Actividades</a></li>
+                          <li><a href="#inicio">Carreras</a></li>
+                          <!-- <li><a href="#whatwedo"></a></li> -->
+                          <!--<li><a href="#news"></a></li> -->
+                          <!--<li><a href="#testimonials"></a></li>-->
+                          <li><a href="/associateds">Asociados</a></li>
+                          <li><a href="/dashboard">dash</a></li>
+                          <%if current_user%>
+                            <li><a href="/users/<%= current_user.id%>/edit">Editar cuenta</a></li>
+                            <li class="arrow-login-2" rel="tooltip" data-placement='bottom' title="Cerrar Sesión"><%= link_to "", logout_path %></li>
+                          <%else%>
+                            <li class="arrow-login-1" rel="tooltip" data-placement='bottom' title="Iniciar Sesión"><a href="/login"></a></li>
+                          <%end%>
+                        </ul>                                                      
+                  </div><!-- /.navbar-collapse -->
+                </div><!-- /.container-fluid -->
+              </nav>
+            </div><!-- m-navbar -->
+          </div><!-- l-navigation -->
+        </div><!-- content -->
+      </header>
+      <div class="l-content-wrap" id="standard-content">
+      </div><!-- l-content-wrap --> 
+    </div><!-- l-wrapper -->
+           
+    
+    <!-- LOAD SCRIPTS -->
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="inc/bootstrap/js/bootstrap.min.js"></script>
+    
+    <!-- flexslider -->
+     <script src="inc/flexslider/jquery.flexslider.js"></script>
+            
+    <!-- skrollr -->
+    <script type="text/javascript" src="inc/skrollr/dist/skrollr.min.js"></script>
+
+    <!-- easy pie chart -->
+    <script src="inc/easy-pie-chart/dist/jquery.easypiechart.min.js"></script>
+    
+    <!-- isotope -->
+    <script src="inc/isotope/jquery.isotope.min.js" ></script>
+        
+    <!-- isotope -->
+    <script src="inc/nice-scroll/jquery.nicescroll.min.js" ></script>
+    
+    <!-- google maps -->
+    <script src="https://maps.googleapis.com/maps/api/js?sensor=false" type="text/javascript"></script>
+    
+    <!-- Magnific Popup core JS file -->
+    <script src="inc/magnific/dist/jquery.magnific-popup.js"></script> 
+    
+    <!-- Waypoints -->
+    <script src="inc/waypoints/waypoints.min.js"></script>
+            
+    <!-- YTP -->
+    <script type="text/javascript" src="inc/YTPlayer/inc/jquery.mb.YTPlayer.js"></script>
+    
+    <!-- script calling -->
+    <script src="inc/js/common.js"></script>         
+  </body>   
+</html>
+
+            

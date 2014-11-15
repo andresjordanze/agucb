@@ -1,43 +1,54 @@
-<h1>Listing associateds</h1>
+<%= render 'layouts/header_menu'%>
 
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Lastname</th>
-      <th>Phone</th>
-      <th>Cellphone</th>
-      <th>Email</th>
-      <th>Address</th>
-      <th>Universitydegree</th>
-      <th>Universitycareer</th>
-      <th>Yeardegree</th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
+<% title "Lista de Asociados" %>
+<div class="page-loader"></div>
+<div class="l-wrapper">
+  <div class="l-content-wrap" id="standard-content">
+    <section>
+    <div class="l-form-section l-section">
+      <center>
+      <div class="col-xs-6 col-md-4">
+        <h1>Asociados</h1><br>
 
-  <tbody>
-    <% @associateds.each do |associated| %>
-      <tr>
-        <td><%= associated.name %></td>
-        <td><%= associated.lastname %></td>
-        <td><%= associated.phone %></td>
-        <td><%= associated.cellphone %></td>
-        <td><%= associated.email %></td>
-        <td><%= associated.address %></td>
-        <td><%= associated.universityDegree %></td>
-        <td><%= associated.universityCareer %></td>
-        <td><%= associated.yearDegree %></td>
-        <td><%= link_to 'Show', associated %></td>
-        <td><%= link_to 'Edit', edit_associated_path(associated) %></td>
-        <td><%= link_to 'Destroy', associated, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+        <br>
+ 
+        <%= link_to 'New Associated', new_associated_path, :class=>"back-btn" %> <br><br>
 
-<br>
-
-<%= link_to 'New Associated', new_associated_path %>
+        <div class="bs-example">
+          <table class="table table-striped">
+            <thead>
+              <tr>
+                <th style="color:black">#</th>
+                <th style="color:black">Nombres</th>
+                <th style="color:black">Apellidos</th>
+                <th style="color:black">Carrera</th>
+                <th colspan="3" style="color:black"><CENTER>Acciones</CENTER></th>
+              </tr>
+            </thead>
+            <tbody>
+              <% count=1 %>
+              <% @associateds.each do |associated| %>
+              
+              <tr>
+                <td style="color:black"><%= count %></td>
+                <td style="color:black"><%= associated.name %></td>
+                <td style="color:black"><%= associated.lastname %></td>
+                <td style="color:black"><%= associated.universityCareer %></td>
+                <td><%= link_to associated, :class => "link-style-view", :title=>"Ver" do %><span class="glyphicon glyphicon-eye-open"></span><% end %></td>
+                <td><%= link_to edit_associated_path(associated), :class => "link-style-edit", :title=>"Editar" do %><span class="glyphicon glyphicon-edit"></span><% end %></td>
+                <td><%= link_to associated, :class => "link-style-delete", :title=>"Eliminar", method: :delete,data: { confirm: 'Are you sure?' } do %><span class="glyphicon glyphicon-trash"></span><% end %></td>
+              </tr>
+              <% count = count + 1 %>
+              <% end %>
+            </tbody>
+          </table>
+        </div><!-- /example -->
+      </center>
+      </div>
+    </div>
+    </section>
+    <div class="l-copyright text-center">
+      © Asociacion de Graduados UCB 2014 - Todos los derechos reservados 
+    </div>
+  </div>
+</div>
