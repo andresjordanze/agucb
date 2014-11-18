@@ -197,11 +197,35 @@ h2 {
     background-color: #07AC8D;
     color: white;
     border: transparent;
-    padding: 8px;
+    padding: 12px;
 }
 
 .first-btn:hover {
     background-color: #01896c;
+    color: white;
+}
+
+.second-btn {
+    background-color: #07AC8D;
+    color: white;
+    border: transparent;
+    padding: 12px;
+}
+
+.second-btn:hover {
+    background-color: #01896c;
+    color: white;
+}
+
+.third-btn {
+    background-color: #00812D;
+    color: white;
+    border: transparent;
+    padding: 12px;
+}
+
+.third-btn:hover {
+    background-color: #005800;
     color: white;
 }
 
