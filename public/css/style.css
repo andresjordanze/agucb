@@ -208,11 +208,35 @@ h2 {
     background-color: #07AC8D;
     color: white;
     border: transparent;
-    padding: 8px;
+    padding: 12px;
 }
 
 .first-btn:hover {
     background-color: #01896c;
+    color: white;
+}
+
+.second-btn {
+    background-color: #07AC8D;
+    color: white;
+    border: transparent;
+    padding: 12px;
+}
+
+.second-btn:hover {
+    background-color: #01896c;
+    color: white;
+}
+
+.third-btn {
+    background-color: #00812D;
+    color: white;
+    border: transparent;
+    padding: 12px;
+}
+
+.third-btn:hover {
+    background-color: #005800;
     color: white;
 }
 
@@ -1599,6 +1623,32 @@ fieldset[disabled] .navbar-default2 .btn-link2:focus {
 }
 
 
+.link-style-view {
+    color: #34495e;
 
+}
 
+.link-style-view:hover {
+    color: #5bc0de;
+    font-size: 1.2em;
+}
 
+.link-style-edit {
+    color: #34495e;
+
+}
+
+.link-style-edit:hover {
+    color: #f0ad4e;
+    font-size: 1.2em;
+}
+
+.link-style-delete {
+    color: #34495e;
+
+}
+
+.link-style-delete:hover {
+    color: #d9534f;
+    font-size: 1.2em;
+}

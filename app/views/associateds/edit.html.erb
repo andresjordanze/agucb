@@ -6,10 +6,14 @@
     <div class="l-form-section l-section">
       <center>
         <h1>Editar Asociado</h1><br>
-		<%= render 'form' %>
-		<%= link_to 'Show', @associated, :class=>"btn-successful" %> |
-		<%= link_to 'Back', associateds_path, :class=>"btn-warning" %>
-		<div class="l-copyright text-center">
+    		<%= render 'form' %>
+        <div class="col-xs-6 col-md-4">
+          <div class="field"><br>
+          <%= link_to 'Ver', @associated, :class=>"second-btn" %>
+          <%= link_to ' Atrás ', associateds_path, :class=>"back-btn" %>
+          </div>
+        </div>
+		    <div class="l-copyright text-center">
         	© Asociacion de Graduados UCB 2014 - Todos los derechos reservados 
       	</div>
       </center>

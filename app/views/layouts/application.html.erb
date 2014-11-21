@@ -43,6 +43,10 @@
     <link rel="stylesheet" href="/css/style.css">
     <link rel="stylesheet" href="/css/colors.css">
 
+    <%= stylesheet_link_tag    "application", :media => "all" %>
+    <%= javascript_include_tag "application" %>
+    <%= csrf_meta_tags %>  
+
     <script language="javascript">
         $(document).ready(function(){
             $("[rel='tooltip']").tooltip();

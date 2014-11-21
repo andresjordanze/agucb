@@ -1,49 +1,64 @@
-<p id="notice"><%= notice %></p>
+<% title "Nuevo Asociado" %>
+<div class="page-loader"></div>
+<div class="l-wrapper">
+  <div class="l-content-wrap" id="standard-content">
+    <section>
+    <div class="l-form-section l-section">
+      <center>
+        <h1>Registrar Asociado</h1><br>
 
-<p>
-  <strong>Name:</strong>
-  <%= @associated.name %>
-</p>
+        <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Lastname:</strong>
-  <%= @associated.lastname %>
-</p>
+        <div class="col-xs-6 col-md-4">
+          <div class="field">
+            <label for="associated_name" style="color:green">Nombres</label><br>
+            <input class="form-control" type="text" style="background-color:#FAFFBD; color: black;" value="<%= @associated.name %>" readonly/>
+          </div>
+          <div class="field">
+            <label for="associated_name" style="color:green">Apellidos</label><br>
+            <input class="form-control" type="text" style="background-color:#FAFFBD; color: black;" value="<%= @associated.lastname %>" />
+          </div>
+          <div class="field">
+            <label for="associated_name" style="color:green">Teléfono</label><br>
+            <input class="form-control" type="text" style="background-color:#FAFFBD; color: black;" value="<%= @associated.phone %>" />
+          </div>
+          <div class="field">
+            <label for="associated_name" style="color:green">Celular</label><br>
+            <input class="form-control" type="text" style="background-color:#FAFFBD; color: black;" value="<%= @associated.cellphone %>" />
+          </div>
+          <div class="field">
+            <label for="associated_name" style="color:green">Correo electrónico</label><br>
+            <input class="form-control" type="text" style="background-color:#FAFFBD; color: black;" value="<%= @associated.email %>" />
+          </div>
+          <div class="field">
+            <label for="associated_name" style="color:green">Direcçión</label><br>
+            <input class="form-control" type="text" style="background-color:#FAFFBD; color: black;" value="<%= @associated.address %>" />
+          </div>
+          <div class="field">
+            <label for="associated_name" style="color:green">Título</label><br>
+            <input class="form-control" type="text" style="background-color:#FAFFBD; color: black;" value="<%= @associated.universityDegree %>" />
+          </div>
+          <div class="field">
+            <label for="associated_name" style="color:green">Carrera</label><br>
+            <input class="form-control" type="text" style="background-color:#FAFFBD; color: black;" value="<%= @associated.universityCareer %>" />
+          </div>
+          <div class="field">
+            <label for="associated_name" style="color:green">Año de graduación</label><br>
+            <input class="form-control" type="text" style="background-color:#FAFFBD; color: black;" value="<%= @associated.yearDegree %>" />
+          </div>
+          <div class="field">
+            <br>
+            <%= link_to 'Editar', edit_associated_path(@associated), :class=>"second-btn" %>
+            <%= link_to 'Atrás', associateds_path, :class=>"back-btn" %>
+          </div>
+        </div>
 
-<p>
-  <strong>Phone:</strong>
-  <%= @associated.phone %>
-</p>
-
-<p>
-  <strong>Cellphone:</strong>
-  <%= @associated.cellphone %>
-</p>
-
-<p>
-  <strong>Email:</strong>
-  <%= @associated.email %>
-</p>
-
-<p>
-  <strong>Address:</strong>
-  <%= @associated.address %>
-</p>
-
-<p>
-  <strong>Universitydegree:</strong>
-  <%= @associated.universityDegree %>
-</p>
-
-<p>
-  <strong>Universitycareer:</strong>
-  <%= @associated.universityCareer %>
-</p>
-
-<p>
-  <strong>Yeardegree:</strong>
-  <%= @associated.yearDegree %>
-</p>
-
-<%= link_to 'Edit', edit_associated_path(@associated) %> |
-<%= link_to 'Back', associateds_path %>
+        
+      </center>
+      <div class="l-copyright text-center">
+        © Asociacion de Graduados UCB 2014 - Todos los derechos reservados 
+      </div>
+    </div>
+    </section>
+  </div>
+</div>
