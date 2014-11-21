@@ -1,3 +1,55 @@
+<% title @player.name+" "+@player.lastname%>
+<div class="page-loader"></div>
+<div class="l-wrapper">
+<%= render 'layouts/header8'%>
+  <div class="l-content-wrap" id="standard-content">
+    <section>
+
+        <div class="l-paralax-section paralax-section1 l-twitter-section l-section" data-0="background-position:0px 500px;" data-10000="background-position:0px -2000px;"  id="twitter-section" >
+
+            <div class="flexslider flexslider-twitter">
+                <br><center>
+                <a href="#">
+                    <img src="/img/avatar5.png">
+                </a><br><br>
+                <h3><%= @player.name %> <%= @player.lastname %></h3></center>
+
+                <ul class="slides">
+
+                  <li class="text-center">
+                      <div class="container">
+                          <div class="col-lg-12">
+                                <span class="tweet"><a>Carrera: </a><%= @player.career %></span>                                  
+                                <a href="#" class="tweet-name"><%= Team.find(@player.team_id).name %></a>      
+                          </div><!-- col-lg-12 -->
+                      </div><!-- container -->
+                  </li>
+                    <li class="text-center">
+                      <div class="container">
+                          <div class="col-lg-12">
+                                <span class="tweet"><a>Goles: </a><%= @player.goals %>0</span>                                  
+                                <a href="#" class="tweet-name"><%= Team.find(@player.team_id).name %></a>      
+                          </div><!-- col-lg-12 -->
+                      </div><!-- container -->
+                  </li>
+                </ul>
+            </div><!-- flexslider -->
+        </div><!-- l-paralax-section -->
+        <div class="l-copyright text-center">
+            © Asociacion de Graduados UCB 2014 - Todos los derechos reservados 
+        </div>
+    </section>
+  </div>
+</div>
+
+
+
+
+
+
+
+<!--
+
 <p id="notice"><%= notice %></p>
 
 <p>
@@ -37,3 +89,4 @@
 
 <%= link_to 'Edit', edit_player_path(@player) %> |
 <%= link_to 'Back', players_path %>
+-->

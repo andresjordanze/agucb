@@ -33,13 +33,12 @@
         </table>
       </div>
       <h5>Delegado: <%= @team.delegado%> Teléfono: <%= @team.phone%> Email: <%= @team.email%></h5>
-      <%= link_to "Lista de Jugadores", "/players", {:controller => :players, :action => "index", :team_id => @team.id}%><br><br>
-
+      <a href="/players_list/<%=@team.id%>"><h5><img src="/img/list.png" width="35"> Lista de jugadores</h5></a>
       <%if current_user%>
         <%if current_user.rol=="admin"%>
           <%= link_to 'Editar', edit_team_path(@team), :class=>"edit-btn-mini" %> |
         <%end%>
-      <%end%>
+      <%end%><br>
       <%= link_to 'Volver', teams_path ,:class=>"back-btn-mini"%></br>
         
       </center>

@@ -9,11 +9,5 @@
 	admin = User.new
 	admin.username = 'admin'
 	admin.password = 'admin123'
-	admin.rol = 'admin'
+	admin.userType = 'admin'
 	admin.save!
-
-	gerente = User.new
-	gerente.username = 'gerente'
-	gerente.password = 'gerente123'
-	gerente.rol = 'gerente'
-	gerente.save!

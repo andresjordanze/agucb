@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  place: MyString
+  team_id_1: 1
+  team_id_2: 1
+  referee: MyString
+
+two:
+  place: MyString
+  team_id_1: 1
+  team_id_2: 1
+  referee: MyString

@@ -1,6 +1,6 @@
 class User < ActiveRecord::Base
   # new columns need to be added here to be writable through mass assignment
-  attr_accessible :username, :email, :password, :password_confirmation, :userType
+  attr_accessible :username, :email, :password, :password_confirmation, :userType, :rol
 
   attr_accessor :password
   before_save :prepare_password
@@ -15,7 +15,6 @@ class User < ActiveRecord::Base
 
   def self.nuevo(login,email,pass,type)
     user = User.create(username:login,email:email,password:pass,userType:type)
-    #user.rol = "f8"
     user.save
   end
 

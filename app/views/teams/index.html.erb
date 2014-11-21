@@ -8,7 +8,9 @@
         <div class="l-team-section l-section" id="team">
 
             <div class="container">
+            <%if current_user%>
             <%= link_to 'Registrar equipo', new_team_path %>
+            <%end%>
                 <h4 class="text-center">Equipos Categoria A</h4>
 
                 <div class="m-heading-border"></div><!-- m-heading-border -->
@@ -19,9 +21,13 @@
                         <img src="img/avatar4.png" class="team-member-image" alt="team-member" />                                
                         <h5><%= link_to team.name, team %></h5>
                         <!--%= link_to 'Confirmar', edit_team_path(team), :class=>"edit-btn-mini" %-->
-                        <%= link_to 'Editar', edit_team_path(team), :class=>"edit-btn-mini" %>
-                        <%= link_to 'Eliminar', team, method: :delete, data: { confirm: 'Are you sure?' }, :class=>"back-btn-mini" %>
-
+                        <!--Administrador-->
+                        <% if current_user %>
+                          <% if current_user.rol == "admin" %>
+                            <p><%= link_to 'Editar', edit_team_path(team), :class=>"edit-btn-mini" %><br>
+                            <%= button_to('Eliminar', team, {:onclick => "return confirm('Esta seguro de eliminar a este equipo?')", method: :delete,:class=>"back-btn-mini"}) %></p>
+                          <%end%>
+                        <%end%>
                         <!--<div class="l-description-wrap">
                             <div class="member-description">
 
@@ -56,7 +62,7 @@
                                 
                     <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12 text-center m-team-member opacity">
                         <img src="img/avatar3.png" class="team-member-image" alt="team-member" />                                
-                        <h5>Hatie Wagneer</h5>
+                        <h5>Equipo Prueba</h5>
 
                         <div class="l-description-wrap">
                             <div class="member-description">
@@ -81,6 +87,90 @@
                         </div><!-- l-description-wrap -->
 
                     </div><!-- col-lg-3 -->
+                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12 text-center m-team-member opacity">
+                        <img src="img/avatar3.png" class="team-member-image" alt="team-member" />                                
+                        <h5>Equipo Prueba</h5>
+
+                        <div class="l-description-wrap">
+                            <div class="member-description">
+
+                                <div class="m-arrow-wrap">
+                                    <div class="m-arrow"></div>
+                                </div><!-- m-arrow-wrap -->
+
+                                <p>Nunc consequat lobortis sem, eget consequat metus euismod gravida. Maecenas dapibus dui non ipsum </p>
+
+                                <div class="team-social-icons text-center">
+
+                                    <a href="#"><i class="fa fa-twitter fa-lg"></i></a>
+                                    <a href="#"><i class="fa fa-facebook fa-lg"></i></a>
+                                    <a href="#"><i class="fa fa-google-plus fa-lg"></i></a>
+                                    <a href="#"><i class="fa fa-pinterest fa-lg"></i></a>
+                                    <a href="#"><i class="fa fa-dribbble fa-lg"></i></a>
+
+                                </div><!-- team-social-icons -->  
+                                <div class="clearfix"></div>
+                            </div><!-- member-description -->
+                        </div><!-- l-description-wrap -->
+
+                    </div><!-- col-lg-3 -->
+
+<div class="col-lg-3 col-md-3 col-sm-3 col-xs-12 text-center m-team-member opacity">
+                        <img src="img/avatar3.png" class="team-member-image" alt="team-member" />                                
+                        <h5>Equipo Prueba</h5>
+
+                        <div class="l-description-wrap">
+                            <div class="member-description">
+
+                                <div class="m-arrow-wrap">
+                                    <div class="m-arrow"></div>
+                                </div><!-- m-arrow-wrap -->
+
+                                <p>Nunc consequat lobortis sem, eget consequat metus euismod gravida. Maecenas dapibus dui non ipsum </p>
+
+                                <div class="team-social-icons text-center">
+
+                                    <a href="#"><i class="fa fa-twitter fa-lg"></i></a>
+                                    <a href="#"><i class="fa fa-facebook fa-lg"></i></a>
+                                    <a href="#"><i class="fa fa-google-plus fa-lg"></i></a>
+                                    <a href="#"><i class="fa fa-pinterest fa-lg"></i></a>
+                                    <a href="#"><i class="fa fa-dribbble fa-lg"></i></a>
+
+                                </div><!-- team-social-icons -->  
+                                <div class="clearfix"></div>
+                            </div><!-- member-description -->
+                        </div><!-- l-description-wrap -->
+
+                    </div><!-- col-lg-3 -->
+
+<div class="col-lg-3 col-md-3 col-sm-3 col-xs-12 text-center m-team-member opacity">
+                        <img src="img/avatar3.png" class="team-member-image" alt="team-member" />                                
+                        <h5>Equipo Prueba</h5>
+
+                        <div class="l-description-wrap">
+                            <div class="member-description">
+
+                                <div class="m-arrow-wrap">
+                                    <div class="m-arrow"></div>
+                                </div><!-- m-arrow-wrap -->
+
+                                <p>Nunc consequat lobortis sem, eget consequat metus euismod gravida. Maecenas dapibus dui non ipsum </p>
+
+                                <div class="team-social-icons text-center">
+
+                                    <a href="#"><i class="fa fa-twitter fa-lg"></i></a>
+                                    <a href="#"><i class="fa fa-facebook fa-lg"></i></a>
+                                    <a href="#"><i class="fa fa-google-plus fa-lg"></i></a>
+                                    <a href="#"><i class="fa fa-pinterest fa-lg"></i></a>
+                                    <a href="#"><i class="fa fa-dribbble fa-lg"></i></a>
+
+                                </div><!-- team-social-icons -->  
+                                <div class="clearfix"></div>
+                            </div><!-- member-description -->
+                        </div><!-- l-description-wrap -->
+
+                    </div><!-- col-lg-3 -->
+
 
                 </div><!-- row -->
 

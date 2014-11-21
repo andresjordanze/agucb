@@ -1,0 +1,33 @@
+<h1>Listing scorers</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Match</th>
+      <th>Player</th>
+      <th>Team</th>
+      <th>Goals</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @scorers.each do |scorer| %>
+      <tr>
+        <td><%= scorer.match_id %></td>
+        <td><%= scorer.player_id %></td>
+        <td><%= scorer.team_id %></td>
+        <td><%= scorer.goals %></td>
+        <td><%= link_to 'Show', scorer %></td>
+        <td><%= link_to 'Edit', edit_scorer_path(scorer) %></td>
+        <td><%= link_to 'Destroy', scorer, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Scorer', new_scorer_path %>

@@ -1,5 +1,9 @@
 Agucb::Application.routes.draw do
   
+  resources :scorers
+
+  resources :matches
+
   resources :associateds
 
   get 'user/edit' => 'users#edit', :as => :edit_current_user
@@ -14,6 +18,10 @@ Agucb::Application.routes.draw do
 
   root "home#inicio"
 
+  get 'players_list/:id' => 'players#players_list'
+
+  match '/otb_japon',    to: 'home#otb_japon',    via: 'get'
+  match '/beato_salomon',    to: 'home#beato_salomon',    via: 'get'
   match '/futbol8',    to: 'home#futbol8',    via: 'get'
   match '/agucb',    to: 'home#agucb',    via: 'get'
   match '/menu_agucb',    to: 'home#menu_agucb',    via: 'get'

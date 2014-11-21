@@ -3,6 +3,11 @@ class PlayersController < ApplicationController
 
   # GET /players
   # GET /players.json
+  def players_list
+    @players = Player.where(:team_id=>params[:id])
+    @team_id = params[:id]
+  end
+
   def index
     @players = Player.all
   end
