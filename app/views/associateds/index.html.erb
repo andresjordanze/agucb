@@ -34,9 +34,10 @@
                 <td style="color:black"><%= associated.name %></td>
                 <td style="color:black"><%= associated.lastname %></td>
                 <td style="color:black"><%= associated.universityCareer %></td>
-                <td><%= link_to associated, :class => "link-style-view", :title=>"Ver" do %><span class="glyphicon glyphicon-eye-open"></span><% end %></td>
+                <td><%= link_to associated, data: { confirm: 'Are you sure?' },:class => "link-style-view", :title=>"Ver" do %><span class="glyphicon glyphicon-eye-open"></span><% end %></td>
                 <td><%= link_to edit_associated_path(associated), :class => "link-style-edit", :title=>"Editar" do %><span class="glyphicon glyphicon-edit"></span><% end %></td>
-                <td><%= link_to associated, :class => "link-style-delete", :title=>"Eliminar", method: :delete,data: { confirm: 'Are you sure?' } do %><span class="glyphicon glyphicon-trash"></span><% end %></td>
+                <td><%= link_to associated, :class => "link-style-delete", :title=>"Eliminar #{associated.name}", method: :delete,data: { confirm: 'Esta seguro que desea Eliminar a: 
+                  '+associated.name+' '+associated.lastname } do %><span class="glyphicon glyphicon-trash"></span><% end %></td>
               </tr>
               <% count = count + 1 %>
               <% end %>
