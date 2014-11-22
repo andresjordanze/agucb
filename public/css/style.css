@@ -48,6 +48,7 @@ h2 {
     margin-bottom: 30px;
 }
 
+
 .select-style {
     background-color: #BEBCBC;
     width: 260px;
@@ -1373,6 +1374,11 @@ h2 {
 }
 
 @media (max-width: 460px)  {
+    .flexslider .slides img {
+        width: 70px;
+        display: inline-block;
+    }
+
     .m-splash-image h1 {
         font-size: 1.7em;
     }
