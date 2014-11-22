@@ -1,0 +1,23 @@
+<% title "Editar Evento" %>
+<div class="page-loader"></div>
+<div class="l-wrapper">
+  <div class="l-content-wrap" id="standard-content">
+    <section>
+    <div class="l-form-section l-section">
+      <center>
+        <h1>Editar Evento</h1><br>
+    		<%= render 'form' %>
+        <div class="col-xs-6 col-md-4">
+          <div class="field"><br>
+          <%= link_to 'Ver', @event, :class=>"second-btn" %>
+          <%= link_to ' Atrás ', events_path, :class=>"back-btn" %>
+          </div>
+        </div>
+		    <div class="l-copyright text-center">
+        	© Asociacion de Graduados UCB 2014 - Todos los derechos reservados 
+      	</div>
+      </center>
+    </div>
+    </section>
+  </div>
+</div>

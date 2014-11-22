@@ -1,11 +1,16 @@
 Agucb::Application.routes.draw do
   
+  resources :events
+
   resources :associateds
 
   get 'user/edit' => 'users#edit', :as => :edit_current_user
   get 'signup' => 'users#new', :as => :signup
   get 'logout' => 'sessions#destroy', :as => :logout
   get 'login' => 'sessions#new', :as => :login
+
+  get '/associated/search', to: 'associateds#search'
+  #post '/associated/search', to: 'associateds#search'
 
   #get '/associateds/:id' => 'associateds#destroy' 
   

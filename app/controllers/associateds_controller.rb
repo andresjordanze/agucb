@@ -5,6 +5,7 @@ class AssociatedsController < ApplicationController
   # GET /associateds.json
   def index
     @associateds = Associated.all
+    @associated = Associated.new
   end
 
   # GET /associateds/1
@@ -59,6 +60,22 @@ class AssociatedsController < ApplicationController
       format.html { redirect_to associateds_url }
       format.json { head :no_content }
     end
+  end
+
+  def search
+    #@associateds = Associated.where("name LIKE '%?%'", "leonardo")
+    @associateds = Associated.where('name LIKE ?', "%#{params[:name]}%") 
+    #@associateds = buscar(params[:name])
+    render 'index'
+  end
+
+  def buscar(nombre)
+
+    if search  
+      find(:all, :conditions => ['name LIKE ?', "%#{"leonardo"}%"])  
+    else  
+      find(:all)  
+    end  
   end
 
   private

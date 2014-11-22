@@ -1,0 +1,40 @@
+<% title "Evento" %>
+<div class="page-loader"></div>
+<div class="l-wrapper">
+  <div class="l-content-wrap" id="standard-content">
+    <section>
+    <div class="l-form-section l-section">
+      <center>
+        <h1>Evento</h1><br>
+
+        <p id="notice"><%= notice %></p>
+
+        <div class="col-xs-6 col-md-4">
+          <div class="field">
+            <label for="associated_name" style="color:green">Título</label><br>
+            <input class="form-control" type="text" style="background-color:#FAFFBD; color: black;" value="<%= @event.name %>" readonly/>
+          </div>
+          <div class="field">
+            <label for="associated_name" style="color:green">Apellidos</label><br>
+            <input class="form-control" type="text" style="background-color:#FAFFBD; color: black;" value="<%= @event.description %>" />
+          </div>
+          <div class="field">
+            <label for="associated_name" style="color:green">Teléfono</label><br>
+            <input class="form-control" type="text" style="background-color:#FAFFBD; color: black;" value="<%= @event.location %>" />
+          </div>
+          <div class="field">
+            <br>
+            <%= link_to 'Editar', edit_event_path(@event), :class=>"second-btn" %>
+            <%= link_to 'Atrás', events_path, :class=>"back-btn" %>
+          </div>
+        </div>
+
+        
+      </center>
+      <div class="l-copyright text-center">
+        © Asociacion de Graduados UCB 2014 - Todos los derechos reservados 
+      </div>
+    </div>
+    </section>
+  </div>
+</div>

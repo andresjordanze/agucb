@@ -1,0 +1,53 @@
+<%= render 'layouts/header_menu'%>
+
+<% title "Lista de Eventos" %>
+<div class="page-loader"></div>
+<div class="l-wrapper">
+  <div class="l-content-wrap" id="standard-content">
+    <section>
+    <div class="l-form-section l-section">
+      <center>
+      <div class="col-xs-6 col-md-4">
+        <h1>Eventos</h1><br>
+
+        <br>
+ 
+        <%= link_to 'Crear Evento', new_event_path, :class=>"back-btn" %> <br><br>
+
+        <div class="bs-example">
+          <table class="table table-striped">
+            <thead>
+              <tr>
+                <th style="color:black">#</th>
+                <th style="color:black">Título</th>
+                <th style="color:black">Descripción</th>
+                <th colspan="3" style="color:black"><CENTER>Acciones</CENTER></th>
+              </tr>
+            </thead>
+            <tbody>
+              <% count=1 %>
+              <% @events.each do |event| %>
+              
+              <tr>
+                <td style="color:black"><%= count %></td>
+                <td style="color:black"><%= event.name %></td>
+                <td style="color:black"><%= event.description %></td>
+                <td><%= link_to event,:class => "link-style-view", :title=>"Ver" do %><span class="glyphicon glyphicon-eye-open"></span><% end %></td>
+                <td><%= link_to edit_event_path(event), :class => "link-style-edit", :title=>"Editar" do %><span class="glyphicon glyphicon-edit"></span><% end %></td>
+                <td><%= link_to event, :class => "link-style-delete", :title=>"Eliminar #{event.name}", method: :delete,data: { confirm: 'Esta seguro que desea Eliminar a: 
+                  ' } do %><span class="glyphicon glyphicon-trash"></span><% end %></td>
+              </tr>
+              <% count = count + 1 %>
+              <% end %>
+            </tbody>
+          </table>
+        </div><!-- /example -->
+      </center>
+      </div>
+    </div>
+    </section>
+    <div class="l-copyright text-center">
+      © Asociacion de Graduados UCB 2014 - Todos los derechos reservados 
+    </div>
+  </div>
+</div>
