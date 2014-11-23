@@ -48,6 +48,18 @@ h2 {
     margin-bottom: 30px;
 }
 
+
+.select-style {
+    background-color: #BEBCBC;
+    width: 260px;
+    height: 50px;
+    color: #6D6D6D;
+}
+
+@media screen and (max-width: 600px) {
+  .select-style { width: 144px;}
+}
+
 .separator {
     width: 100%;
     display: inline-block;
@@ -246,6 +258,7 @@ h2 {
     color: white;
     border: transparent;
     padding: 2px;
+    margin-bottom: 10px;
 }
 
 .back-btn-mini:hover {
@@ -532,7 +545,9 @@ h2 {
 }
 
 .l-section {
+    margin-top: 118px;
     padding: 1px;
+    padding-bottom: 10px;
 }
 
 /* paralax section */
@@ -1153,7 +1168,7 @@ h2 {
     background-color: #293A4A;
     padding: 35px 0;
     width: 100%;
-    margin: 55px 0 0 0;
+    margin: 0 0 0 0;
 }
 
 
@@ -1359,6 +1374,11 @@ h2 {
 }
 
 @media (max-width: 460px)  {
+    .flexslider .slides img {
+        width: 70px;
+        display: inline-block;
+    }
+
     .m-splash-image h1 {
         font-size: 1.7em;
     }
@@ -1607,6 +1627,7 @@ fieldset[disabled] .navbar-default2 .btn-link2:focus {
     border-radius: 4px;
   }
 }
+
 
 .link-style-view {
     color: #34495e;

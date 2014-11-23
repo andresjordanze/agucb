@@ -1,0 +1,50 @@
+<head>
+  <style>
+      #map-canvas {
+        width: 1000px;
+        height: 1000px;
+      }
+    </style>
+    <script src="https://maps.googleapis.com/maps/api/js"></script>
+    <script>
+      function initialize() {
+        var mapCanvas = document.getElementById('map-canvas');
+        var mapOptions = {
+          center: new google.maps.LatLng(-17.362042, -66.172211),
+          zoom: 18,
+          mapTypeId: google.maps.MapTypeId.HYBRID
+        }
+        var map = new google.maps.Map(mapCanvas, mapOptions)
+      }
+      google.maps.event.addDomListener(window, 'load', initialize);
+    </script>
+</head>
+<body>
+<% title "Programar partido"%>
+<div class="page-loader"></div>
+<div class="l-wrapper">
+<%= render 'layouts/header8'%>
+  <div class="l-content-wrap" id="standard-content">
+	<section>
+                    <div class="l-map-section l-section" id="contact">
+                        <div class="container">
+                            <h4 class="text-center">Cala Cala - Complejo Beato Salomon</h4>
+                            <div class="m-heading-border"></div><!-- m-heading-border -->           
+
+                            <div class="clearfix"></div><!-- clearfix -->
+
+                              </div><!-- container -->
+
+                            <!-- google map -->
+                            <div id="map-canvas" style="width:100%; height:500px;" class="opacity" ></div>
+
+                    </div><!-- l-latest-posts -->
+                    <div class="l-copyright text-center" style="margin-top:0;">
+    © Asociacion de Graduados UCB 2014 - Todos los derechos reservados 
+  </div>
+                </section>
+      <!--<div id="map-canvas"></div>-->
+	</div>
+</div>
+
+</body>

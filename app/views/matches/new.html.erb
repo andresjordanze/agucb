@@ -1,0 +1,58 @@
+<% title "Programar partido"%>
+<div class="page-loader"></div>
+<div class="l-wrapper">
+<%= render 'layouts/header8'%>
+  <div class="l-content-wrap" id="standard-content">
+    <section>
+    <div class="l-form-section l-section">
+      <center>
+      <!--<br><br><br>
+      <a href="/futbol8"><img src="/img/logo1.png"></a><br><br>-->
+      <h1>Programar partido</h1><br>
+        <div class="col-xs-6 col-md-4">
+        <%= form_for(@match) do |f| %>
+
+        	
+        	<div class="form-group">
+        	<h6>Equipo 1:<%=f.collection_select(:team_id_1, Team.all, :id, :name, {:prompt=>false}, {:class=>'select-style'})%></h6>
+        	</div>
+
+        	<div class="form-group">
+        	<h6>Equipo 2:<%=f.collection_select(:team_id_2, Team.all, :id, :name, {:prompt=>false}, {:class=>'select-style'})%></h6>
+        	</div>
+
+        	<div class="form-group">
+        		<h6>Fecha:<%= f.date_field :date, :class=>"select-style"%></h6>
+        	</div>
+
+        	<div class="form-group">
+        		<h6>Hora: <%= f.time_field :time, :class=>"select-style" %></h6>
+        	</div>
+
+            <div class="form-group">
+              <%= f.text_field :place,:class=>"form-control", :placeholder=>"Lugar" %>
+            </div>
+
+            <div class="form-group">
+              <%= f.text_field :referee,:class=>"form-control", :placeholder=>"Arbitro" %>
+            </div>
+            
+            <p><%= f.submit (@match.new_record? ? 'Programar partido' : 'Guardar cambios'), :class=>"first-btn" %><br><br><%= link_to 'Cancelar', matches_path, :class=>"back-btn" %></p>
+        <% end %>
+      </div>
+      <div class="l-copyright text-center">
+            © Asociacion de Graduados UCB 2014 - Todos los derechos reservados 
+        </div>
+        </center>
+    </div>
+    </section>
+  </div>
+</div>
+
+<script type="text/javascript">
+	$(function () {
+		$('#datetimepicker').datetimepicker({
+			pickTime: false
+		});
+	});
+</script>

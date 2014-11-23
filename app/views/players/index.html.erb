@@ -43,34 +43,34 @@
 <div class="l-wrapper">
 <%= render 'layouts/header8'%>
   <div class="l-content-wrap" id="standard-content">
+    <section>
+      <div class="l-paralax-section what-we-do-section paralax-section1 l-section"  data-0="background-position:0px 180px" data-10000="background-position: 0px -2000px;"  id="whatwedo">
+        <div class="container">
+          <%if current_user%>
+          <%= link_to 'Registrar jugador', new_player_path %>
+          <%end%>
+          <h1 class="text-center">Jugadores - Papines</h1><br>
+          <div class="row">
+            <% @players.each do |player| %>
+                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12 text-center">
+                <img src="img/avatar5.png"  alt="icon" class="opacity" />
+                <h6><%= link_to player.name+" "+player.lastname, player %></h6>
+                <h6><%= player.career %></h6>
+                <!--Administrador-->
+                <% if current_user %>
+                  <% if current_user.rol == "admin" %>
+                    <%= link_to 'Editar', edit_player_path(player), :class=>"edit-btn-mini" %><br><br>
+                    <%= button_to('Eliminar', player, {:onclick => "return confirm('Esta seguro de eliminar a este jugador de su equipo?')", method: :delete,:class=>"back-btn-mini"}) %><br>
+                  <%end%>
+                <%end%><!--Fin Administrador-->
+                </div><!-- col-lg-3 -->
+            <%end%>
+          </div><!-- row -->
+        </div><!-- container -->
+      </div><!-- l-paralax-section -->
 
-<section>
-
-                    <div class="l-paralax-section what-we-do-section paralax-section1 l-section"  data-0="background-position:0px 180px" data-10000="background-position: 0px -2000px;"  id="whatwedo">
-
-                        <div class="container">
-                        <%= link_to 'Registrar jugador', new_player_path %>
-                            <h1 class="text-center">Jugadores - Papines</h1><br>
-
-                            <div class="row">
-                                <% @players.each do |player| %>
-                                <%if player.team_id = Team.where(:login=>current_user.username).first.id %>
-                                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12 text-center">
-                                    <img src="img/avatar5.png"  alt="icon" class="opacity" />
-                                    <h6><%= player.name %> <%= player.lastname %></h6>
-                                    <h6><%= player.career %></h6>
-                                    <%= link_to 'Editar', edit_player_path(player), :class=>"edit-btn-mini" %><br><br>
-                                    <%= button_to 'Eliminar', player, method: :delete, data: { confirm: 'Are you sure?' },:class=>"back-btn-mini" %><br>
-                                </div><!-- col-lg-3 -->
-                                <%end%>
-                                <%end%>
-
-                            </div><!-- row -->
-
-                        </div><!-- container -->
-
-                    </div><!-- l-paralax-section -->
-
-
-                </section>
-                </div>
+      <div class="l-copyright text-center" style="margin-top:0;">
+        © Asociacion de Graduados UCB 2014 - Todos los derechos reservados 
+      </div>
+    </section>
+  </div>

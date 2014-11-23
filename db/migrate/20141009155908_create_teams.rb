@@ -17,6 +17,7 @@ class CreateTeams < ActiveRecord::Migration
       t.boolean :check
       t.string :category
       t.integer :position
+      t.string :rol
 
       t.timestamps
     end
