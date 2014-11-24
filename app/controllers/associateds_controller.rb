@@ -64,7 +64,7 @@ class AssociatedsController < ApplicationController
 
   def search
     #@associateds = Associated.where("name LIKE '%?%'", "leonardo")
-    @associateds = Associated.where('name LIKE ?', "%#{params[:name]}%") 
+    @associateds = Associated.where('name LIKE ? OR lastname like ? OR universityDegree like ? OR universityCareer like ?', "%#{params[:name]}%", "%#{params[:name]}%", "%#{params[:name]}%", "%#{params[:name]}%") 
     #@associateds = buscar(params[:name])
     render 'index'
   end

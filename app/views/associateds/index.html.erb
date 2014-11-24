@@ -3,9 +3,9 @@
 <% title "Afiliados" %>
 <div class="page-loader"></div>
 <div class="l-wrapper">
-  <div class="l-content-wrap" id="standard-content">
+  <div class="l-content-wrap" id="standard-content" >
     <section>
-    <div class="l-form-section l-section">
+    <div class="l-form-section l-section" style="margin-top: 0px;">
       <center>
       <div class="col-xs-6 col-md-4">
         <h1>Afiliados</h1><br>
@@ -15,8 +15,12 @@
         <%= link_to 'Registrar Afiliado', new_associated_path, :class=>"back-btn" %> <br><br>
 
         <form method="GET" action="/associated/search">
-          Busqueda: <input type="text" name="name" placeholder="Nombre de marca"> &nbsp;&nbsp;&nbsp;
-          <input type="submit" value="Buscar marca", class="btn btn-info">
+          <div class="col-lg-3">
+            <input type="submit" value="Buscar", class="third-btn" style="padding-top: 15px; padding-bottom: 15px;">
+          </div>
+          <div class="col-lg-9">
+            <input type="text" class="form-control" style="background-color:#FAFFBD; color: black;" name="name" placeholder="Buscar asociados">
+          </div>
         </form>
 
         <div class="bs-example">

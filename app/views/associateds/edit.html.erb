@@ -1,16 +1,18 @@
+<%= render 'layouts/header_menu'%>
+
 <% title "Editar Asociado" %>
 <div class="page-loader"></div>
 <div class="l-wrapper">
   <div class="l-content-wrap" id="standard-content">
     <section>
-    <div class="l-form-section l-section">
+    <div class="l-form-section l-section" style="margin-top: 0px;">
       <center>
         <h1>Editar Asociado</h1><br>
     		<%= render 'form' %>
         <div class="col-xs-6 col-md-4">
           <div class="field"><br>
           <%= link_to 'Ver', @associated, :class=>"second-btn" %>
-          <%= link_to ' Atrás ', associateds_path, :class=>"back-btn" %>
+          <%= link_to ' Atrás ', associateds_path, :class=>"back-btn" %><br><br>
           </div>
         </div>
 		    <div class="l-copyright text-center">

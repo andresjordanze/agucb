@@ -14,9 +14,8 @@ Agucb::Application.routes.draw do
   get 'login' => 'sessions#new', :as => :login
 
   get '/associated/search', to: 'associateds#search'
-  #post '/associated/search', to: 'associateds#search'
-
-  #get '/associateds/:id' => 'associateds#destroy' 
+  get '/users/index', to: 'users#index'
+  get '/users/change_state/:id', to: 'users#change_state'
   
   resources :sessions
   resources :users

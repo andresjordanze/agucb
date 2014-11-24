@@ -1,9 +1,11 @@
+<%= render 'layouts/header_menu'%>
+
 <% title "Asociado" %>
 <div class="page-loader"></div>
 <div class="l-wrapper">
   <div class="l-content-wrap" id="standard-content">
     <section>
-    <div class="l-form-section l-section">
+    <div class="l-form-section l-section" style="margin-top: 0px;">
       <center>
         <h1>Asociado</h1><br>
 
@@ -49,7 +51,7 @@
           <div class="field">
             <br>
             <%= link_to 'Editar', edit_associated_path(@associated), :class=>"second-btn" %>
-            <%= link_to 'Atrás', associateds_path, :class=>"back-btn" %>
+            <%= link_to 'Atrás', associateds_path, :class=>"back-btn" %><br><br>
           </div>
         </div>
 

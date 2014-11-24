@@ -6,13 +6,18 @@ class SessionsController < ApplicationController
   def create
     user = User.authenticate(params[:login], params[:password])
     if user
-      session[:user_id] = user.id
-      if user.userType == "f8"
-        redirect_to "/futbol8"
+      if user.state == 'activo'
+        session[:user_id] = user.id
+        if user.userType == "f8"
+          redirect_to "/futbol8"
+        else
+          redirect_to "/menu_agucb"
+        end
+        flash.now[:success] = "Sesión iniciada exitosamente."
       else
-        redirect_to "/menu_agucb"
+        flash.now[:danger] = "La cuenta se encuentra bloqueada por falta de pago, porfavor contacte al administrador"
+        render :action => 'new'
       end
-      flash.now[:success] = "Sesión iniciada exitosamente."
     else
       flash.now[:danger] = "Login o contraseña invalidos"
       render :action => 'new'

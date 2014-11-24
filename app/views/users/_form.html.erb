@@ -8,19 +8,7 @@
       <%= f.text_field :email,:class=>"form-control", :placeholder=>"Correo electrónico" %>
     </div>
     <div class="form-group">
-      <%= f.text_field :userType,:class=>"form-control", :placeholder=>"Tipo de Usuario" %>
-    </div>
-    <div class="form-group">
-        <div class="radio">
-          <label style="color:orange">
-            <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">
-            AGUCB
-          </label>
-          <label style="color:blue">
-            <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked="">
-            Campeonato Alumni
-          </label>
-        </div>
+      <%#= f.text_field :userType,:class=>"form-control", :placeholder=>"Tipo de Usuario" %>
     </div>
     <div class="form-group">
       <%= f.password_field :password,:class=>"form-control", :placeholder=>"Contraseña" %>
@@ -30,7 +18,7 @@
     </div>
     <div class="btn-group btn-group-lg">
       <%= f.submit (@user.new_record? ? "Registrar usuario" : "Guardar cambios Leo"), :class=>"first-btn" %>
-      <%= link_to 'Cancelar', teams_path, :class=>"back-btn" %>
+      <%= link_to 'Cancelar', teams_path, :class=>"back-btn" %><br><br>
     </div>
 <% end %>
 </div>

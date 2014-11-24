@@ -3,9 +3,9 @@
 <div class="l-wrapper">
   <div class="l-content-wrap" id="standard-content">
     <section>
-    <div class="l-form-section l-section">
+    <div class="l-form-section l-section" style="margin-top: 0px;">
       <center>
-        <p style="color:green">¿Ya tienes una cuenta? <%= link_to "Iniciar Sesión", login_path %>.</p>
+        <p style="color:green">¿Ya tienes una cuenta? <%= link_to "Iniciar Sesión", login_path, :class => "link-style-view" %>.</p>
         <h1>Registrar Usuario</h1><br>
 		    <%= render 'form' %>
 		    <div class="l-copyright text-center">

@@ -1,6 +1,10 @@
 class UsersController < ApplicationController
   before_filter :login_required, :except => [:new, :create]
 
+  def index
+    @users = User.all
+  end
+
   def new
     @user = User.new
   end
@@ -28,4 +32,17 @@ class UsersController < ApplicationController
       render :action => 'edit'
     end
   end
+
+  def change_state
+    user = User.find(params[:id])
+    if(user.state == 'inactivo')
+      user.state = 'activo'
+    else
+      user.state = 'inactivo'
+    end
+    user.save
+    @users = User.all
+    render 'index'
+  end
+
 end
