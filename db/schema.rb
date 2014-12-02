@@ -41,8 +41,6 @@ ActiveRecord::Schema.define(version: 20141124151203) do
     t.integer  "team_id_1"
     t.integer  "team_id_2"
     t.string   "referee"
-    t.integer  "goals_1"
-    t.integer  "goals_2"
     t.date     "date"
     t.time     "time"
     t.datetime "created_at"
@@ -91,6 +89,7 @@ ActiveRecord::Schema.define(version: 20141124151203) do
     t.boolean  "check"
     t.string   "category"
     t.integer  "position"
+    t.string   "rol"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
