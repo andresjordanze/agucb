@@ -31,7 +31,9 @@ gem 'jbuilder', '~> 1.2'
 
 gem 'nifty-generators'
 
-gem "protected_attributes", "~> 1.0.5"
+gem "paperclip", "~> 4.2"
+
+gem "protected_attributes", "~> 1.0.8"
 
 group :production do
 	gem 'pg'
@@ -59,3 +61,4 @@ gem "bcrypt-ruby", require: "bcrypt"
 
 gem "mocha", group: :test
 
+gem "tzinfo", '~> 0.3.41'

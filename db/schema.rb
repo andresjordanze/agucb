@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141205133851) do
+ActiveRecord::Schema.define(version: 20141205144313) do
 
   create_table "associateds", force: true do |t|
     t.string   "name"
