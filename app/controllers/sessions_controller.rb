@@ -6,7 +6,7 @@ class SessionsController < ApplicationController
   def create
     user = User.authenticate(params[:login], params[:password])
     if user
-      if user.state == 'activo'
+      if user.state == nil
         session[:user_id] = user.id
         if user.userType == "f8"
           redirect_to "/futbol8"

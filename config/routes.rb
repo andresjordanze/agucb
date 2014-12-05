@@ -1,5 +1,7 @@
 Agucb::Application.routes.draw do
 
+  resources :cards
+
   resources :events
 
   resources :scorers

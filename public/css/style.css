@@ -577,6 +577,8 @@ h2 {
 
 .opacity-on {
     opacity: 1;
+    margin-right: auto;
+    margin-left: auto;
 }
 
 .paralax-section2 {
@@ -1334,6 +1336,8 @@ h2 {
     .container {
         padding-left: 25px;
         padding-right: 25px;
+        margin-right: auto;
+        margin-left: auto;
     }
     
     .form-wrapper {

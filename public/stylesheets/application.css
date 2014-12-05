@@ -25,6 +25,8 @@ a {
   padding: 20px 40px;
   border: solid 1px black;
   margin-top: 20px;
+  margin-right:auto;
+  margin-left:auto
 }
 
 #flash_notice, #flash_error, #flash_alert {

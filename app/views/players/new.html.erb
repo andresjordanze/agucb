@@ -24,7 +24,6 @@
             <!--<div class="form-group">
               <%=f.collection_select(:team_id, Team.all, :id, :name)%>
             </div>-->
-              <%= f.file_field :photo %><br>
             <p><%= f.submit 'Registrar jugador', :class=>"first-btn" %><br><br>
             <%= link_to 'Cancelar', players_path, :class=>"back-btn" %></p>
         <% end %>
