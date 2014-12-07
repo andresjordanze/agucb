@@ -12,7 +12,6 @@ class UsersController < ApplicationController
   def create
     @user = User.new(params[:user])
     if @user.save
-      # sessighjon[:user_id] = @user.id
       session[:user_id] = @user.id
       redirect_to root_url, :notice => "Thank you for signing up! You are now logged in."
     else
@@ -31,7 +30,7 @@ class UsersController < ApplicationController
     else
       render :action => 'edit'
     end
-  end
+  end 
 
   def change_state
     user = User.find(params[:id])
@@ -43,6 +42,28 @@ class UsersController < ApplicationController
     user.save
     @users = User.all
     render 'index'
+  end
+
+  def new_user_for_associated
+    @user = User.new
+    @user.id = params[:associated_id]
+  end
+
+  def create_user_for_associated
+    @associated = Associated.find(params[:user][:id])
+    @user = User.new(params[:user])
+    @user.id = nil
+    if @user.save
+      @associated.userId = @user.id
+      if @associated.save
+        redirect_to root_url, :notice => "La cuenta para el Associado fue creada correctamente."
+      else
+        redirect_to root_url, :notice => "Error al crear la cuenta para el associado."
+      end
+    else
+      redirect_to root_url, :notice => "Error al crear el usuario para el associado. "+@user.id.to_s
+    end
+
   end
 
 end

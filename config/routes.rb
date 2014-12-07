@@ -12,13 +12,17 @@ Agucb::Application.routes.draw do
 
   get 'user/edit' => 'users#edit', :as => :edit_current_user
   get 'signup' => 'users#new', :as => :signup
+  get 'signup_associated' => 'users#new_user_for_associated'
+  get '/users/index', to: 'users#index'
+  get '/users/change_state/:id', to: 'users#change_state'
+  get '/users/new_user_for_associated/:associated_id', to: 'users#new_user_for_associated'
+  post '/users' => 'users#create_user_for_associated'
+
   get 'logout' => 'sessions#destroy', :as => :logout
   get 'login' => 'sessions#new', :as => :login
 
   get '/associated/search', to: 'associateds#search'
-  get '/users/index', to: 'users#index'
-  get '/users/change_state/:id', to: 'users#change_state'
-  
+
   resources :sessions
   resources :users
   resources :teams

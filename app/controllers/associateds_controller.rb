@@ -63,19 +63,8 @@ class AssociatedsController < ApplicationController
   end
 
   def search
-    #@associateds = Associated.where("name LIKE '%?%'", "leonardo")
     @associateds = Associated.where('name LIKE ? OR lastname like ? OR universityDegree like ? OR universityCareer like ?', "%#{params[:name]}%", "%#{params[:name]}%", "%#{params[:name]}%", "%#{params[:name]}%") 
-    #@associateds = buscar(params[:name])
     render 'index'
-  end
-
-  def buscar(nombre)
-
-    if search  
-      find(:all, :conditions => ['name LIKE ?', "%#{"leonardo"}%"])  
-    else  
-      find(:all)  
-    end  
   end
 
   private

@@ -26,6 +26,8 @@ ActiveRecord::Schema.define(version: 20141205144313) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "employementStatus"
+    t.string   "associatedType"
+    t.integer  "userId"
   end
 
   create_table "cards", force: true do |t|

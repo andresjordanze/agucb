@@ -55,6 +55,27 @@
           </div>
         </div>
 
+        <% if current_user && current_user.userType == 'admin' %>
+            <h1>Cuenta de Asociado</h1><br>
+            <% if @associated.userId != nil %>
+              <% @user = User.find(@associated.userId) %>
+              <div class="col-xs-6 col-md-4">
+                <div class="field">
+                  <label for="associated_name" style="color:green">Nombre de usuario: </label><br>
+                  <input class="form-control" type="text" style="background-color:#FAFFBD; color: black;" value="<%= @user.username %>" readonly/>
+                </div>
+                <div class="field">
+                  <label for="associated_name" style="color:green">Correo: </label><br>
+                  <input class="form-control" type="text" style="background-color:#FAFFBD; color: black;" value="<%= @user.email %>" />
+                </div><br>
+              </div>
+            <% else %>
+              <h4><a class="link-style-view" href="/users/new_user_for_associated/<%= @associated.id %>">Crear Cuenta de Associado</a></h4>
+            <% end %>
+
+        <% end %>
+
+        
         
       </center>
       <div class="l-copyright text-center">
