@@ -7,7 +7,7 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 	
 	admin = User.new
-	admin.username = 'admin'
+	admin.username = 'adminfut'
 	admin.password = 'admin123'
-	admin.userType = 'admin'
+	admin.userType = 'fut8'
 	admin.save!
