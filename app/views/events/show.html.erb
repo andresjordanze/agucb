@@ -25,6 +25,9 @@
             <input class="form-control" type="text" style="background-color:#FAFFBD; color: black;" value="<%= @event.location %>" />
           </div>
           <div class="field">
+            <%= image_tag @event.photo.url %>
+          </div>
+          <div class="field">
             <br>
             <%= link_to 'Editar', edit_event_path(@event), :class=>"second-btn" %>
             <%= link_to 'Atrás', events_path, :class=>"back-btn" %>
