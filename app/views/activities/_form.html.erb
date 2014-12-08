@@ -1,0 +1,32 @@
+<div class="col-xs-6 col-md-4">
+<%= form_for(@activity) do |f| %>
+  <% if @activity.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@activity.errors.count, "error") %> prohibited this activity from being saved:</h2>
+
+      <ul>
+      <% @activity.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :title, :style=>"color:green" %><br>
+    <%= f.text_field :title, :class=>"form-control", :placeholder=>"Título" %>
+  </div>
+  <div class="field">
+    <%= f.label :description, :style=>"color:green" %><br>
+    <%= f.text_field :description, :class=>"form-control", :placeholder=>"Descripción" %>
+  </div>
+  <div class="field">
+    <%= f.label :location, :style=>"color:green" %><br>
+    <%= f.text_field :location, :class=>"form-control", :placeholder=>"Ubicación" %>
+  </div>
+  <div class="btn-group btn-group-lg">
+    <%= f.submit :class=>"third-btn"%>
+  </div>
+<% end %>
+</div>
+

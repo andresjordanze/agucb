@@ -1,5 +1,7 @@
 Agucb::Application.routes.draw do
 
+  resources :activities
+
   resources :cards
 
   resources :events
