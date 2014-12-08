@@ -15,15 +15,15 @@
             <tr>
                 <td>
                     <h3 align="center">
-                    <% goals_1 = 0 %>
+                    <% @match.goals_1 = 0 %>
                     <% @scorers.each do |scorer| %>
                         <%if scorer.team_id == @match.team_id_1 %>
-                            <% goals_1 = goals_1 + scorer.goals %>  
+                            <% @match.goals_1 = @match.goals_1 + scorer.goals %>  
                         <%end%>
                     <%end%>
-                    <%= goals_1 %>
+                    <%= @match.goals_1 %>
                     </h3>
-                    
+                    <%= @match.save%>
                     <h6 align="center">
                     <% n = 0 %>
                     <% @scorers.each do |scorer| %>
@@ -78,14 +78,15 @@
                 <td><h5 align="center">Goles</h5></td>
                 <td>
                     <h3 align="center">
-                    <% goals_2 = 0 %>
+                    <% @match.goals_2 = 0 %>
                     <% @scorers.each do |scorer| %>
                         <%if scorer.team_id == @match.team_id_2 %>
-                            <% goals_2 = goals_2 + scorer.goals %>  
+                            <% @match.goals_2 = @match.goals_2 + scorer.goals %>  
                         <%end%>
                     <%end%>
-                    <%= goals_2 %>
+                    <%= @match.goals_2 %>
                     </h3>
+                    <%= @match.save%>
 
                     <h6 align="center">
                     <% n = 0 %>
