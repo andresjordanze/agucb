@@ -14,15 +14,18 @@
 
   <div class="field">
     <%= f.label :name, :style=>"color:green"%><br>
-    <%= f.text_field :name, :class=>"form-control", :placeholder=>"Nombres" %>
+    <%= f.text_field :name, :class=>"form-control", :placeholder=>"Nombre" %>
   </div>
   <div class="field">
     <%= f.label :description, :style=>"color:green" %><br>
-    <%= f.text_field :description, :class=>"form-control", :placeholder=>"Nombres" %>
+    <%= f.text_field :description, :class=>"form-control", :placeholder=>"Descripción" %>
   </div>
   <div class="field">
     <%= f.label :location, :style=>"color:green" %><br>
-    <%= f.text_field :location, :class=>"form-control", :placeholder=>"Nombres" %>
+    <%= f.text_field :location, :class=>"form-control", :placeholder=>"Ubicación" %>
+  </div>
+  <div class="form-group">
+    <%= f.file_field :photo %>
   </div>
   <div class="btn-group btn-group-lg">
     <%= f.submit :class=>"third-btn" %>

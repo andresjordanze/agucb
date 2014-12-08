@@ -1,20 +1,15 @@
 <%= render 'layouts/header_menu'%>
 
 <% title "Nuevo Evento" %>
-<div class="page-loader"></div>
-<div class="l-wrapper">
-  <div class="l-content-wrap" id="standard-content">
-    <section>
-    <div class="l-form-section l-section" style="margin-top: 0px;">
-      <center>
-        <h1>Registrar Evento</h1><br>
-		<%= render 'form' %>
-		<%= link_to 'Back', events_path, :class=>"back-btn"%>
-		<div class="l-copyright text-center">
-        	© Asociacion de Graduados UCB 2014 - Todos los derechos reservados 
-      	</div>
-      </center>
-    </div>
-    </section>
-  </div>
+<section>
+<div class="l-form-section l-section" style="margin-top: 0px;">
+  <center>
+    <h1>Registrar Evento</h1><br>
+    <%= render 'form' %>
+    <%= link_to 'Back', events_path, :class=>"back-btn"%>
+    <div class="l-copyright text-center">
+      © Asociacion de Graduados UCB 2014 - Todos los derechos reservados 
+	  </div>
+  </center>
 </div>
+</section>
