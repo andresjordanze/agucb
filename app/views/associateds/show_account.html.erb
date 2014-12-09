@@ -1,9 +1,6 @@
 <%= render 'layouts/header_menu'%>
 
 <% title "Asociado" %>
-<div class="page-loader"></div>
-<div class="l-wrapper">
-  <div class="l-content-wrap" id="standard-content">
     <section>
     <div class="l-form-section l-section" style="margin-top: 0px;">
       <center>
@@ -56,7 +53,6 @@
         </div>
 
         <h1>Cuenta de Asociado</h1><br>
-
         <% if @associated.userId != nil %>
           <div class="col-xs-6 col-md-4">
             <div class="field">
@@ -64,17 +60,14 @@
               <input class="form-control" type="text" style="background-color:#FAFFBD; color: black;" value="<%= @user.username %>" readonly/>
             </div>
             <div class="field">
-              <label for="associated_name" style="color:green">Corre</label><br>
+              <label for="associated_name" style="color:green">Correo electrónico</label><br>
               <input class="form-control" type="text" style="background-color:#FAFFBD; color: black;" value="<%= @user.email %>" readonly/>
             </div>
           </div>
         <% end %>
-        
       </center>
       <div class="l-copyright text-center">
         © Asociacion de Graduados UCB 2014 - Todos los derechos reservados 
       </div>
     </div>
     </section>
-  </div>
-</div>

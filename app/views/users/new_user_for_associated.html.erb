@@ -1,19 +1,18 @@
+<% if current_user && current_user.userType == 'admin' %>
+  <%= render 'layouts/header_menu'%>
+<% end %>
+
 <% title "Registrar Usuario" %>
-<div class="page-loader"></div>
-<div class="l-wrapper">
-  <div class="l-content-wrap" id="standard-content">
-    <section>
-    <div class="l-form-section l-section" style="margin-top: 0px;">
-      <center>
-        <p style="color:green">¿Ya tienes una cuenta? <%= link_to "Iniciar Sesión", login_path, :class => "link-style-view" %>.</p>
-        <h1>Registrar Usuario</h1><br>
-        <h1><%= @user.id %></h1>
-		    <%= render 'form' %>
-		    <div class="l-copyright text-center">
-        	© Asociacion de Graduados UCB 2014 - Todos los derechos reservados 
-      	</div>
-      </center>
-    </div>
-    </section>
-  </div>
+<section>
+<div class="l-form-section l-section" style="margin-top: 0px;">
+  <center>
+    <h1>Registrar Usuario</h1><br>
+    <% associated = Associated.find(@user.id) %>
+    <h6>Afiliado: <%= associated.name+' '+associated.lastname %></h6><br>
+    <%= render 'form' %>
+    <div class="l-copyright text-center">
+    	© Asociacion de Graduados UCB 2014 - Todos los derechos reservados 
+  	</div>
+  </center>
 </div>
+</section>

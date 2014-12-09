@@ -29,7 +29,7 @@ class AssociatedsController < ApplicationController
 
     respond_to do |format|
       if @associated.save
-        format.html { redirect_to @associated, notice: 'Associated was successfully created.' }
+        format.html { redirect_to @associated, notice: 'El Afiliado fue creado exitosamente.' }
         format.json { render action: 'show', status: :created, location: @associated }
       else
         format.html { render action: 'new' }
@@ -43,7 +43,7 @@ class AssociatedsController < ApplicationController
   def update
     respond_to do |format|
       if @associated.update(associated_params)
-        format.html { redirect_to @associated, notice: 'Associated was successfully updated.' }
+        format.html { redirect_to @associated, notice: 'Su perfil ha sido actualizado.' }
         format.json { head :no_content }
       else
         format.html { render action: 'edit' }
@@ -75,6 +75,6 @@ class AssociatedsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def associated_params
-      params.require(:associated).permit(:name, :lastname, :phone, :cellphone, :email, :address, :universityDegree, :universityCareer, :yearDegree)
+      params.require(:associated).permit(:name, :lastname, :phone, :cellphone, :email, :address, :universityDegree, :universityCareer, :yearDegree, :city)
     end
 end

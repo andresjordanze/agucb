@@ -1,3 +1,10 @@
+<style>
+  input:focus {
+    background-color:#FAFFBD;
+    color: black;
+  }
+</style>
+
 <div class="col-xs-6 col-md-4">
 <%= form_for(@associated) do |f| %>
   <% if @associated.errors.any? %>
@@ -18,12 +25,12 @@
   </div><!-- col-lg-6 -->
   <div class="col-lg-6">
     <div class="field">
-      <%= f.text_field :lastname, :class=>"form-control", :placeholder=>"Apellidos", :autocomplete=>'off', :title =>'Apellidos' %><br>
+      <%= f.text_field :lastname, :class=>"form-control", :placeholder=>"Apellidos", :autocomplete=>'off', :title =>'Apellidos' %>
     </div>
   </div><!-- col-lg-6 -->
   <div class="col-lg-12">
       <div class="field">
-        <%= f.text_field :address, :class=>"form-control", :placeholder=>"Dirección", :autocomplete=>'off', :title =>'Dirección' %><br>
+        <br><%= f.text_field :address, :class=>"form-control", :placeholder=>"Dirección", :autocomplete=>'off', :title =>'Dirección' %><br>
     </div>
   </div>
 
@@ -35,12 +42,12 @@
   </div>
   <div class="col-lg-6">
     <div class="field">
-      <%= f.text_field :cellphone, :class=>"form-control", :placeholder=>"Celular", :autocomplete=>'off' %><br>
+      <%= f.text_field :cellphone, :class=>"form-control", :placeholder=>"Celular", :autocomplete=>'off' %>
     </div>
   </div>
   <div class="col-lg-12">
     <div class="field">
-      <%= f.text_field :email, :class=>"form-control", :placeholder=>"Correo Electrónico", :autocomplete=>'off' %><br>
+      <br><%= f.text_field :email, :class=>"form-control", :placeholder=>"Correo Electrónico", :autocomplete=>'off' %><br>
     </div>
   </div>
   
@@ -52,21 +59,22 @@
   </div>
   <div class="col-lg-6">
     <div class="field">
-      <%= f.text_field :universityCareer, :class=>"form-control", :placeholder=>"Carrera Universitaria", :autocomplete=>'off' %><br>
+      <%= f.text_field :universityCareer, :class=>"form-control", :placeholder=>"Carrera Universitaria", :autocomplete=>'off' %>
     </div>
   </div>
   <div class="col-lg-6">
     <div class="field">
-      <%= f.text_field :yearDegree, :class=>"form-control", :placeholder=>"Año de graduación", :autocomplete=>'off' %>
+      <br><%= f.text_field :yearDegree, :class=>"form-control", :placeholder=>"Año de graduación", :autocomplete=>'off' %>
     </div>
   </div>
   <div class="col-lg-6">
     <div class="field">
-      <%= f.text_field :city, :class=>"form-control", :placeholder=>"Ciudad", :autocomplete=>'off', :title => "Ciudad" %><br>
+      <br><%= f.text_field :city, :class=>"form-control", :placeholder=>"Ciudad", :autocomplete=>'off', :title => "Ciudad" %><br>
     </div>
-  </div><br>
+  </div>
   <div class="btn-group btn-group-lg">
-    <%= f.submit :class=>"third-btn" %>
+    <br><%= f.submit :class=>"third-btn" %>
   </div>
 <% end %>
 </div>
+
