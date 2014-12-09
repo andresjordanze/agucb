@@ -3,7 +3,6 @@
   <% if @associated.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@associated.errors.count, "error") %> prohibited this associated from being saved:</h2>
-
       <ul>
       <% @associated.errors.full_messages.each do |msg| %>
         <li><%= msg %></li>
@@ -11,7 +10,7 @@
       </ul>
     </div>
   <% end %>
-
+  <legend>Legend</legend>
   <div class="field">
     <%= f.label :Nombres, :style=>"color:green" %><br>
     <%= f.text_field :name, :class=>"form-control", :placeholder=>"Nombres", :autocomplete=>'off' %>
