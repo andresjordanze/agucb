@@ -11,11 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-<<<<<<< HEAD
-ActiveRecord::Schema.define(version: 20141209040139) do
-=======
 ActiveRecord::Schema.define(version: 20141209050501) do
->>>>>>> abdd3c9294bf089cad6fb6c0e0b495299bbd6489
 
   create_table "activities", force: true do |t|
     t.string   "title"
@@ -72,10 +68,6 @@ ActiveRecord::Schema.define(version: 20141209050501) do
     t.string   "location"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "image_file_name"
-    t.string   "image_content_type"
-    t.integer  "image_file_size"
-    t.datetime "image_updated_at"
     t.string   "photo_file_name"
     t.string   "photo_content_type"
     t.integer  "photo_file_size"
