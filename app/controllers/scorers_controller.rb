@@ -28,8 +28,9 @@ class ScorersController < ApplicationController
 
     respond_to do |format|
       if @scorer.save
-        format.html { redirect_to @scorer, notice: 'Scorer was successfully created.' }
-        format.json { render action: 'show', status: :created, location: @scorer }
+        format.html { redirect_to "/matches/"+@scorer.match_id.to_s }
+        #format.html { redirect_to @scorer, notice: 'Scorer was successfully created.' }
+        #format.json { render action: 'show', status: :created, location: @scorer }
       else
         format.html { render action: 'new' }
         format.json { render json: @scorer.errors, status: :unprocessable_entity }

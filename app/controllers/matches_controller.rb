@@ -13,8 +13,10 @@ class MatchesController < ApplicationController
     @match_id = @match.id
     @scorers = Scorer.where(:match_id=>@match_id)
     @cards = Card.where(:match_id=>@match_id)
+    @enabledplayers = EnabledPlayer.where(:match_id=>@match_id)
     @card = Card.new
     @scorer = Scorer.new
+    @enabledplayer = EnabledPlayer.new
   end
 
   # GET /matches/new

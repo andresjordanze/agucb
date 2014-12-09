@@ -1,0 +1,33 @@
+<h1>Listing enabled_players</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Match</th>
+      <th>Team</th>
+      <th>Player</th>
+      <th>Number</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @enabled_players.each do |enabled_player| %>
+      <tr>
+        <td><%= enabled_player.match_id %></td>
+        <td><%= enabled_player.team_id %></td>
+        <td><%= enabled_player.player_id %></td>
+        <td><%= enabled_player.number %></td>
+        <td><%= link_to 'Show', enabled_player %></td>
+        <td><%= link_to 'Edit', edit_enabled_player_path(enabled_player) %></td>
+        <td><%= link_to 'Destroy', enabled_player, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Enabled player', new_enabled_player_path %>

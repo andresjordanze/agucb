@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Match:</strong>
+  <%= @enabled_player.match_id %>
+</p>
+
+<p>
+  <strong>Team:</strong>
+  <%= @enabled_player.team_id %>
+</p>
+
+<p>
+  <strong>Player:</strong>
+  <%= @enabled_player.player_id %>
+</p>
+
+<p>
+  <strong>Number:</strong>
+  <%= @enabled_player.number %>
+</p>
+
+<%= link_to 'Edit', edit_enabled_player_path(@enabled_player) %> |
+<%= link_to 'Back', enabled_players_path %>

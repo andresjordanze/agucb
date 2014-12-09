@@ -1,5 +1,7 @@
 Agucb::Application.routes.draw do
 
+  resources :enabled_players
+
   resources :activities
 
   resources :cards
