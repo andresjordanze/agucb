@@ -1,39 +1,35 @@
+<%= render 'layouts/header_menu'%>
 
 <% title "Actividad" %>
-<div class="page-loader"></div>
-<div class="l-wrapper">
-  <div class="l-content-wrap" id="standard-content">
-    <section>
-    <div class="l-form-section l-section" style="margin-top: 0px;">
-      <center>
-        <h1>Evento</h1><br>
+<section>
+<div class="l-form-section l-section" style="margin-top: 0px;">
+  <center>
+    <h1>Evento</h1>
 
-        <p id="notice"><%= notice %></p>
+    <p id="notice"><%= notice %></p>
 
-        <div class="col-xs-6 col-md-4">
-          <div class="field">
-            <label for="associated_name" style="color:green">Título</label><br>
-            <input class="form-control" type="text" style="background-color:#FAFFBD; color: black;" value="<%= @activity.title %>" readonly/>
-          </div>
-          <div class="field">
-            <label for="associated_name" style="color:green">Descripción</label><br>
-            <input class="form-control" type="text" style="background-color:#FAFFBD; color: black;" value="<%= @activity.description %>" />
-          </div>
-          <div class="field">
-            <label for="associated_name" style="color:green">ubicación</label><br>
-            <input class="form-control" type="text" style="background-color:#FAFFBD; color: black;" value="<%= @activity.location %>" />
-          </div>
-          <div class="field">
-            <br>
-            <%= link_to 'Editar', edit_activity_path(@activity), :class=>"second-btn" %>
-            <%= link_to 'Atrás', activities_path, :class=>"back-btn" %>
-          </div>
-        </div>
-      </center>
-      <div class="l-copyright text-center">
-        © Asociacion de Graduados UCB 2014 - Todos los derechos reservados 
+    <div class="col-xs-6 col-md-4">
+      <div class="field">
+        <input class="form-control" type="text" style="background-color:#FAFFBD; color: black;" value="<%= @activity.title %>" title="Ubicación" readonly /><br>
+      </div>
+      <div class="field">
+        <input class="form-control" type="text" style="background-color:#FAFFBD; color: black;" value="<%= @activity.description %>" title="Ubicación" readonly /><br>
+      </div>
+      <div class="field">
+        <input class="form-control" type="text" style="background-color:#FAFFBD; color: black;" value="<%= @activity.location %>" title="Ubicación" readonly /><br>
+      </div>
+      <div class="field">
+        <%= image_tag @activity.photo.url, :style=>'width: 350px;height: 300px;'%><br>
+      </div>
+      <div class="field">
+        <br>
+        <%= link_to 'Editar', edit_activity_path(@activity), :class=>"second-btn" %>
+        <%= link_to 'Atrás', activities_path, :class=>"back-btn" %>
       </div>
     </div>
-    </section>
+  </center>
+  <div class="l-copyright text-center">
+    © Asociacion de Graduados UCB 2014 - Todos los derechos reservados 
   </div>
 </div>
+</section>
