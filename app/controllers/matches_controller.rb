@@ -12,6 +12,8 @@ class MatchesController < ApplicationController
   def show
     @match_id = @match.id
     @scorers = Scorer.where(:match_id=>@match_id)
+    @cards = Card.where(:match_id=>@match_id)
+    @card = Card.new
     @scorer = Scorer.new
   end
 
@@ -28,7 +30,8 @@ class MatchesController < ApplicationController
   # POST /matches.json
   def create
     @match = Match.new(match_params)
-    
+    @match.goals_1 = 0
+    @match.goals_2 = 0
     respond_to do |format|
       if @match.save
         format.html { redirect_to @match, notice: 'Match was successfully created.' }
