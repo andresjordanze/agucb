@@ -1,5 +1,5 @@
 class Associated < ActiveRecord::Base
-	attr_accessible :name,:lastname, :phone, :cellphone, :email, :address, :universityDegree, :universityCareer, :yearDegree
+	attr_accessible :name,:lastname, :phone, :cellphone, :email, :address, :universityDegree, :universityCareer, :yearDegree, :city, :userId
 
 	#def self.search(search)
 	#  search_condition = "%" + search + "%"
