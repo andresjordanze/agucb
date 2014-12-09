@@ -26,9 +26,9 @@
               <table>
                 <tr>
                   <td width="160"><h4 align="center"><%= Team.find(match.team_id_1).name %></h4></td>
-                  <td><h1>0</h1></td>
+                  <td><h1><%=match.goals_1%></h1></td>
                   <td><div class="canchita"><img src="/img/avatar10.jpg"/></div></a></td>
-                  <td><h1>0</h1></td>
+                  <td><h1><%=match.goals_2%></h1></td>
                   <td width="160"><h4 align="center"><%= Team.find(match.team_id_2).name %></h4></td>
                 </tr>
               </table>
