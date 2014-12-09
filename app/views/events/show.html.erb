@@ -7,25 +7,22 @@
     <section>
     <div class="l-form-section l-section" style="margin-top: 0px;">
       <center>
-        <h1>Evento</h1><br>
+        <h1>Evento</h1>
 
         <p id="notice"><%= notice %></p>
 
         <div class="col-xs-6 col-md-4">
           <div class="field">
-            <label for="associated_name" style="color:green">Título</label><br>
-            <input class="form-control" type="text" style="background-color:#FAFFBD; color: black;" value="<%= @event.name %>" readonly/>
+            <input class="form-control" type="text" style="background-color:#FAFFBD; color: black;" value="<%= @event.name %>" title="Título" readonly/><br>
           </div>
           <div class="field">
-            <label for="associated_name" style="color:green">Apellidos</label><br>
-            <input class="form-control" type="text" style="background-color:#FAFFBD; color: black;" value="<%= @event.description %>" />
+            <input class="form-control" type="text" style="background-color:#FAFFBD; color: black;" value="<%= @event.description %>" title="Descripción" /><br>
           </div>
           <div class="field">
-            <label for="associated_name" style="color:green">Teléfono</label><br>
-            <input class="form-control" type="text" style="background-color:#FAFFBD; color: black;" value="<%= @event.location %>" />
+            <input class="form-control" type="text" style="background-color:#FAFFBD; color: black;" value="<%= @event.location %>" title="Ubicación" /><br>
           </div>
           <div class="field">
-            <%= image_tag @event.photo.url %>
+            <%= image_tag @event.photo.url, :style=>'width: 350px;height: 300px;'%>
           </div>
           <div class="field">
             <br>
