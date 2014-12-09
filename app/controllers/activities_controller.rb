@@ -28,7 +28,7 @@ class ActivitiesController < ApplicationController
 
     respond_to do |format|
       if @activity.save
-        format.html { redirect_to @activity, notice: 'Activity was successfully created.' }
+        format.html { redirect_to @activity, notice: 'La actividad fue creada exitosamente.' }
         format.json { render action: 'show', status: :created, location: @activity }
       else
         format.html { render action: 'new' }
@@ -42,7 +42,7 @@ class ActivitiesController < ApplicationController
   def update
     respond_to do |format|
       if @activity.update(activity_params)
-        format.html { redirect_to @activity, notice: 'Activity was successfully updated.' }
+        format.html { redirect_to @activity, notice: 'La actividad ha sido actualizada.' }
         format.json { head :no_content }
       else
         format.html { render action: 'edit' }
@@ -69,6 +69,6 @@ class ActivitiesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def activity_params
-      params.require(:activity).permit(:title, :description, :location)
+      params.require(:activity).permit(:title, :description, :location, :photo)
     end
 end

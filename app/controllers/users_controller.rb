@@ -13,7 +13,7 @@ class UsersController < ApplicationController
     @user = User.new(params[:user])
     if @user.save
       session[:user_id] = @user.id
-      redirect_to root_url, :notice => "Thank you for signing up! You are now logged in."
+      redirect_to root_url, :notice => "Gracias por tú inscripción! Ahora puede hacer uso del sistema."
     else
       render :action => 'new'
     end
@@ -26,7 +26,7 @@ class UsersController < ApplicationController
   def update
     @user = current_user
     if @user.update_attributes(params[:user])
-      redirect_to root_url, :notice => "Your profile has been updated."
+      redirect_to root_url, :notice => "Su perfil ha sido actualizado."
     else
       render :action => 'edit'
     end
@@ -55,13 +55,15 @@ class UsersController < ApplicationController
     @user.id = nil
     if @user.save
       @associated.userId = @user.id
+      @associated.email = @user.email
       if @associated.save
-        redirect_to root_url, :notice => "La cuenta para el Associado fue creada correctamente."
+        redirect_to '/associateds/'+@associated.id.to_s, :notice => "La cuenta para el Asociado fue creada correctamente."
       else
-        redirect_to root_url, :notice => "Error al crear la cuenta para el associado."
+        @user.destroy
+        redirect_to '/associateds/'+@associated.id.to_s, :notice => "Error al crear la cuenta para el associado."
       end
     else
-      redirect_to root_url, :notice => "Error al crear el usuario para el associado. "+@user.id.to_s
+      redirect_to '/users/new_user_for_associated/'+@associated.id.to_s, :notice => "Error al crear el usuario para el associado. Asegúrese que el nombre de usuario sea único, y que las contraseñas coincidan."
     end
 
   end

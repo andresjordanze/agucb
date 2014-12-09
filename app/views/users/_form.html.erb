@@ -2,14 +2,14 @@
 <% if current_user && current_user.userType == 'admin' %>
   <%= form_for @user, :url => {:controller => "users", :action => "create_user_for_associated"}, :method => "post" do |f| %>
     <div class="form-group">
-      <%= f.text_field :id, :class=>"form-control", :value => @user.id %>
+      <%= f.text_field :id, :class=>"form-control", :value => @user.id, :type=>'hidden' %>
     </div>
     <%= f.error_messages %>
     <div class="form-group">
       <%= f.text_field :username, :class=>"form-control", :placeholder=>"Nombre de usuario" %>
     </div>
     <div class="form-group">
-      <%= f.text_field :email,:class=>"form-control", :placeholder=>"Correo electrónico" %>
+      <%= f.text_field :email,:class=>"form-control", :value => if Associated.find(@user.id).email!=nil then Associated.find(@user.id).email end, :placeholder=>"Correo electrónico" %>
     </div>
     <div class="form-group">
       <%#= f.text_field :userType,:class=>"form-control", :placeholder=>"Tipo de Usuario" %>
@@ -21,11 +21,7 @@
       <%= f.password_field :password_confirmation,:class=>"form-control", :placeholder=>"Vuelve a escribir la contraseña" %>
     </div>
     <div class="btn-group btn-group-lg">
-      <% if current_user && current_user.userType == 'admin' %>
-        <%= f.submit (@user.new_record? ? "Registrar usuario" : "Guardar cambios"), :class=>"first-btn" %>
-      <% else %>
-        <%= f.submit (@user.new_record? ? "Registrar usuario" : "Guardar cambios"), :class=>"first-btn" %>
-      <% end %>
+      <%= f.submit (@user.new_record? ? "Registrar usuario" : "Guardar cambios"), :class=>"first-btn" %><br><br>
       <%= link_to 'Cancelar', teams_path, :class=>"back-btn" %><br><br>
     </div>
   <% end %>
@@ -48,11 +44,7 @@
       <%= f.password_field :password_confirmation,:class=>"form-control", :placeholder=>"Vuelve a escribir la contraseña" %>
     </div>
     <div class="btn-group btn-group-lg">
-      <% if current_user && current_user.userType == 'admin' %>
-        <%= f.submit (@user.new_record? ? "Registrar usuario" : "Guardar cambios"), :class=>"first-btn" %>
-      <% else %>
-        <%= f.submit (@user.new_record? ? "Registrar usuario" : "Guardar cambios"), :class=>"first-btn" %>
-      <% end %>
+      <%= f.submit (@user.new_record? ? "Registrar usuario" : "Guardar cambios"), :class=>"first-btn" %><br><br>
       <%= link_to 'Cancelar', teams_path, :class=>"back-btn" %><br><br>
     </div>
   <% end %>

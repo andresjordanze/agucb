@@ -13,16 +13,13 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :name, :style=>"color:green"%><br>
-    <%= f.text_field :name, :class=>"form-control", :placeholder=>"Nombre" %>
+    <%= f.text_field :name, :class=>"form-control", :placeholder=>"Nombre", :title => "Nombre" %><br>
   </div>
   <div class="field">
-    <%= f.label :description, :style=>"color:green" %><br>
-    <%= f.text_field :description, :class=>"form-control", :placeholder=>"Descripción" %>
+    <%= f.text_field :description, :class=>"form-control", :placeholder=>"Descripción", :title => "Descripción" %><br>
   </div>
   <div class="field">
-    <%= f.label :location, :style=>"color:green" %><br>
-    <%= f.text_field :location, :class=>"form-control", :placeholder=>"Ubicación" %>
+    <%= f.text_field :location, :class=>"form-control", :placeholder=>"Ubicación", :title => "Ubicación" %><br>
   </div>
   <div class="form-group">
     <%= f.file_field :photo %>

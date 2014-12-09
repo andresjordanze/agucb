@@ -15,7 +15,7 @@ class SessionsController < ApplicationController
         end
         flash.now[:success] = "Sesión iniciada exitosamente."
       else
-        flash.now[:danger] = "La cuenta se encuentra bloqueada por falta de pago, porfavor contacte al administrador"
+        flash.now[:danger] = "La cuenta se encuentra bloqueada por falta de pago, porfavor contacte al administrador."
         render :action => 'new'
       end
     else
@@ -27,7 +27,7 @@ class SessionsController < ApplicationController
   def destroy
     session[:user_id] = nil
     redirect_to "/"
-    flash.now[:danger] = "Sesion cerrada exitosamente."
+    flash.now[:danger] = "Sesión cerrada exitosamente."
   end
 
 end

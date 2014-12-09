@@ -1,52 +1,47 @@
 <%= render 'layouts/header_menu'%>
 
 <% title "Usuarios" %>
-<div class="page-loader"></div>
-<div class="l-wrapper">
-  <div class="l-content-wrap" id="standard-content" >
-    <section>
-    <div class="l-form-section l-section" style="margin-top: 0px;">
-      <center>
-      <div class="col-xs-6 col-md-6">
-        <h1>Usuarios</h1><br>
+<section>
+<div class="l-form-section l-section" style="margin-top: 0px;">
+  <center>
+  <div class="col-xs-7 col-md-4">
+    <h1>Usuarios</h1><br>
 
-        <br>
+    <br>
 
-        <div class="bs-example">
-          <table class="table table-striped">
-            <thead>
-              <tr>
-                <th style="color:black">#</th>
-                <th style="color:black">Nombre de Usuario</th>
-                <th style="color:black">Correo</th>
-                <th colspan="2" style="color:black"><CENTER>Acciones</CENTER></th>
-              </tr>
-            </thead>
-            <tbody>
-              <% count=1 %>
-              <% @users.each do |user| %>
-              
-              <tr>
-                <td style="color:black"><%= count %></td>
-                <td style="color:black"><%= user.username %></td>
-                <td style="color:black"><%= user.email %></td>
-                <% if user.state == 'inactivo'%>
-                  <td><%= link_to '/users/change_state/'+user.id.to_s, :class => "link-style-view", :title=>"Ver" do %>Habilitar<span class="glyphicon glyphicon-ok-circle"></span><% end %></td>
-                <% else %>
-                  <td><%= link_to '/users/change_state/'+user.id.to_s,:class => "link-style-delete", :title=>"Ver" do %>Des-habilitar<span class="glyphicon glyphicon-ban-circle"></span><% end %></td>
-                <% end %>
-              </tr>
-              <% count = count + 1 %>
-              <% end %>
-            </tbody>
-          </table>
-        </div><!-- /example -->
-      </center>
-      </div>
-    </div>
-    </section>
-    <div class="l-copyright text-center">
-      © Asociacion de Graduados UCB 2014 - Todos los derechos reservados 
-    </div>
+    <div class="bs-example">
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th style="color:black">#</th>
+            <th style="color:black">Nombre de Usuario</th>
+            <th style="color:black">Correo</th>
+            <th colspan="2" style="color:black"><CENTER>Acciones</CENTER></th>
+          </tr>
+        </thead>
+        <tbody>
+          <% count=1 %>
+          <% @users.each do |user| %>
+          
+          <tr>
+            <td style="color:black"><%= count %></td>
+            <td style="color:black"><%= user.username %></td>
+            <td style="color:black"><%= user.email %></td>
+            <% if user.state == 'inactivo'%>
+              <td><%= link_to '/users/change_state/'+user.id.to_s, :class => "link-style-view", :title=>"Ver" do %>Habilitar<span class="glyphicon glyphicon-ok-circle"></span><% end %></td>
+            <% else %>
+              <td><%= link_to '/users/change_state/'+user.id.to_s,:class => "link-style-delete", :title=>"Ver" do %>Des-habilitar<span class="glyphicon glyphicon-ban-circle"></span><% end %></td>
+            <% end %>
+          </tr>
+          <% count = count + 1 %>
+          <% end %>
+        </tbody>
+      </table>
+    </div><!-- /example -->
+  </center>
   </div>
+</div>
+</section>
+<div class="l-copyright text-center">
+  © Asociacion de Graduados UCB 2014 - Todos los derechos reservados 
 </div>
