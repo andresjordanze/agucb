@@ -1,11 +1,11 @@
 class AddNewAttachmentToPublications < ActiveRecord::Migration
   def self.up
-    change_table :Publications do |t|
+    change_table :publications do |t|
       t.attachment :photo
     end
   end
 
   def self.down
-    remove_attachment :Publications, :photo
+    remove_attachment :publications, :photo
   end
 end
