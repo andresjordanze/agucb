@@ -57,7 +57,7 @@
                                   <%= f.hidden_field :match_id,:value => @match.id %>
                                   
                                   <div class="form-group">
-                                    <%=f.collection_select(:player_id, EnabledPlayer.where(:team_id=>@match.team_id_1), :id, :full, {:prompt=>false}, {:class=>'select-style'})%>
+                                    <%=f.collection_select(:player_id, EnabledPlayer.where(:team_id=>@match.team_id_1), :player_id, :full, {:prompt=>false}, {:class=>'select-style'})%>
                                   </div>
                                   
                                   <%= f.hidden_field :team_id,:value => @match.team_id_1 %>
@@ -123,7 +123,7 @@
                                   <%= f.hidden_field :match_id,:value => @match.id %>
                                   
                                   <div class="form-group">
-                                    <%=f.collection_select(:player_id, EnabledPlayer.where(:team_id=>@match.team_id_2), :id, :full, {:prompt=>false}, {:class=>'select-style'})%>
+                                    <%=f.collection_select(:player_id, EnabledPlayer.where(:team_id=>@match.team_id_2), :player_id, :full, {:prompt=>false}, {:class=>'select-style'})%>
                                   </div>
                                   
                                   <%= f.hidden_field :team_id,:value => @match.team_id_2 %>
@@ -194,7 +194,7 @@
                                   <%= f.hidden_field :match_id,:value => @match.id %>
                                   
                                   <div class="form-group">
-                                    <%=f.collection_select(:player_id, EnabledPlayer.where(:team_id=>@match.team_id_1), :id, :full, {:prompt=>false}, {:class=>'select-style'})%>
+                                    <%=f.collection_select(:player_id, EnabledPlayer.where(:team_id=>@match.team_id_1), :player_id, :full, {:prompt=>false}, {:class=>'select-style'})%>
                                   </div>
                                   
                                   <%= f.hidden_field :team_id,:value => @match.team_id_1 %>
@@ -261,7 +261,7 @@
                                   <%= f.hidden_field :match_id,:value => @match.id %>
                                   
                                   <div class="form-group">
-                                    <%=f.collection_select(:player_id, EnabledPlayer.where(:team_id=>@match.team_id_2), :id, :full, {:prompt=>false}, {:class=>'select-style'})%>
+                                    <%=f.collection_select(:player_id, EnabledPlayer.where(:team_id=>@match.team_id_2), :player_id, :full, {:prompt=>false}, {:class=>'select-style'})%>
                                   </div>
                                   
                                   <%= f.hidden_field :team_id,:value => @match.team_id_2 %>
@@ -517,11 +517,101 @@
             </td>
 <!--***********Fin Jugadores Habilitados segundo equipo*************-->
         </tr>
-        <!--tr>
-            <td><h6 align="center">Sin balon</h6></td>
+        <tr>
+            <td>
+                <h6 align="center">
+                    <% @observations.each do |observation| %>
+                        <%if observation.team_id == @match.team_id_1 %>
+                            <%= observation.detail %><br>
+                        <%end%>
+                    <%end%>
+                </h6>
+                <%if current_user%>
+                <center><button class="btn" data-toggle="modal" data-target="#myModalObservation1">Registrar observacion
+                </button></center>
+                <!-- Modal -->
+                <div class="modal fade" id="myModalObservation1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                          <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                            <h4 class="modal-title" id="myModalLabel">Registrar observacion</h4>
+                          </div>
+                          <div class="modal-body">
+                            <div class="l-form-section">
+                                <center>
+                              
+                                <%= form_for(@observation) do |f| %>
+
+                                  <%= f.hidden_field :match_id,:value => @match.id %>
+                                  
+                                  <%= f.hidden_field :team_id,:value => @match.team_id_1 %>
+
+                                  <%= f.hidden_field :referee,:value => @match.referee %>
+                                  <div class="col-xs-6 col-md-4">
+                                  <div class="form-group">
+                                    <%= f.text_field :detail,:class=>"form-control", :placeholder=>"Detalle" %>
+                                  </div>
+                                </div>
+                                </center>
+                            </div>
+                          </div>
+                          <div class="modal-footer">
+                            <%= f.submit "Guardar", :class=>"first-btn" %><% end %>
+                          </div>
+                        </div><!-- /.modal-content -->
+                    </div><!-- /.modal-dialog -->
+                </div><!-- /.modal -->
+                <%end%>
+            </td>
             <td><h5 align="center">Observaciones</h5></td>
-            <td><h6 align="center">Sin cintillo de capitan</h6></td>
-        </tr-->
+            <td>
+                <h6 align="center">
+                    <% @observations.each do |observation| %>
+                        <%if observation.team_id == @match.team_id_2 %>
+                            <%= observation.detail %><br>
+                        <%end%>
+                    <%end%>
+                </h6>
+                <%if current_user%>
+                <center><button class="btn" data-toggle="modal" data-target="#myModalObservation2">Registrar observacion
+                </button></center>
+                <!-- Modal -->
+                <div class="modal fade" id="myModalObservation2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                          <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                            <h4 class="modal-title" id="myModalLabel">Registrar observacion</h4>
+                          </div>
+                          <div class="modal-body">
+                            <div class="l-form-section">
+                                <center>
+                              
+                                <%= form_for(@observation) do |f| %>
+
+                                  <%= f.hidden_field :match_id,:value => @match.id %>
+                                  
+                                  <%= f.hidden_field :team_id,:value => @match.team_id_2 %>
+
+                                  <%= f.hidden_field :referee,:value => @match.referee %>
+                                  <div class="col-xs-6 col-md-4">
+                                  <div class="form-group">
+                                    <%= f.text_field :detail,:class=>"form-control", :placeholder=>"Detalle" %>
+                                  </div>
+                                </div>
+                                </center>
+                            </div>
+                          </div>
+                          <div class="modal-footer">
+                            <%= f.submit "Guardar", :class=>"first-btn" %><% end %>
+                          </div>
+                        </div><!-- /.modal-content -->
+                    </div><!-- /.modal-dialog -->
+                </div><!-- /.modal -->
+                <%end%>
+            </td>
+        </tr>
     </table>
     </div>
     </center>

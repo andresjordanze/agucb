@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Match:</strong>
+  <%= @observation.match_id %>
+</p>
+
+<p>
+  <strong>Team:</strong>
+  <%= @observation.team_id %>
+</p>
+
+<p>
+  <strong>Detail:</strong>
+  <%= @observation.detail %>
+</p>
+
+<p>
+  <strong>Referee:</strong>
+  <%= @observation.referee %>
+</p>
+
+<%= link_to 'Edit', edit_observation_path(@observation) %> |
+<%= link_to 'Back', observations_path %>

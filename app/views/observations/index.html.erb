@@ -1,0 +1,40 @@
+<% title "Tabla de Observaciones"%>
+<div class="page-loader"></div>
+<div class="l-wrapper">
+<%= render 'layouts/header8'%>
+<section>
+<div class="l-page-section l-section" id="page-section">
+    <center>
+    <div class="table-responsive">
+    <table class="table table-hover">
+    <br><h1><img src="/img/warning-icon.png" width="100"> Tabla de Observaciones por partido</h1>
+    <center>
+    <tr class="info">
+      <th><h6 align="center"><b>Partido</b></h5></th>
+      <th><h6 align="center"><b>Equipo</b></h5></th>
+      <th><h6 align="center"><b>Observacion</b></h5></th>
+      <th><h6 align="center"><b>Arbitro</b></h6></th>
+    </tr>
+
+    <% @observations.each do |observation| %>
+      <tr class="warning">
+        <td><h6 align="center"><%= Match.find(observation.match_id).teams %></h6></td>
+        <td><h6 align="center"><%= Team.find(observation.team_id).name %></h6></td>
+        <td><h6 align="center"><%= observation.detail %></h6></td>
+        <td><h6 align="center"><%= observation.referee %></h6></td>
+        <!--td><h6><%= link_to 'Show', observation %></td>
+        <td><h6><%= link_to 'Edit', edit_observation_path(observation) %></td>
+        <td><h6><%= link_to 'Destroy', observation, method: :delete, data: { confirm: 'Are you sure?' } %></td-->
+      </tr>
+    <% end %>
+    </center>
+    </table>
+    </div>/
+    </center>
+</div>
+</section>
+<br>
+<%= render 'layouts/footer8'%>
+<!--%= link_to 'New Scorer', new_scorer_path %-->
+</div>
+
