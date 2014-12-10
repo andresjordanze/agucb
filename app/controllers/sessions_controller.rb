@@ -6,12 +6,16 @@ class SessionsController < ApplicationController
   def create
     user = User.authenticate(params[:login], params[:password])
     if user
-      if user.state == nil
+      if user.state == nil || user.state == 'activo'
         session[:user_id] = user.id
         if user.userType == "f8"
           redirect_to "/futbol8"
         else
-          redirect_to "/menu_agucb"
+          if user.userType == 'admin'
+            redirect_to "/menu_agucb"
+          else
+            redirect_to "/associations"
+          end
         end
         flash.now[:success] = "Sesión iniciada exitosamente."
       else
