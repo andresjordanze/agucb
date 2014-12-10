@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  aboutUs: MyText
+  mission: MyText
+  vision: MyText
+  institutionalPurposes: MyText
+  generalObjectives: MyText
+  specificObjectives: MyText
+  organization: MyText
+
+two:
+  aboutUs: MyText
+  mission: MyText
+  vision: MyText
+  institutionalPurposes: MyText
+  generalObjectives: MyText
+  specificObjectives: MyText
+  organization: MyText
