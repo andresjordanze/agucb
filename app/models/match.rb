@@ -57,4 +57,8 @@ class Match < ActiveRecord::Base
 		end
 		return res
 	end
+
+	def teams
+		Team.find(self.team_id_1).name+" vs "+Team.find(self.team_id_2).name
+	end
 end
