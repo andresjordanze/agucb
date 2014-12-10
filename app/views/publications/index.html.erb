@@ -1,0 +1,45 @@
+<%= render 'layouts/header_menu'%>
+
+<% title "Lista de Publicaciones" %>
+
+<div class="l-form-section l-section" style="margin-top: 0px;">
+  <center>
+  <div class="col-xs-6 col-md-4">
+    <h1>Publicaciones</h1><br><br>
+    <%= link_to 'Crear Publicación', new_publication_path, :class=>"back-btn" %> <br><br>
+    <div class="bs-example">
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th style="color:black">#</th>
+            <th style="color:black">Título</th>
+            <th style="color:black">Descripción</th>
+            <th colspan="3" style="color:black"><CENTER>Acciones</CENTER></th>
+          </tr>
+        </thead>
+        <tbody>
+          <% count=1 %>
+          <% @publications.each do |publication| %>
+          <tr>
+            <td style="color:black"><%= count %></td>
+            <td style="color:black"><%= publication.title %></td>
+            <td style="color:black"><%= publication.description %></td>
+            <td style="color:black"><%= publication.id_event_or_activity %></td>
+            <td><%= link_to publication,:class => "link-style-view", :title=>"Ver" do %><span class="glyphicon glyphicon-eye-open"></span><% end %></td>
+            <td><%= link_to edit_publication_path(publication), :class => "link-style-edit", :title=>"Editar" do %><span class="glyphicon glyphicon-edit"></span><% end %></td>
+            <td><%= link_to publication, :class => "link-style-delete", :title=>"Eliminar #{publication.title}", method: :delete,data: { confirm: 'Esta seguro que desea Eliminar a: 
+              ' } do %><span class="glyphicon glyphicon-trash"></span><% end %></td>
+          </tr>
+          <% count = count + 1 %>
+          <% end %>
+        </tbody>
+      </table>
+    </div><!-- /example -->
+  </div>
+  </center>
+</div>
+<div class="l-copyright text-center">
+  © Asociacion de Graduados UCB 2014 - Todos los derechos reservados 
+</div>
+
+

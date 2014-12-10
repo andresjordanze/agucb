@@ -1,0 +1,31 @@
+<div class="col-xs-6 col-md-4">
+<%= form_for(@publication) do |f| %>
+  <% if @publication.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@publication.errors.count, "error") %> prohibited this publication from being saved:</h2>
+
+      <ul>
+      <% @publication.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.text_field :title, :class=>"form-control", :placeholder=>"Título", :title => "Título" %><br>
+  </div>
+  <div class="field">
+    <%= f.text_field :description, :class=>"form-control", :placeholder=>"Descripción", :title => "Descripción" %><br>
+  </div>
+  <div class="field">
+    <%= f.text_field :id_event_or_activity, :class=>"form-control", :placeholder=>"Id", :title => "Id" %><br>
+  </div>
+  <div class="form-group">
+    <%= f.file_field :photo %>
+  </div>
+  <div class="btn-group btn-group-lg">
+    <%= f.submit :class=>"third-btn"%>
+  </div>
+<% end %>
+</div>

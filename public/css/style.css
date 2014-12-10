@@ -1635,6 +1635,16 @@ fieldset[disabled] .navbar-default2 .btn-link2:focus {
 }
 
 
+.link-style {
+    color: #34495e;
+
+}
+
+.link-style:hover {
+    color: #5bc0de;
+    font-size: 1.2em;
+}
+
 .link-style-view {
     color: #34495e;
 
@@ -1642,7 +1652,6 @@ fieldset[disabled] .navbar-default2 .btn-link2:focus {
 
 .link-style-view:hover {
     color: #5bc0de;
-    font-size: 1.2em;
 }
 
 .link-style-edit {
@@ -1652,7 +1661,6 @@ fieldset[disabled] .navbar-default2 .btn-link2:focus {
 
 .link-style-edit:hover {
     color: #f0ad4e;
-    font-size: 1.2em;
 }
 
 .link-style-delete {
@@ -1662,5 +1670,4 @@ fieldset[disabled] .navbar-default2 .btn-link2:focus {
 
 .link-style-delete:hover {
     color: #d9534f;
-    font-size: 1.2em;
 }

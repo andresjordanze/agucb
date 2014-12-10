@@ -1,0 +1,33 @@
+<%= render 'layouts/header_menu'%>
+
+<% title "Evento" %>
+<section>
+<div class="l-form-section l-section" style="margin-top: 0px;">
+  <center>
+    <h1>Publicación</h1>
+    <p id="notice"><%= notice %></p>
+    <div class="col-xs-6 col-md-4">
+      <div class="field">
+        <input class="form-control" type="text" style="background-color:#FAFFBD; color: black;" value="<%= @publication.title %>" title="Título" readonly/><br>
+      </div>
+      <div class="field">
+        <input class="form-control" type="text" style="background-color:#FAFFBD; color: black;" value="<%= @publication.description %>" title="Descripción" /><br>
+      </div>
+      <div class="field">
+        <input class="form-control" type="text" style="background-color:#FAFFBD; color: black;" value="<%= @publication.id_event_or_activity %>" title="Ubicación" /><br>
+      </div>
+      <div class="field">
+        <%= image_tag @publication.photo.url, :style=>'width: 350px;height: 300px;'%>
+      </div>
+      <div class="field">
+        <br>
+        <%= link_to 'Editar', edit_publication_path(@publication), :class=>"second-btn" %>
+        <%= link_to 'Atrás', publications_path, :class=>"back-btn" %>
+      </div>
+    </div>
+  </center>
+  <div class="l-copyright text-center">
+    © Asociacion de Graduados UCB 2014 - Todos los derechos reservados 
+  </div>
+</div>
+</section>
