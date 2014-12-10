@@ -4,6 +4,8 @@ Agucb::Application.routes.draw do
 
   resources :observations
 
+  resources :associations
+
   resources :publications
 
   resources :enabled_players
@@ -32,6 +34,8 @@ Agucb::Application.routes.draw do
   get 'login' => 'sessions#new', :as => :login
 
   get '/associated/search', to: 'associateds#search'
+
+  #get '/associations/agucb', to: 'associations#agucb'
 
   resources :sessions
   resources :users

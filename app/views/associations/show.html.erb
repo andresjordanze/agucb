@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Aboutus:</strong>
+  <%= @association.aboutUs %>
+</p>
+
+<p>
+  <strong>Mission:</strong>
+  <%= @association.mission %>
+</p>
+
+<p>
+  <strong>Vision:</strong>
+  <%= @association.vision %>
+</p>
+
+<p>
+  <strong>Institutionalpurposes:</strong>
+  <%= @association.institutionalPurposes %>
+</p>
+
+<p>
+  <strong>Generalobjectives:</strong>
+  <%= @association.generalObjectives %>
+</p>
+
+<p>
+  <strong>Specificobjectives:</strong>
+  <%= @association.specificObjectives %>
+</p>
+
+<p>
+  <strong>Organization:</strong>
+  <%= @association.organization %>
+</p>
+
+<%= link_to 'Edit', edit_association_path(@association) %> |
+<%= link_to 'Back', associations_path %>
