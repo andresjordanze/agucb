@@ -23,6 +23,7 @@
             <div class="form-group">
               <%= f.text_field :phone,:class=>"form-control", :placeholder=>"Celular ó Telefono" %>
             </div>
+
             <p><%= f.submit (@team.new_record? ? 'Registrar equipo' : 'Guardar cambios'), :class=>"first-btn" %> <%= link_to 'Cancelar', teams_path, :class=>"back-btn" %></p>
         <% end %>
       </div>

@@ -25,6 +25,12 @@ class TeamsController < ApplicationController
   # POST /teams.json
   def create
     @team = Team.new(params["team"])
+    @team.goles = 0
+    @team.p_jug = 0
+    @team.p_per = 0
+    @team.p_gan = 0
+    @team.p_emp = 0
+    @team.position = 0
     respond_to do |format|
       if @team.save
         @user = User.nuevo(params["team"]["login"],params["team"]["email"],params["team"]["password"],"f8")
@@ -61,6 +67,33 @@ class TeamsController < ApplicationController
     end
   end
 
+  def register
+    @match = Match.find(params[:id])
+    @team1 = Team.find(@match.team_id_1)
+    @team2 = Team.find(@match.team_id_2)
+    @team1.goles = @team1.goles + @match.goals_1
+    @team2.goles = @team2.goles + @match.goals_2
+    if @team1.goles > @team2.goles
+      @team1.p_gan = @team1.p_gan + 1
+      @team2.p_per = @team2.p_per + 1
+    end
+    if @team2.goles > @team1.goles
+      @team2.p_gan = @team2.p_gan + 1
+      @team1.p_per = @team1.p_per + 1
+    end
+    if @team1.goles == @team2.goles
+      @team1.p_emp = @team1.p_emp + 1
+      @team2.p_emp = @team2.p_emp + 1
+    end
+    @team1.p_jug = @team1.p_jug + 1
+    @team2.p_jug = @team2.p_jug + 1
+    @team1.position = @team1.p_gan*3+@team1.p_emp*1
+    @team2.position = @team2.p_gan*3+@team2.p_emp*1
+    @team1.save
+    @team2.save
+    redirect_to "/positions"
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_team
@@ -69,6 +102,6 @@ class TeamsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def team_params
-      params.require(:team).permit(:name, :p_jug, :p_gan, :p_per, :p_emp, :goles, :tar_roj, :tar_ama, :login, :password, :delegado, :email, :phone)
+      params.require(:team).permit(:name, :p_jug, :p_gan, :p_per, :p_emp, :goles, :tar_roj, :tar_ama, :login, :password, :delegado, :email, :phone, :position)
     end
 end

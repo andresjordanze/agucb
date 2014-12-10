@@ -35,6 +35,8 @@ Agucb::Application.routes.draw do
 
   get '/associated/search', to: 'associateds#search'
 
+  get '/register', to: 'teams#register'
+
   #get '/associations/agucb', to: 'associations#agucb'
 
   resources :sessions
@@ -53,6 +55,7 @@ Agucb::Application.routes.draw do
   match '/menu_agucb',    to: 'home#menu_agucb',    via: 'get'
   match '/dashboard',    to: 'home#dashboard', via: 'get'
   match '/stadistics',    to: 'stadistics#stadistics', via: 'get'
+  match '/positions',    to: 'positions#index', via: 'get'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
