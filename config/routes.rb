@@ -1,5 +1,9 @@
 Agucb::Application.routes.draw do
 
+  resources :ads
+
+  resources :observations
+
   resources :publications
 
   resources :enabled_players
