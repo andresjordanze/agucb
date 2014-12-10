@@ -40,9 +40,7 @@
             <p><%= f.submit (@match.new_record? ? 'Programar partido' : 'Guardar cambios'), :class=>"first-btn" %><br><br><%= link_to 'Cancelar', matches_path, :class=>"back-btn" %></p>
         <% end %>
       </div>
-      <div class="l-copyright text-center">
-            © Asociacion de Graduados UCB 2014 - Todos los derechos reservados 
-        </div>
+      <%= render 'layouts/footer8'%>
         </center>
     </div>
     </section>

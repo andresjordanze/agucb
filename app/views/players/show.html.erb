@@ -20,25 +20,15 @@
                   <li class="text-center">
                       <div class="container">
                           <div class="col-lg-12">
-                                <span class="tweet"><a>Carrera: </a><%= @player.career %></span>                                  
-                                <a href="#" class="tweet-name"><%= Team.find(@player.team_id).name %></a>      
-                          </div><!-- col-lg-12 -->
-                      </div><!-- container -->
-                  </li>
-                    <li class="text-center">
-                      <div class="container">
-                          <div class="col-lg-12">
+                                <span class="tweet"><a>Carrera: </a><%= @player.career %></span>
                                 <span class="tweet"><a>Goles: </a><%= @player.goals %>0</span>                                  
                                 <a href="#" class="tweet-name"><%= Team.find(@player.team_id).name %></a>      
                           </div><!-- col-lg-12 -->
                       </div><!-- container -->
-                  </li>
                 </ul>
             </div><!-- flexslider -->
         </div><!-- l-paralax-section -->
-        <div class="l-copyright text-center">
-            © Asociacion de Graduados UCB 2014 - Todos los derechos reservados 
-        </div>
+        <%= render 'layouts/footer8'%>
     </section>
   </div>
 </div>
