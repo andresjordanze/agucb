@@ -1,35 +1,55 @@
-<h1>Listing cards</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>Match</th>
-      <th>Player</th>
-      <th>Team</th>
-      <th>Type</th>
-      <th>Number</th>
-      <th></th>
-      <th></th>
-      <th></th>
+<% title "Tabla de Amonestaciones"%>
+<div class="page-loader"></div>
+<div class="l-wrapper">
+<%= render 'layouts/header8'%>
+<section>
+<div class="l-page-section l-section" id="page-section">
+    <center>
+    <div class="table-responsive">
+    <table class="table table-hover">
+    <br><h1><img src="/img/arbitro.png" width="100"> Tabla de Amonestaciones</h1>
+    <center>
+    <tr class="info">
+      <th><h6 align="center"><b>Jugador</b></h5></th>
+      <th><h6 align="center"><b>Partido</b></h5></th>
+      <th><h6 align="center"><b>Equipo</b></h5></th>
+      <th><h6 align="center"><b>Tarjeta</b></h5></th>
     </tr>
-  </thead>
 
-  <tbody>
     <% @cards.each do |card| %>
-      <tr>
-        <td><%= card.match_id %></td>
-        <td><%= card.player_id %></td>
-        <td><%= card.team_id %></td>
-        <td><%= card.type %></td>
-        <td><%= card.number %></td>
-        <td><%= link_to 'Show', card %></td>
+      <tr class="<%= 'warning' if card.type == 'amarilla' %><%= 'danger' if card.type == 'roja' %>">
+        <td><h6 align="center"><%= Player.find(card.player_id).full_name %></h6></td>
+        <td><h6 align="center"><%= Match.find(card.match_id).teams %></h6></td>
+        <td><h6 align="center"><%= Team.find(card.team_id).name %></h6></td>
+        <td>
+          <h6 align="center">
+            <%if card.type=="amarilla"%>
+              <%n=0%>
+              <% while  n <card.number %>
+                <img src="/img/amarilla.png" width="20">
+                <%n=n+1%>
+              <%end%>
+            <%end%>
+            <%if card.type=="roja"%>
+              <%n=0%>
+              <% while  n <card.number %>
+                <img src="/img/roja.png" width="20">
+                <%n=n+1%>
+              <%end%>
+            <%end%>
+          </h6>
+        </td>
+        <!--td><%= link_to 'Show', card %></td>
         <td><%= link_to 'Edit', edit_card_path(card) %></td>
-        <td><%= link_to 'Destroy', card, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= button_to 'Destroy', card, method: :delete, data: { confirm: 'Are you sure?' } %></td-->
       </tr>
+      </center>
     <% end %>
-  </tbody>
 </table>
-
-<br>
-
+</div>
+</center>
+</div>
+</section>
 <%= link_to 'New Card', new_card_path %>
+<%= render 'layouts/footer8'%>
+</div>
