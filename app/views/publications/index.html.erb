@@ -27,7 +27,7 @@
             <td style="color:black"><%= publication.id_event_or_activity %></td>
             <td><%= link_to publication,:class => "link-style-view", :title=>"Ver" do %><span class="glyphicon glyphicon-eye-open"></span><% end %></td>
             <td><%= link_to edit_publication_path(publication), :class => "link-style-edit", :title=>"Editar" do %><span class="glyphicon glyphicon-edit"></span><% end %></td>
-            <td><%= link_to publication, :class => "link-style-delete", :title=>"Eliminar #{publication.title}", method: :delete,data: { confirm: 'Esta seguro que desea Eliminar a: 
+            <td><%= button_to publication, :class => "link-style-delete", :title=>"Eliminar #{publication.title}", method: :delete,data: { confirm: 'Esta seguro que desea Eliminar a: 
               ' } do %><span class="glyphicon glyphicon-trash"></span><% end %></td>
           </tr>
           <% count = count + 1 %>
@@ -38,8 +38,6 @@
   </div>
   </center>
 </div>
-<div class="l-copyright text-center">
-  © Asociacion de Graduados UCB 2014 - Todos los derechos reservados 
-</div>
+<%= render 'layouts/footerAgucb'%>
 
 

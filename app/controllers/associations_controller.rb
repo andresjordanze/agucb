@@ -5,7 +5,7 @@ class AssociationsController < ApplicationController
   # GET /associations.json
   def index
     @associations = Association.all
-    @event_list = Event.all
+    @publications_list = Publication.all
   end
   
   # GET /associations/1
