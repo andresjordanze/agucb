@@ -614,7 +614,9 @@
         </tr>
     </table>
     </div>
+    <%if current_user%>
     <%= link_to 'Registrar datos en tabla', {:controller => :teams, :action => "register", :id => @match.id }, :class => 'first-btn'  %><br>
+    <%end%>
     </center>
     </div><!-- l-page-section -->
     
