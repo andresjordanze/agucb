@@ -40,9 +40,9 @@
                                 <h6>
                                     <a href="#">COMIENZA EL CAMPEONATO ALUMNI FÚTBOL 8</a>
                                 </h6>
-                                <p>
+                                <p><h6>
                                     FÚTBOL 8 ALUMNI. SE INICIA EL CLAUSURA 2014 ¡Bienvenidos todos los equipos ¡ ...
-                                </p>
+                                </h6></p>
                                 <div class="clearfix"></div><!-- clearfix -->
                                 <a  href="#post-popup1" class="news-button open-popup-link">Read More</a>
                             </div><!-- news-content -->
@@ -51,7 +51,7 @@
                         <!-- post popup content -->
                         <div id="post-popup1" class="white-popup mfp-hide">
                             <img src="img/ultimasnoticias/1.png" alt="popup-image" />
-                            <p>
+                            <p><h6>
                                 COMIENZA EL CAMPEONATO ALUMNI FÚTBOL 8
                                 FÚTBOL 8 ALUMNI. SE INICIA EL CLAUSURA 2014 ¡Bienvenidos todos los equipos ¡
                                 ROL DE PARTIDOS PRIMERA FECHA, sábado 27 de septiembre 2014. Cancha: de pasto sintético del Complejo Deportivo “Beato Salomón” (Av. Melchor Pérez, dos cuadras antes de la Av. Circunvalación, detrás del nuevo edificio de la Policía):
@@ -60,7 +60,7 @@
                                 Hrs. 16: 00 La Selección (ex Super Campeones) -vs- Inter de Milán
                                 - Todos equipos deben completar su inscripción en la Cuenta No. 3652634019 del Banco Bisa para ser programados en la próxima fecha.
                                 SALUDOS Y BUEN INICIO DE CAMPEONATO.
-                            </p>
+                            </h6></p>
                         </div>
                     </div><!-- col-lg-4 -->
 
@@ -278,6 +278,63 @@
                         </p>
                     </div><!-- white-popup -->
                 </div><!-- col-lg-4 -->
+
+
+                <!-- desde eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee aquiiiiiiiiiiiiiiiiiiiiiiiiiiiiii -->
+                <% count = 10 %>
+                <% event_list = Event.all %>
+                <% event_list.each do |event| %>
+
+                    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 text-center">
+                        <div class="m-news-post">                                                                        
+                            <div class="m-image-wrap">      
+                                <div class="hover-wrap">
+                                    <div class="image-hover">                                            
+                                        <div class="categories">
+                                            <a href="#post-popup1">event.name</a>
+                                            <div class="m-heading-border"></div><!-- m-heading-border -->
+                                        </div>                                            
+                                        <div class="post-meta">                                                
+                                            <div class="post-comments text-left">
+                                                10 comentarios
+                                            </div><!-- comments -->                                                
+                                            <div class="post-date text-right">
+                                                12 - Septiembre - 2014
+                                            </div>                                                
+                                        </div><!-- post-meta -->                                            
+                                    </div>  <!-- image-hover -->
+                                </div><!-- hover-wrap -->
+                                <img src="img/ultimasnoticias/1.png" style="width:360px; height:225px;" alt="latest post image" />                                    
+                            </div><!-- m-image-wrap -->
+                            <div class="news-content">
+                                <h6>
+                                    <a href="#"><%= event.name %></a>
+                                </h6>
+                                <p><h6>
+                                    <% if event.description.length >= 77 %>
+                                        <%= event.description[0,76]+'...' %>
+                                    <% else %>
+                                        <%= event.description+'...' %>
+                                    <% end %>
+                                </h6></p>
+                                <div class="clearfix"></div><!-- clearfix -->
+                                <a  href="#post-popup<%= count %>" class="news-button open-popup-link">Leer más</a>
+                            </div><!-- news-content -->
+                        </div><!-- m-news-post -->                                                                
+
+                        <!-- post popup content -->
+                        <div id="post-popup<%= count %>" class="white-popup mfp-hide">
+                            <img src="img/ultimasnoticias/1.png" alt="popup-image" />
+                            <p><h6>
+                                <%= event.description %>
+                            </h6></p>
+                        </div>
+                    </div><!-- col-lg-4 -->
+                    <% count=count + 1%>"
+                <% end %>
+                
+                    
+
             </div><!-- row -->
         </div><!-- m-posts -->
         </div><!-- container -->
