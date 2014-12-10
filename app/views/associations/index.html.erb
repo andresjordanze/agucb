@@ -312,7 +312,7 @@
                                     <a href="#"><%= event.name %></a>
                                 </h6>
                                 <p><h6>
-                                    <% if event.description.length >= 77 %>
+                                    <% if event.description.to_s.length >= 77 %>
                                         <%= event.description[0,76]+'...' %>
                                     <% else %>
                                         <%= event.description+'...' %>
