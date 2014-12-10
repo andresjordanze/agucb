@@ -148,12 +148,12 @@
                 <% @publications_list.each do |publication| %>
 
                     <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 text-center">
-                        <div class="m-news-post">                                                                        
+                        <div class="m-news-post">                                                     
                             <div class="m-image-wrap">      
                                 <div class="hover-wrap">
                                     <div class="image-hover">                                            
                                         <div class="categories">
-                                            <a href="#post-popup1">publication.title</a>
+                                            <a href="#post-popup1"><%= publication.title %></a>
                                             <div class="m-heading-border"></div><!-- m-heading-border -->
                                         </div>                                            
                                         <div class="post-meta">                                                
@@ -166,7 +166,7 @@
                                         </div><!-- post-meta -->                                            
                                     </div>  <!-- image-hover -->
                                 </div><!-- hover-wrap -->
-                                <img src="img/ultimasnoticias/1.png" style="width:360px; height:225px;" alt="latest post image" />                                    
+                                <%= image_tag publication.photo.url, :style=>'width:360px; height:225px;' %>                   
                             </div><!-- m-image-wrap -->
                             <div class="news-content">
                                 <h6>
@@ -186,7 +186,7 @@
 
                         <!-- post popup content -->
                         <div id="post-popup<%= count %>" class="white-popup mfp-hide">
-                            <img src="img/ultimasnoticias/1.png" alt="popup-image" />
+                            <%= image_tag publication.photo.url %>
                             <p><h6>
                                 <%= publication.description.to_s %>
                             </h6></p>
