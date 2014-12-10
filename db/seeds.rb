@@ -9,7 +9,7 @@
 	admin = User.new
 	admin.username = 'adminfut'
 	admin.password = '123456'
-	admin.userType = 'fut8'
+	admin.userType = 'f8'
 	admin.save!
 
 
