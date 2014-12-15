@@ -39,12 +39,17 @@
         <% end %>
 
         <div class="field">
-          <%= f.label :comment %><br>
           <%= f.text_area :comment, :placeholder=>"Escribe un comentario...", :cols=>"62", :style=>"background-color:#FFFFFF; resize:none;", :required => true %>
         </div>
         <div class="field">
-          <%= f.label :user_id %><br>
-          <%= f.number_field :user_id %>
+          <% if current_user %>
+            <%= f.number_field :user_id, :value=>@current_user.id %>
+          <% else %>
+            <%= f.number_field :user_id, :value=>'0' %>
+          <% end %>
+        </div>
+        <div class="field">
+          <%= f.number :publication_id,  :value=>@publication.id %>
         </div>
         <div class="actions">
           <%= f.submit 'Publicar Comentario', :class=>"first-btn"%>
