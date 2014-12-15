@@ -1,3 +1,3 @@
 class Comment < ActiveRecord::Base
-	attr_accessible :comment
+	attr_accessible :comment, :user_id, :publication_id
 end
