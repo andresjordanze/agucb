@@ -11,7 +11,8 @@ class PublicationsController < ApplicationController
   # GET /publications/1.json
   def show
     @comment = Comment.new
-    @comments_list = Comment.where("publication_id = ?", 3)
+    #@comments_list = Comment.where("publication_id = ?", 3)
+    @comments_list = Comment.all
   end
 
   # GET /publications/new
