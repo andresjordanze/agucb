@@ -19,6 +19,38 @@
       <div class="field">
         <%= image_tag @publication.photo.url, :style=>'width: 350px;height: 300px;'%>
       </div>
+
+      <div class="field">
+        <p style="color:black; line-height: 1em; font-size: 0,5em; border-style:dashed; border-width: 1px; padding-top: 10px;padding-left: 10px;padding-right: 10px;padding-bottom: 10px; border-color:#50BFA1; background-color:#F5FCFA;"><strong style"color:blue;">Leonardo Mejia Pacheco</strong><br><br><var>Integrar a la comunidad de la UCB en torno a la práctica del fútbol. Mantener el vínculo afectivo de los ex alumnos con su Alma Mater. Confraternizar deportivamente entre miembros de la comunidad UCB: graduados, estudiantes, autoridades, funcionarios administrativos, docentes. Institucionalizar Clubes de Fútbol al interior de la UCB</var></p>
+        <p style="color:black; line-height: 1em; font-size: 0,5em; border-style:dashed; border-width: 1px; padding-top: 10px;padding-left: 10px;padding-right: 10px;padding-bottom: 10px; border-color:orange; background-color:#FFF8F0;"><strong style"color:blue;">Leonardo Mejia Pacheco</strong><br><br>Integrar a la comunidad de la UCB en torno a la práctica del fútbol. Mantener el vínculo afectivo de los ex alumnos con su Alma Mater. Confraternizar deportivamente entre miembros de la comunidad UCB: graduados, estudiantes, autoridades, funcionarios administrativos, docentes. Institucionalizar Clubes de Fútbol al interior de la UCB</p>
+      </div>
+
+      <%= form_for(@comment) do |f| %>
+        <% if @comment.errors.any? %>
+          <div id="error_explanation">
+            <h2><%= pluralize(@comment.errors.count, "error") %> prohibited this comment from being saved:</h2>
+
+            <ul>
+            <% @comment.errors.full_messages.each do |msg| %>
+              <li><%= msg %></li>
+            <% end %>
+            </ul>
+          </div>
+        <% end %>
+
+        <div class="field">
+          <%= f.label :comment %><br>
+          <%= f.text_area :comment, :placeholder=>"Escribe un comentario...", :cols=>"62", :style=>"background-color:#FFFFFF; resize:none;", :required => true %>
+        </div>
+        <div class="field">
+          <%= f.label :user_id %><br>
+          <%= f.number_field :user_id %>
+        </div>
+        <div class="actions">
+          <%= f.submit 'Publicar Comentario', :class=>"first-btn"%>
+        </div>
+      <% end %>
+
       <div class="field">
         <br>
         <%= link_to 'Editar', edit_publication_path(@publication), :class=>"second-btn" %>

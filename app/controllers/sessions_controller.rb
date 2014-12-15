@@ -23,7 +23,7 @@ class SessionsController < ApplicationController
         render :action => 'new'
       end
     else
-      flash.now[:danger] = "Login o contraseña invalidos"
+      flash.now[:danger] = "Login o contraseña inválidos"
       render :action => 'new'
     end
   end
