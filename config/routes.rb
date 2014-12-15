@@ -1,5 +1,7 @@
 Agucb::Application.routes.draw do
 
+  resources :comments
+
   resources :ads
 
   resources :observations
