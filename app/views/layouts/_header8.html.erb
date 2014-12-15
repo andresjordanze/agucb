@@ -29,7 +29,7 @@
               <li class="<%= 'active' if params[:controller] == 'matches' %>"><a href="/matches">Partidos</a></li>
               <li class="<%= 'active' if params[:controller] == 'stadistics' %>"><a href="/stadistics">Estadisticas</a></li>
               <li class="<%= 'active' if params[:controller] == 'teams' %>"><a href="/teams">Equipos</a></li>
-              <li><a href="#gallery">Anuncios</a></li>
+              <li><a href="/ads">Anuncios</a></li>
               <li><a href="#team">Contacto</a></li>
               <%if current_user%>
                 <li class="arrow-login-2" rel="tooltip" data-placement='bottom' title="Cerrar Sesión"><%= link_to "", logout_path %></li>
