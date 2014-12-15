@@ -63,7 +63,7 @@
                                   <%= f.hidden_field :team_id,:value => @match.team_id_1 %>
                                   <div class="col-xs-6 col-md-4">
                                   <div class="form-group">
-                                    <%= f.text_field :goals,:class=>"form-control", :placeholder=>"Goles" %>
+                                    <%= f.text_field :goals,:class=>"form-control", :placeholder=>"Minuto" %>
                                   </div>
                                 </div>
                                 </center>
@@ -537,8 +537,8 @@
                             <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
                             <h4 class="modal-title" id="myModalLabel">Registrar observacion</h4>
                           </div>
-                          <div class="modal-body">
-                            <div class="l-form-section">
+                          <div class="modal-body" style="height:100px;">
+                            <div class="l-form-section"> 
                                 <center>
                               
                                 <%= form_for(@observation) do |f| %>
@@ -548,9 +548,10 @@
                                   <%= f.hidden_field :team_id,:value => @match.team_id_1 %>
 
                                   <%= f.hidden_field :referee,:value => @match.referee %>
-                                  <div class="col-xs-6 col-md-4">
+
+                                <div class="col-lg-12">
                                   <div class="form-group">
-                                    <%= f.text_field :detail,:class=>"form-control", :placeholder=>"Detalle" %>
+                                    <%= f.text_area :detail,:class=>"form-control", :placeholder=>"Detalle"%>
                                   </div>
                                 </div>
                                 </center>

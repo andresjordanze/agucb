@@ -31,8 +31,8 @@ gem 'jbuilder', '~> 1.2'
 
 gem 'nifty-generators'
 
-#gem "paperclip", :git => "git://github.com/thoughtbot/paperclip.git"
-gem "paperclip", "~> 4.2"
+gem "paperclip", :git => "git://github.com/thoughtbot/paperclip.git"
+#gem "paperclip", "~> 4.2"
 
 gem "protected_attributes", "~> 1.0.8"
 

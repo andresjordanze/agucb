@@ -7,6 +7,11 @@ class CardsController < ApplicationController
     @cards = Card.all
   end
 
+  def search
+    @cards = Card.where('match_id LIKE ? OR player_id like ?', "%#{params[:name]}%", "%#{params[:name]}%") 
+    render 'index'
+  end
+
   # GET /cards/1
   # GET /cards/1.json
   def show

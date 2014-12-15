@@ -57,6 +57,8 @@ Agucb::Application.routes.draw do
   match '/stadistics',    to: 'stadistics#stadistics', via: 'get'
   match '/positions',    to: 'positions#index', via: 'get'
 
+
+  get 'card/search' => 'cards#search'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

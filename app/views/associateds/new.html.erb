@@ -1,14 +1,17 @@
-<%= render 'layouts/header_menu'%>
-
 <% title "Nuevo Asociado" %>
-
-<section>
-<div class="l-form-section l-section" style="margin-top: 0px;">
-  <center>
-    <h1>Registrar Asociado</h1><br>
-    <%= render 'form' %><br>
-    <%= link_to 'Back', associateds_path, :class=>"back-btn"%><br><br>
-    <%= render 'layouts/footerAgucb'%>
-  </center>
+<div class="page-loader"></div>
+<div class="l-wrapper">
+<%= render 'layouts/header_menu'%>
+	<div class="l-content-wrap" id="standard-content">
+		<section>
+		<div class="l-form-section l-section" style="margin-top: 0px;">
+  		<center>
+    		<h1>Registrar Asociado</h1><br>
+		    <%= render 'form' %><br>
+		    <%= link_to 'Cancelar', associateds_path, :class=>"back-btn"%><br><br>
+		    <%= render 'layouts/footerAgucb'%>
+		  </center>
+		</div>
+		</section>
+	</div>
 </div>
-</section>
