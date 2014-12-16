@@ -33,8 +33,8 @@
     </div>
     <div class="form-group">
       <%= f.text_field :email,:class=>"form-control", :placeholder=>"Correo electrónico" %>
-      <%= f.text_field :userType, :value=>'' %>
-      <%= f.text_field :state, :value=>'activo' %>
+      <%= f.text_field :userType, :value=>'', :hidden=>true %>
+      <%= f.text_field :state, :value=>'activo', :hidden=>true %>
 
     </div>
     <div class="form-group">
