@@ -24,7 +24,7 @@
           <!-- Collect the nav links, forms, and other content for toggling -->
           <div class="collapse navbar-collapse" id="navbar">
             <ul class="nav navbar-nav navbar-right">
-              <li><a href="#team">Contáctanos</a></li>
+              <li class="<%= 'active' if params[:controller] == 'messages' %>"><a href="/messages/new">Contáctanos</a></li>
               <%if current_user%>
                 <li class="arrow-login-2" rel="tooltip" data-placement='bottom' title="Cerrar Sesión"><%= link_to "", logout_path %></li>
               <%else%>

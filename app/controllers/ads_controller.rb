@@ -28,8 +28,9 @@ class AdsController < ApplicationController
 
     respond_to do |format|
       if @ad.save
-        format.html { redirect_to @ad, notice: 'Ad was successfully created.' }
-        format.json { render action: 'show', status: :created, location: @ad }
+        format.html { redirect_to "/ads" }
+        #format.html { redirect_to @ad, notice: 'Ad was successfully created.' }
+        #format.json { render action: 'show', status: :created, location: @ad }
       else
         format.html { render action: 'new' }
         format.json { render json: @ad.errors, status: :unprocessable_entity }
@@ -42,8 +43,9 @@ class AdsController < ApplicationController
   def update
     respond_to do |format|
       if @ad.update(ad_params)
-        format.html { redirect_to @ad, notice: 'Ad was successfully updated.' }
-        format.json { head :no_content }
+        format.html { redirect_to "/ads" }
+        #format.html { redirect_to @ad, notice: 'Ad was successfully updated.' }
+        #format.json { head :no_content }
       else
         format.html { render action: 'edit' }
         format.json { render json: @ad.errors, status: :unprocessable_entity }

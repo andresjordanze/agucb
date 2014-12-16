@@ -1,5 +1,39 @@
-<h1>New ad</h1>
-
-<%= render 'form' %>
-
-<%= link_to 'Back', ads_path %>
+<% title "Nuevo anuncio"%>
+<div class="page-loader"></div>
+<div class="l-wrapper">
+<%= render 'layouts/header8'%>
+  <div class="l-content-wrap" id="standard-content">
+    <section>
+    <div class="l-form-section l-section">
+      <center>
+      <!--<br><br><br>
+      <a href="/futbol8"><img src="/img/logo1.png"></a><br><br>-->
+      <h1>Nuevo anuncio</h1><br>
+        <% if @ad.errors.any? %>
+                <div id="error_explanation">
+                  <% @ad.errors.messages.values.each do |msg| %>
+                    <h6><img src="/img/error.png" width="25"><%= msg.first %></h6>
+                  <% end %>
+                </div>
+              <% end %>
+        <div class="col-xs-6 col-md-4">
+        <%= form_for(@ad) do |f| %>
+            <div class="form-group">
+              <%= f.text_field :title,:class=>"form-control", :placeholder=>"Título" %>
+            </div>
+            <div class="form-group">
+              <%= f.text_area :content,:class=>"form-control", :placeholder=>"Contenido" %>
+            </div>
+            <div class="form-group">
+    		<%= f.file_field :avatar %>
+  			</div>
+            <%= f.hidden_field :user_id,:value => current_user.id  %>
+            <p><%= f.submit (@ad.new_record? ? 'Crear anuncio' : 'Guardar cambios'), :class=>"first-btn" %><br><br><%= link_to 'Cancelar', ads_path, :class=>"back-btn" %></p>
+        <% end %>
+      </div>
+      <%= render 'layouts/footer8'%>
+        </center>
+    </div>
+    </section>
+  </div>
+</div>
