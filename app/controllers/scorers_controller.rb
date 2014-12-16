@@ -5,6 +5,7 @@ class ScorersController < ApplicationController
   # GET /scorers.json
   def index
     @scorers = Scorer.all
+    @players = Player.order(goals: :desc)
   end
 
   # GET /scorers/1
@@ -25,7 +26,9 @@ class ScorersController < ApplicationController
   # POST /scorers.json
   def create
     @scorer = Scorer.new(scorer_params)
-
+    @player = Player.find(@scorer.player_id)
+    @player.goals = @player.goals + @scorer.goals
+    @player.save
     respond_to do |format|
       if @scorer.save
         format.html { redirect_to "/matches/"+@scorer.match_id.to_s }
