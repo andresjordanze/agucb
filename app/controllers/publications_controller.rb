@@ -7,6 +7,17 @@ class PublicationsController < ApplicationController
     @publications = Publication.all
   end
 
+  def select_publications
+    @publications = Publication.all
+    @id_associated = params[:associated_id]
+    @shared = Shared.new
+  end
+
+  def shared_publications
+    params[:user][:id] != nil
+
+  end
+
   # GET /publications/1
   # GET /publications/1.json
   def show

@@ -1,5 +1,7 @@
 Agucb::Application.routes.draw do
 
+  resources :shareds
+
   resources :messages
 
   resources :comments
@@ -41,6 +43,9 @@ Agucb::Application.routes.draw do
 
   get '/register', to: 'teams#register'
 
+  get '/publication/select_publications/:associated_id', to: 'publications#select_publications'
+  post '/publication' => 'publications#shared_publications'
+  get '/publication/shared_publications/:associated_id?:publication_id', to: 'publications#shared_publications'
   #get '/associations/agucb', to: 'associations#agucb'
 
   resources :sessions

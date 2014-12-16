@@ -1,3 +1,81 @@
 <%= render 'layouts/header_menu'%>
 
 <h1>Bienvenidos </h1>
+
+<section>
+    <div class="l-latest-posts l-section" id="inicio">
+        <div class="container">
+            <br/>
+            <div class="row">
+                <div class="col-lg-12">
+                    <h2 class="text-center">Últimas Noticias</h2>
+                    <div class="m-heading-border"></div><!-- m-heading-border -->
+                </div><!-- col-lg-12 -->
+            </div><!-- row -->
+            <!--<div class="separator"></div>--><!-- separator -->
+
+            <div class="clearfix"></div><!-- clearfix -->
+            <div class="m-posts">
+
+            <div class="row">   
+
+                <!-- desde eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee aquiiiiiiiiiiiiiiiiiiiiiiiiiiiiii -->
+                <% if current_user && current_user.userType != 'admin' %>
+	                <% count = 10 %>
+	                <% @associated = Associated.find_by! userId:current_user.id %>
+	                <% @publications_for_user = Shared.where('user_id = ?', @associated.id) %>
+	                <% @publications_for_user.each do |publication_user| %>
+	                	<% publication = Publication.find(publication_user.publication_id) %>
+	                    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 text-center">
+	                        <div class="m-news-post">                                                     
+	                            <div class="m-image-wrap">      
+	                                <div class="hover-wrap">
+	                                    <div class="image-hover">                                            
+	                                        <div class="categories">
+	                                            <a href="/publications/<%= publication.id %>"><%= publication.title %></a>
+	                                            <div class="m-heading-border"></div><!-- m-heading-border -->
+	                                        </div>                                            
+	                                        <div class="post-meta">                                                
+	                                            <div class="post-comments text-left">
+	                                                <%= (Comment.where('publication_id = ?', publication.id)).count.to_s+" comentarios" %>
+	                                            </div><!-- comments -->                                                
+	                                            <div class="post-date text-right">
+	                                                <%= publication.created_at.strftime("%d %B %Y") %>
+	                                            </div>                                                
+	                                        </div><!-- post-meta -->                                            
+	                                    </div>  <!-- image-hover -->
+	                                </div><!-- hover-wrap -->
+	                                <%= image_tag publication.photo.url, :style=>'width:360px; height:225px;' %>                   
+	                            </div><!-- m-image-wrap -->
+	                            <div class="news-content">
+	                                <h6>
+	                                    <a href="#"><%= publication.description %></a>
+	                                </h6>
+	                                <p><h6>
+	                                    <% if publication.description.to_s.length >= 77 %>
+	                                        <%= publication.description[0,76].to_s+'...' %>
+	                                    <% else %>
+	                                        <%= publication.description.to_s+'...' %>
+	                                    <% end %>
+	                                </h6></p>
+	                                <div class="clearfix"></div><!-- clearfix -->
+	                                <a  href="#post-popup<%= count %>" class="news-button open-popup-link">Leer más</a>
+	                            </div><!-- news-content -->
+	                        </div><!-- m-news-post -->                                                                
+
+	                        <!-- post popup content -->
+	                        <div id="post-popup<%= count %>" class="white-popup mfp-hide">
+	                            <%= image_tag publication.photo.url %>
+	                            <p><h6>
+	                                <%= publication.description.to_s %>
+	                            </h6></p>
+	                        </div>
+	                    </div><!-- col-lg-4 -->
+	                    <% count=count + 1%>"
+	                <% end %>
+	            <% end %>
+            </div><!-- row -->
+        </div><!-- m-posts -->
+        </div><!-- container -->
+    </div><!-- l-latest-posts -->
+</section>
