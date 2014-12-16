@@ -33,6 +33,8 @@
               <%if current_user%>
                 <%if current_user.rol=="admin"%>
                   <li class="<%= 'active' if params[:controller] == 'messages' %>"><a href="/messages">Mensajes</a></li>
+                <%else%>
+                  <li class="<%= 'active' if params[:controller] == 'messages' %>"><a href="/messages/new">Contáctanos</a></li>
                 <%end%>
               <%else%>
                 <li class="<%= 'active' if params[:controller] == 'messages' %>"><a href="/messages/new">Contáctanos</a></li>
