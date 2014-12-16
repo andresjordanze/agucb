@@ -1379,7 +1379,7 @@ h2 {
 
 @media (max-width: 460px)  {
     .flexslider .slides img {
-        width: 70px;
+        width: 180px;
         display: inline-block;
     }
 
