@@ -7,8 +7,10 @@
       <div class="l-paralax-section what-we-do-section paralax-section1 l-section"  data-0="background-position:0px 180px" data-10000="background-position: 0px -2000px;"  id="whatwedo">
         <div class="container">
           <%if current_user%>
-            <%if @team_id.to_i == Team.where(:login=>current_user.username).first.id.to_i%>
-              <%= link_to 'Registrar jugador', new_player_path %>
+            <% if current_user.rol == "team" %>
+              <%if @team_id.to_i == Team.where(:login=>current_user.username).first.id.to_i%>
+                <%= link_to 'Registrar jugador', new_player_path %>
+              <%end%>
             <%end%>
           <%end%>
           <h1 class="text-center">Jugadores <%= Team.find(@team_id).name%></h1><br>

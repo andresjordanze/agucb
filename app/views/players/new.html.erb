@@ -17,8 +17,11 @@
             <div class="form-group">
               <%= f.text_field :lastname,:class=>"form-control", :placeholder=>"Apellidos"  %>
             </div>
-            <div class="form-group">
+            <!--div class="form-group">
               <%= f.text_field :career,:class=>"form-control", :placeholder=>"Carrera" %>
+            </div-->
+            <div class="form-group">
+              <h6>Carrera:<%=f.select(:career, options_for_select([["Admin. Empresas"],["Antropología"],["Comunicación Social"],["Contaduría Pública"],["Derecho"],["Enfermería"],["Filosofía"],["Ing. Ambiental"],["Ing. Civil"],["Ing. Comercial"],["Ing. Financiera"],["Ing. Industrial"],["Ing. Mecatrónica"],["Ing. Química"],["Ing. de Sistemas"],["Ing. de Telecomunicaciones"],["Pedagogía"],["Psicología"],["Teología"]]), {:prompt=>false}, {:class=>'select-style'})%></h6>
             </div>
             <div class="form-group">
               <%= f.file_field :photo %>

@@ -9,7 +9,9 @@
 
             <div class="container">
             <%if current_user%>
-            <%= link_to 'Registrar equipo', new_team_path %>
+                <%if current_user.rol=="admin"%>
+                    <%= link_to 'Registrar equipo', new_team_path %>
+                <%end%>
             <%end%>
                 <h4 class="text-center">Equipos Categoria A</h4>
 

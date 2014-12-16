@@ -6,7 +6,9 @@
 <section>
   <div class="l-paralax-section testimonials-paralax paralax-section2 l-section l-section" id="partidos">                
     <%if current_user%>
-      <%= link_to 'Programar partido', new_match_path %>
+      <%if current_user.rol == "admin"%>
+        <%= link_to 'Programar partido', new_match_path %>
+      <%end%>
     <%end%>
     <div class="flexslider-testimonials flexslider">
       <ul class="slides">
