@@ -9,6 +9,13 @@
       <!--<br><br><br>
       <a href="/futbol8"><img src="/img/logo1.png"></a><br><br>-->
       <h1>Registrar equipo</h1><br>
+        <% if @team.errors.any? %>
+                <div id="error_explanation">
+                  <% @team.errors.messages.values.each do |msg| %>
+                    <h6><img src="/img/error.png" width="25"><%= msg.first %></h6>
+                  <% end %>
+                </div>
+              <% end %>
         <div class="col-xs-6 col-md-4">
         <%= form_for(@team) do |f| %>
             <div class="form-group">

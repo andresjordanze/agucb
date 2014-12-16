@@ -24,7 +24,7 @@
                     <%end%>
                     <%= @match.goals_1 %>
                 </h3>
-                <%= @match.save%>
+                <% @match.save%>
                 <h6 align="center">
                     <% n = 0 %>
                     <% @scorers.each do |scorer| %>
@@ -38,6 +38,7 @@
                     <%end%>
                 </h6>
                 <%if current_user%>
+                <%if current_user.rol == "admin"%>
                 <center><button class="btn" data-toggle="modal" data-target="#myModalGoal1">Registrar gol
                 </button></center>
                 <!-- Modal -->
@@ -76,6 +77,7 @@
                     </div><!-- /.modal-dialog -->
                 </div><!-- /.modal -->
                 <%end%>
+                <%end%>
             </td>
 <!--********************Fin Goles primer equipo*********************-->
             <td><h5 align="center">Goles</h5></td>
@@ -90,7 +92,7 @@
                     <%end%>
                     <%= @match.goals_2 %>
                 </h3>
-                <%= @match.save%>
+                <% @match.save%>
                 <h6 align="center">
                     <% n = 0 %>
                     <% @scorers.each do |scorer| %>
@@ -104,6 +106,7 @@
                     <%end%>
                 </h6>
                 <%if current_user%>
+                <%if current_user.rol == "admin"%>
                 <center><button class="btn" data-toggle="modal" data-target="#myModalGoal2">Registrar gol
                 </button></center>
                 <!-- Modal -->
@@ -142,6 +145,7 @@
                     </div><!-- /.modal-dialog -->
                 </div><!-- /.modal -->
                 <%end%>
+                <%end%>
             </td>
 <!--********************Fin Goles segundo equipo********************-->
         </tr>
@@ -175,6 +179,7 @@
                     <%end%>
                 </h6>
                 <%if current_user%>
+                <%if current_user.rol == "admin"%>
                 <center><button class="btn" data-toggle="modal" data-target="#myModalCardY1">Registrar amarilla
                 </button></center>
                     <!-- Modal -->
@@ -209,7 +214,8 @@
                         </div><!-- /.modal-content -->
                       </div><!-- /.modal-dialog -->
                     </div><!-- /.modal -->
-                    <%end%>
+                <%end%>
+                <%end%>
                 </h6>
             </td>
 <!--**************Fin Tarjetas amarilas primer equipo***************-->
@@ -242,6 +248,7 @@
                     <%end%>
                 </h6>
                 <%if current_user%>
+                <%if current_user.rol == "admin"%>
                 <center><button class="btn" data-toggle="modal" data-target="#myModalCardY2">Registrar amarilla
                 </button></center>
                     <!-- Modal -->
@@ -276,7 +283,8 @@
                         </div><!-- /.modal-content -->
                       </div><!-- /.modal-dialog -->
                     </div><!-- /.modal -->
-                    <%end%>
+                <%end%>
+                <%end%>
                 </h6>
             </td>
 <!--**************Fin Tarjetas amarilas primer equipo***************-->
@@ -310,6 +318,7 @@
                     <%end%>
                 </h6>
                 <%if current_user%>
+                <%if current_user.rol == "admin"%>
                 <center><button class="btn" data-toggle="modal" data-target="#myModalCardR1">Registrar roja</button></center>
                 <!-- Modal -->
                 <div class="modal fade" id="myModalCardR1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
@@ -343,7 +352,8 @@
                         </div><!-- /.modal-content -->
                       </div><!-- /.modal-dialog -->
                     </div><!-- /.modal -->
-                    <%end%>
+                <%end%>
+                <%end%>
                 </h6>
             </td>
 <!--****************Fin Tarjetas Rojas primer equipo****************-->
@@ -376,6 +386,7 @@
                     <%end%>
                 </h6>
                 <%if current_user%>
+                <%if current_user.rol == "admin"%>
                 <center><button class="btn" data-toggle="modal" data-target="#myModalCardR2">Registrar roja</button></center>
                 <!-- Modal -->
                 <div class="modal fade" id="myModalCardR2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
@@ -409,7 +420,8 @@
                         </div><!-- /.modal-content -->
                       </div><!-- /.modal-dialog -->
                     </div><!-- /.modal -->
-                    <%end%>
+                <%end%>
+                <%end%>
                 </h6>
             </td>
 <!--****************Fin Tarjetas Rojas primer equipo****************-->
@@ -425,6 +437,7 @@
                     <%end%>
                 </h6>
                 <%if current_user%>
+                <%if current_user.rol == "admin"%>
                 <center><button class="btn" data-toggle="modal" data-target="#myModalPlayers1">Habilitar jugador
                 </button></center>
                 <!-- Modal -->
@@ -463,6 +476,7 @@
                     </div><!-- /.modal-dialog -->
                 </div><!-- /.modal -->
                 <%end%>
+                <%end%>
             </td>
 <!--************Fin Jugadores Habilitados primer equipo*************-->
             <td><h5 align="center">Jugadores Habilitados</h5></td>
@@ -476,6 +490,7 @@
                     <%end%>
                 </h6>
                 <%if current_user%>
+                <%if current_user.rol == "admin"%>
                 <center><button class="btn" data-toggle="modal" data-target="#myModalPlayers2">Habilitar jugador
                 </button></center>
                 <!-- Modal -->
@@ -514,6 +529,7 @@
                     </div><!-- /.modal-dialog -->
                 </div><!-- /.modal -->
                 <%end%>
+                <%end%>
             </td>
 <!--***********Fin Jugadores Habilitados segundo equipo*************-->
         </tr>
@@ -527,6 +543,7 @@
                     <%end%>
                 </h6>
                 <%if current_user%>
+                <%if current_user.rol == "admin"%>
                 <center><button class="btn" data-toggle="modal" data-target="#myModalObservation1">Registrar observacion
                 </button></center>
                 <!-- Modal -->
@@ -564,6 +581,7 @@
                     </div><!-- /.modal-dialog -->
                 </div><!-- /.modal -->
                 <%end%>
+                <%end%>
             </td>
             <td><h5 align="center">Observaciones</h5></td>
             <td>
@@ -575,6 +593,7 @@
                     <%end%>
                 </h6>
                 <%if current_user%>
+                <%if current_user.rol == "admin"%>
                 <center><button class="btn" data-toggle="modal" data-target="#myModalObservation2">Registrar observacion
                 </button></center>
                 <!-- Modal -->
@@ -611,12 +630,15 @@
                     </div><!-- /.modal-dialog -->
                 </div><!-- /.modal -->
                 <%end%>
+                <%end%>
             </td>
         </tr>
     </table>
     </div>
     <%if current_user%>
+    <%if current_user.rol == "admin"%>
     <%= link_to 'Registrar datos en tabla', {:controller => :teams, :action => "register", :id => @match.id }, :class => 'first-btn'  %><br>
+    <%end%>
     <%end%>
     </center>
     </div><!-- l-page-section -->
@@ -624,11 +646,6 @@
     <%= render 'layouts/footer8'%>
 </section>
 </div>
-
-
-
-
-
 
 
 
@@ -661,5 +678,4 @@
 <%= @match.time.hour %>:<%= @match.time.min %>
 
 <%= link_to 'Edit', edit_match_path(@match) %> |
-<%= link_to 'Back', matches_path %>
--->
+<%= link_to 'Back', matches_path %
