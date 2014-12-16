@@ -57,7 +57,7 @@ class CommentsController < ApplicationController
   def destroy
     @comment.destroy
     respond_to do |format|
-      format.html { redirect_to comments_url }
+      format.html { redirect_to '/publications/'+@comment.publication_id.to_s, success: 'Comentarie creado exitosamente...' }
       format.json { head :no_content }
     end
   end

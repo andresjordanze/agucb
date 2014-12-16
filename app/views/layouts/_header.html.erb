@@ -22,9 +22,15 @@
                   <div class="collapse navbar-collapse" id="navbar">
                  
                         <ul class="nav navbar-nav navbar-right">
-                          <li><a href="#agucbinstitucion">AGUCB</a></li>
+                          <% if params[:controller] == 'associations' %>
+                            <li ><a href="#agucbinstitucion">AGUCB</a></li>
+                            <li ><a href="#agucbmision">Misión / Visión</a></li>
+                            <li ><a href="#agucbobjetivos">Objetivos</a></li>
+                            <li ><a href="#agucbgraduado">El Graduado de la UCB</a></li>
+                          <% end %>
                           <!-- <li><a href="#skills">Organización</a></li> -->
-                          <li><a href="#contact">Contáctanos</a></li>
+                          <!-- <li><a href="#contact">Contáctanos</a></li>-->
+                          <li><a href="/messages/new">Contáctanos</a></li>
                           <%if current_user%>
                             <%if current_user.userType=="admin"%>
                               <li><a href="/menu_agucb">Menú</a></li>
