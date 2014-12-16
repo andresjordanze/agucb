@@ -1,5 +1,7 @@
 Agucb::Application.routes.draw do
 
+  resources :messages
+
   resources :comments
 
   resources :ads
@@ -50,6 +52,7 @@ Agucb::Application.routes.draw do
 
   get 'players_list/:id' => 'players#players_list'
 
+  match '/direccion',    to: 'home#direccion',    via: 'get'
   match '/otb_japon',    to: 'home#otb_japon',    via: 'get'
   match '/beato_salomon',    to: 'home#beato_salomon',    via: 'get'
   match '/futbol8',    to: 'home#futbol8',    via: 'get'

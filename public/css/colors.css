@@ -204,10 +204,14 @@ p {
 }
 
 .l-contactus-section {
-    background-color: #34495e;
+    background-color: #EEB269;
     color: #fff;
 }
 
+.l-session-section {
+    background-color: #34495E;
+    color: #fff;
+}
 
 .l-form-section {
     background-color: #EFEDED;
@@ -218,6 +222,7 @@ p {
     background-color: #f36363;
     border: none;
     border: 2px solid #f36363;
+    color: white;
     transition: all 0.2s linear;
     -webkit-transition: all 0.2s linear;
     -moz-transition: all 0.2s linear;
