@@ -40,13 +40,13 @@
                 <% end %>
 
                 <div class="field">
-                  <%= f.number_field :user_id, :value=>@id_associated %>
+                  <%= f.number_field :user_id, :value=>@id_associated, :hidden=>true %>
                 </div>
                 <div class="field">
-                  <%= f.number_field :publication_id, :value=>publication.id %>
+                  <%= f.number_field :publication_id, :value=>publication.id, :hidden=>true %>
                 </div>
                 <div class="actions">
-                  <%= f.submit 'Seleccionar Publicación' %>
+                  <%= f.submit 'Seleccionar Publicación', :class=>"second-btn" %>
                 </div>
               <% end %>
             </td>
