@@ -28,7 +28,8 @@ class CommentsController < ApplicationController
 
     respond_to do |format|
       if @comment.save
-        format.html { redirect_to @comment, notice: 'Comment was successfully created.' }
+        #redirect_to '/associateds/'+@associated.id.to_s, :notice => "La cuenta para el Asociado fue creada correctamente."
+        format.html { redirect_to '/publications/'+@comment.publication_id.to_s, success: 'Comentarie creado exitosamente...' }
         format.json { render action: 'show', status: :created, location: @comment }
       else
         format.html { render action: 'new' }
@@ -56,7 +57,7 @@ class CommentsController < ApplicationController
   def destroy
     @comment.destroy
     respond_to do |format|
-      format.html { redirect_to comments_url }
+      format.html { redirect_to '/publications/'+@comment.publication_id.to_s, success: 'Comentarie creado exitosamente...' }
       format.json { head :no_content }
     end
   end

@@ -50,20 +50,22 @@ class UsersController < ApplicationController
   end
 
   def create_user_for_associated
-    @associated = Associated.find(params[:user][:id])
-    @user = User.new(params[:user])
-    @user.id = nil
-    if @user.save
-      @associated.userId = @user.id
-      @associated.email = @user.email
-      if @associated.save
-        redirect_to '/associateds/'+@associated.id.to_s, :notice => "La cuenta para el Asociado fue creada correctamente."
+    if params[:user][:id] != nil
+      @associated = Associated.find(params[:user][:id])
+      @user = User.new(params[:user])
+      @user.id = nil
+      if @user.save
+        @associated.userId = @user.id
+        @associated.email = @user.email
+        if @associated.save
+          redirect_to '/associateds/'+@associated.id.to_s, :notice => "La cuenta para el Asociado fue creada correctamente."
+        else
+          @user.destroy
+          redirect_to '/associateds/'+@associated.id.to_s, :notice => "Error al crear la cuenta para el associado."
+        end
       else
-        @user.destroy
-        redirect_to '/associateds/'+@associated.id.to_s, :notice => "Error al crear la cuenta para el associado."
+        redirect_to '/users/new_user_for_associated/'+@associated.id.to_s, :notice => "Error al crear el usuario para el associado. Asegúrese que el nombre de usuario sea único, y que las contraseñas coincidan."
       end
-    else
-      redirect_to '/users/new_user_for_associated/'+@associated.id.to_s, :notice => "Error al crear el usuario para el associado. Asegúrese que el nombre de usuario sea único, y que las contraseñas coincidan."
     end
   end
 
