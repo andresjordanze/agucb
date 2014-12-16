@@ -11,6 +11,10 @@ class PublicationsController < ApplicationController
   # GET /publications/1.json
   def show
     @comment = Comment.new
+    @comments_list = Comment.all
+    if current_user then 
+      @associated = Associated.find_by! userId: current_user.id
+    end
   end
 
   # GET /publications/new
@@ -70,6 +74,6 @@ class PublicationsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def publication_params
-      params.require(:publication).permit(:title, :description, :id_event_or_activity,:photo)
+      params.require(:publication).permit(:id,:title, :description, :id_event_or_activity,:photo)
     end
 end

@@ -23,6 +23,10 @@
       <div class="field">
         <p style="color:black; line-height: 1em; font-size: 0,5em; border-style:dashed; border-width: 1px; padding-top: 10px;padding-left: 10px;padding-right: 10px;padding-bottom: 10px; border-color:#50BFA1; background-color:#F5FCFA;"><strong style"color:blue;">Leonardo Mejia Pacheco</strong><br><br><var>Integrar a la comunidad de la UCB en torno a la práctica del fútbol. Mantener el vínculo afectivo de los ex alumnos con su Alma Mater. Confraternizar deportivamente entre miembros de la comunidad UCB: graduados, estudiantes, autoridades, funcionarios administrativos, docentes. Institucionalizar Clubes de Fútbol al interior de la UCB</var></p>
         <p style="color:black; line-height: 1em; font-size: 0,5em; border-style:dashed; border-width: 1px; padding-top: 10px;padding-left: 10px;padding-right: 10px;padding-bottom: 10px; border-color:orange; background-color:#FFF8F0;"><strong style"color:blue;">Leonardo Mejia Pacheco</strong><br><br>Integrar a la comunidad de la UCB en torno a la práctica del fútbol. Mantener el vínculo afectivo de los ex alumnos con su Alma Mater. Confraternizar deportivamente entre miembros de la comunidad UCB: graduados, estudiantes, autoridades, funcionarios administrativos, docentes. Institucionalizar Clubes de Fútbol al interior de la UCB</p>
+        <% @comments_list = @comments_list.where("publication_id = ?", @publication.id) %> 
+        <% @comments_list.each do |comment_publication| %>
+          <p style="color:black; line-height: 1em; font-size: 0,5em; border-style:dashed; border-width: 1px; padding-top: 10px;padding-left: 10px;padding-right: 10px;padding-bottom: 10px; border-color:orange; background-color:#FFF8F0;"><strong style"color:blue;"><%= if current_user then @associated.name.to_s+ +@associated.lastname.to_s else 'Desconocido' end %></strong><br><br><%= comment_publication.comment %></p>
+        <% end %>
       </div>
 
       <%= form_for(@comment) do |f| %>
@@ -39,12 +43,17 @@
         <% end %>
 
         <div class="field">
-          <%= f.label :comment %><br>
           <%= f.text_area :comment, :placeholder=>"Escribe un comentario...", :cols=>"62", :style=>"background-color:#FFFFFF; resize:none;", :required => true %>
         </div>
         <div class="field">
-          <%= f.label :user_id %><br>
-          <%= f.number_field :user_id %>
+          <% if current_user %>
+            <%= f.number_field :user_id, :value=>current_user.id %>
+          <% else %>
+            <%= f.number_field :user_id, :value=>'0' %>
+          <% end %>
+        </div>
+        <div class="field">
+          <%= f.number_field :publication_id,  :value=>@publication.id %>
         </div>
         <div class="actions">
           <%= f.submit 'Publicar Comentario', :class=>"first-btn"%>
