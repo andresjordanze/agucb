@@ -26,7 +26,12 @@
         <% @comments_list = @comments_list.where("publication_id = ?", @publication.id) %> 
         <% @comments_list.each do |comment_publication| %>
           <% if comment_publication.user_id != 0 %>
-            <%= @associated = Associated.find_by! userId:comment_publication.user_id %>
+            <% if User.find(comment_publication.user_id).userType == 'admin' %>
+              <%= @associated.name='Asociación De Graduados UCB' %>
+              <%= @associated.lastname='' %>
+            <% else %>
+              <%= @associated = Associated.find_by! userId:comment_publication.user_id %>
+            <% end %>
           <% else %>
             <%= @associated.name='Desconocido' %>
             <%= @associated.lastname='' %>

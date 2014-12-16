@@ -21,7 +21,7 @@
       <%= f.password_field :password_confirmation,:class=>"form-control", :placeholder=>"Vuelve a escribir la contraseña" %>
     </div>
     <div class="btn-group btn-group-lg">
-      <%= f.submit (@user.new_record? ? "Registrar usuario" : "Guardar cambios"), :class=>"first-btn" %><br><br>
+      <%= f.submit "Registrar usuario", :class=>"first-btn" %><br><br>
       <%= link_to 'Cancelar', teams_path, :class=>"back-btn" %><br><br>
     </div>
   <% end %>
