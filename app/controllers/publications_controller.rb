@@ -11,8 +11,10 @@ class PublicationsController < ApplicationController
   # GET /publications/1.json
   def show
     @comment = Comment.new
-    #@comments_list = Comment.where("publication_id = ?", 3)
     @comments_list = Comment.all
+    if current_user then 
+      @associated = Associated.find_by! userId: current_user.id
+    end
   end
 
   # GET /publications/new
