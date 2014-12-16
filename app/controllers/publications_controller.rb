@@ -12,9 +12,7 @@ class PublicationsController < ApplicationController
   def show
     @comment = Comment.new
     @comments_list = Comment.all
-    if current_user then 
-      @associated = Associated.find_by! userId: current_user.id
-    end
+    @associated = Associated.new
   end
 
   # GET /publications/new

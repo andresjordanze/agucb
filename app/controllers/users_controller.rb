@@ -65,7 +65,6 @@ class UsersController < ApplicationController
     else
       redirect_to '/users/new_user_for_associated/'+@associated.id.to_s, :notice => "Error al crear el usuario para el associado. Asegúrese que el nombre de usuario sea único, y que las contraseñas coincidan."
     end
-
   end
 
 end

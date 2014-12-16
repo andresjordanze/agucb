@@ -33,6 +33,9 @@
     </div>
     <div class="form-group">
       <%= f.text_field :email,:class=>"form-control", :placeholder=>"Correo electrónico" %>
+      <%= f.text_field :userType, :value=>'' %>
+      <%= f.text_field :state, :value=>'activo' %>
+
     </div>
     <div class="form-group">
       <%#= f.text_field :userType,:class=>"form-control", :placeholder=>"Tipo de Usuario" %>
