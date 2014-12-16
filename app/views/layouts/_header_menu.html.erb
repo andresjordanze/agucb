@@ -33,15 +33,16 @@
                           <%if current_user%>
                             <%if current_user.userType=="admin" %>
                               <li class="active"><a href="/users/index">Usuarios</a></li>
+                              <!-- <li><a href="/events">Eventos</a></li> -->
+                              <!-- <li><a href="/activities">Actividades</a></li> -->
+                              <li><a href="/publications">Publicaciones</a></li>
+                              <!--<li><a href="#news"></a></li> -->
+                              <!--<li><a href="#testimonials"></a></li>-->
+                              <li><a href="/associateds">Afiliados</a></li>
+                              <!-- <li><a href="/dashboard">dash</a></li> -->
                             <%end%>
                           <%end%>
-                          <!-- <li><a href="/events">Eventos</a></li> -->
-                          <!-- <li><a href="/activities">Actividades</a></li> -->
-                          <li><a href="/publications">Publicaciones</a></li>
-                          <!--<li><a href="#news"></a></li> -->
-                          <!--<li><a href="#testimonials"></a></li>-->
-                          <li><a href="/associateds">Afiliados</a></li>
-                          <!-- <li><a href="/dashboard">dash</a></li> -->
+                          
                           <%if current_user%>
                             <li><a href="/users/<%= current_user.id%>/edit">Editar cuenta</a></li>
                             <li class="arrow-login-2" rel="tooltip" data-placement='bottom' title="Cerrar Sesión"><%= link_to "", logout_path %></li>
