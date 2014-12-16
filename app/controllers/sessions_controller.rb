@@ -11,11 +11,7 @@ class SessionsController < ApplicationController
         if user.userType == "f8"
           redirect_to "/futbol8"
         else
-          if user.userType == 'admin'
-            redirect_to "/menu_agucb"
-          else
-            redirect_to "/associations"
-          end
+          redirect_to "/menu_agucb"
         end
         flash.now[:success] = "Sesión iniciada exitosamente."
       else

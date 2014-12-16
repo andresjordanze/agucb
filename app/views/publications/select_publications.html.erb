@@ -1,0 +1,64 @@
+<%= render 'layouts/header_menu'%>
+
+<% title "Lista de Publicaciones" %>
+
+<div class="l-form-section l-section" style="margin-top: 0px;">
+  <center>
+  <div class="col-xs-6 col-md-4">
+    <h1>Publicaciones</h1><br><br>
+    <%= link_to 'Crear Publicación', new_publication_path, :class=>"back-btn" %> <br><br>
+    <div class="bs-example">
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th style="color:black">#</th>
+            <th style="color:black">Título</th>
+            <th style="color:black">Descripción</th>
+            <th style="color:black"></th>
+          </tr>
+        </thead>
+        <tbody>
+          <% count=1 %>
+          <% @publications.each do |publication| %>
+          <tr>
+            <td style="color:black"><%= count %></td>
+            <td style="color:black"><%= publication.title %></td>
+            <td style="color:black"><%= publication.description %></td>
+            <td style="color:black"><%= publication.id_event_or_activity %></td>
+            <td>
+              <%= form_for(@shared) do |f| %>
+                <% if @shared.errors.any? %>
+                  <div id="error_explanation">
+                    <h2><%= pluralize(@shared.errors.count, "error") %> prohibited this shared from being saved:</h2>
+
+                    <ul>
+                    <% @shared.errors.full_messages.each do |msg| %>
+                      <li><%= msg %></li>
+                    <% end %>
+                    </ul>
+                  </div>
+                <% end %>
+
+                <div class="field">
+                  <%= f.number_field :user_id, :value=>@id_associated %>
+                </div>
+                <div class="field">
+                  <%= f.number_field :publication_id, :value=>publication.id %>
+                </div>
+                <div class="actions">
+                  <%= f.submit 'Seleccionar Publicación' %>
+                </div>
+              <% end %>
+            </td>
+          </tr>
+          <% count = count + 1 %>
+          <% end %>
+        </tbody>
+      </table>
+    </div><!-- /example -->
+  </div>
+  </center>
+</div>
+<%= render 'layouts/footerAgucb'%>
+
+
