@@ -29,8 +29,14 @@
               <li class="<%= 'active' if params[:controller] == 'matches' %>"><a href="/matches">Partidos</a></li>
               <li class="<%= 'active' if params[:controller] == 'stadistics' %>"><a href="/stadistics">Estadisticas</a></li>
               <li class="<%= 'active' if params[:controller] == 'teams' %>"><a href="/teams">Equipos</a></li>
-              <li><a href="/ads">Anuncios</a></li>
-              <li><a href="#team">Contacto</a></li>
+              <li class="<%= 'active' if params[:controller] == 'ads' %>"><a href="/ads">Anuncios</a></li>
+              <%if current_user%>
+                <%if current_user.rol=="admin"%>
+                  <li class="<%= 'active' if params[:controller] == 'messages' %>"><a href="/messages">Contáctanos</a></li>
+                <%end%>
+              <%else%>
+                <li class="<%= 'active' if params[:controller] == 'messages' %>"><a href="/messages/new">Contáctanos</a></li>
+              <%end%>
               <%if current_user%>
                 <li class="arrow-login-2" rel="tooltip" data-placement='bottom' title="Cerrar Sesión"><%= link_to "", logout_path %></li>
               <%else%>
