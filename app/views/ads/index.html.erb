@@ -1,31 +1,97 @@
-<h1>Listing ads</h1>
+<% title "Anuncios"%>
+<div class="page-loader"></div>
+<div class="l-wrapper">
+<%= render 'layouts/header8'%>
+  <div class="l-content-wrap" id="standard-content">
+    <section>
+      <div class="l-latest-posts l-section" id="news">
+        <%if current_user%>
+          <%if current_user.rol=="admin"%>
+            <%= link_to 'Nuevo anuncio', new_ad_path , :class=>"first-btn"%>
+          <%end%>
+        <%end%>
+          <div class="container">
 
-<table>
-  <thead>
-    <tr>
-      <th>Title</th>
-      <th>Content</th>
-      <th>User</th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
+              <h4 class="text-center">Anuncios</h4>
 
-  <tbody>
-    <% @ads.each do |ad| %>
-      <tr>
-        <td><%= ad.title %></td>
-        <td><%= ad.content %></td>
-        <td><%= ad.user_id %></td>
-        <td><%= link_to 'Show', ad %></td>
-        <td><%= link_to 'Edit', edit_ad_path(ad) %></td>
-        <td><%= link_to 'Destroy', ad, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+              <div class="m-heading-border"></div><!-- m-heading-border -->         
 
-<br>
+              <div class="clearfix"></div><!-- clearfix -->
 
-<%= link_to 'New Ad', new_ad_path %>
+
+              <div class="m-posts">
+
+                  <div class="row">                                        
+                    <% @ads.each do |ad| %>
+
+                      <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 text-center">
+
+                          <div class="m-news-post">                                                                        
+                              <div class="m-image-wrap">      
+                                  <div class="hover-wrap">
+                                      <div class="image-hover">                                            
+                                          <div class="categories">
+                                              <%=ad.title%>
+                                              <div class="m-heading-border"></div><!-- m-heading-border -->
+                                          </div>                                            
+                                          <div class="post-meta">                                                
+                                              <div class="post-comments text-left">
+                                                <%= User.find(ad.user_id).username%>
+                                              </div><!-- comments -->                                                
+                                              <div class="post-date text-right">
+                                                <%=ad.created_at.strftime(" %d/%m/%Y")%>
+                                              </div>                                                
+                                          </div><!-- post-meta -->                                            
+                                      </div>  <!-- image-hover -->
+                                  </div><!-- hover-wrap -->
+                                  <%= image_tag ad.avatar.url%>
+                                                                        
+                              </div><!-- m-image-wrap -->
+
+                              <div class="news-content">
+                                  <h6>
+                                      <%=ad.title%>
+                                  </h6>
+
+                                  <!--p>
+                                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod temp.or incididunt 
+                                  </p-->
+
+                                  <div class="clearfix"></div><!-- clearfix -->
+                                  <a  href="#post-popup<%=ad.id%>" class="news-button open-popup-link">Ver anuncio</a><br><br>
+                                  <% if current_user %>
+                                  <% if current_user.rol == "admin" %>
+                                    <p><%= link_to 'Editar', edit_ad_path(ad), :class=>"edit-btn-mini" %><br>
+                                    <%= button_to('Eliminar', ad, {:onclick => "return confirm('Esta seguro de eliminar este anuncio?')", method: :delete,:class=>"back-btn-mini"}) %></p>
+                                  <%end%>
+                                  <%end%>
+                              </div><!-- news-content -->
+
+                          </div><!-- m-news-post -->                                                                
+
+                                        
+                          <!-- post popup content -->
+                          <div id="post-popup<%=ad.id%>" class="white-popup mfp-hide">
+                              <h3><%=ad.title%></h3>
+                              <%= image_tag ad.avatar.url%>
+                              <h6>
+                                  <%=ad.content%>
+                              </h6>
+                          </div>
+                                        
+                                        
+                      </div><!-- col-lg-4 -->
+                    <%end%>
+                  </div><!-- row -->
+                            
+          </div><!-- m-posts -->
+
+          </div><!-- container -->
+
+      </div><!-- l-latest-posts -->
+
+
+  </section>
+
+</div>
+</div>

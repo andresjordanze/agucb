@@ -8,7 +8,6 @@
 
                         <div class="container">
 
-
                             <div class="row">
 
                                 <div class="col-lg-5 col-md-5 col-sm-5 col-xs-12">
@@ -30,21 +29,26 @@
                                     <h6>Envíanos un mensaje</h6>
 
                                     <div class="row form-margin">
-
+                                    <%= form_for(@message) do |f| %>
                                         <div class="col-lg-6">
-                                            <input type="text" class="form-control" placeholder="Nombre"/>
+                                            <%= f.text_field :name,:class=>"form-control", :placeholder=>"Nombre completo" %>
                                         </div><!-- col-lg-6 -->
 
                                         <div class="col-lg-6">
-                                            <input type="text" class="form-control" placeholder="E-Mail" />
+                                            <%= f.text_field :email,:class=>"form-control", :placeholder=>"E-mail" %>
                                         </div><!-- col-lg-6 -->
 
                                         <div class="col-lg-12 textarea-margin">
-                                            <textarea  class="form-control" placeholder="Mensaje" ></textarea>
-
-                                            <button type="button" class="pull-right form-button">Enviar mensaje</button>
+                                            <%= f.text_area :content,:class=>"form-control", :placeholder=>"Mensaje" %>
+                                            <%= f.submit "Enviar mensaje", :class=>"pull-right form-button" %>
                                         </div><!-- col-lg-6 -->
 
+                                        <%if current_user%>
+                                            <%if current_user.rol=="team"%>
+                                                <%= f.hidden_field :receiver,:value => "adminfut"  %>
+                                            <%end%>
+                                        <%end%>
+                                    <%end%>
                                     </div><!-- row -->
 
 

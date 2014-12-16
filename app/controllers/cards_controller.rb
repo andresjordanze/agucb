@@ -30,7 +30,6 @@ class CardsController < ApplicationController
   # POST /cards.json
   def create
     @card = Card.new(card_params)
-
     respond_to do |format|
       if @card.save
         format.html { redirect_to "/matches/"+@card.match_id.to_s }
